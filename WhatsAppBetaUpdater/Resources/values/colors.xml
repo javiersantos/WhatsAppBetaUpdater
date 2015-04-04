@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="background">#FFFFFF</color>
+    <color name="white">#FFFFFF</color>
+    <color name="green">#689F38</color>
+    <color name="greenLight">#8BC34A</color>
+    <color name="greenDark">#3E5F22</color>
+    <color name="blueLight">#218C8D</color>
+    <color name="blueDark">#003333</color>
+    <color name="orange">#EF7126</color>
+    <color name="gray">#473E3F</color>
+    <color name="indigo">#3F51B5</color>
+    <color name="indigoDark">#1A237E</color>
+    <color name="indigoLight">#304FFE</color>
+    <color name="deepPurple">#673AB7</color>
+    <color name="banana">#FFCC00</color>
+
+    <!-- Refresh -->
+	<color name="xam_purple">#B455B6</color>
+	<color name="xam_blue">#3498DB</color>
+	<color name="xam_dark_blue">#2C3E50</color>
+	<color name="xam_green">#77D065</color>
+	<color name="xam_gray">#738182</color>
+	<color name="xam_light_gray">#B4BCBC</color>
+</resources>

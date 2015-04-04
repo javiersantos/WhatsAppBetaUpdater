@@ -1,0 +1,25 @@
+﻿<Properties StartupItem="WhatsAppBetaUpdater\WhatsAppBetaUpdater.Android.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" PreferredExecutionTarget="Android.0179459859c9a7a2" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="WhatsAppBetaUpdater\Resources\values\styles.xml">
+    <Files>
+      <File FileName="WhatsAppBetaUpdater\MainActivity.cs" Line="69" Column="61" />
+      <File FileName="WhatsAppBetaUpdater\Resources\values\strings.xml" Line="16" Column="61" />
+      <File FileName="WhatsAppBetaUpdater\Properties\AndroidManifest.xml" Line="12" Column="12" />
+      <File FileName="WhatsAppBetaUpdater\Resources\values\styles.xml" Line="16" Column="42" />
+      <File FileName="WhatsAppBetaUpdater\Resources\values\colors.xml" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="C:\Users\Javier\Documents\Projects\WhatsAppBetaUpdater\WhatsAppBetaUpdater\MainActivity.cs" line="43" column="1" />
+      <Breakpoint file="C:\Users\Javier\Documents\Projects\WhatsAppBetaUpdater\WhatsAppBetaUpdater\MainActivity.cs" line="44" column="1" />
+      <Breakpoint file="C:\Users\Javier\Documents\Projects\WhatsAppBetaUpdater\WhatsAppBetaUpdater\MainActivity.cs" line="45" column="1" />
+      <Breakpoint file="C:\Users\Javier\Documents\Projects\WhatsAppBetaUpdater\WhatsAppBetaUpdater\MainActivity.cs" line="46" column="1" />
+      <Breakpoint file="C:\Users\Javier\Documents\Projects\WhatsAppBetaUpdater\WhatsAppBetaUpdater\MainActivity.cs" line="47" column="1" />
+      <Breakpoint file="C:\Users\Javier\Documents\Projects\WhatsAppBetaUpdater\WhatsAppBetaUpdater\MainActivity.cs" line="48" column="1" />
+      <Breakpoint file="C:\Users\Javier\Documents\Projects\WhatsAppBetaUpdater\WhatsAppBetaUpdater\MainActivity.cs" line="49" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.WhatsAppBetaUpdater.Android AndroidDesignerPreferredDevice="Nexus 4" />
+</Properties>

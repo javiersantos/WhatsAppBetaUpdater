@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+    <whatsappbetaupdater.ScrollChildSwipeRefreshLayout
+        android:id="@+id/refresher"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+        <LinearLayout xmlns:tools="http://schemas.android.com/tools"
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:id="@+id/main_content"
+            android:layout_below="@id/toolbar"
+            android:layout_marginTop="80dp">
+            <android.support.v7.widget.CardView
+                android:layout_width="fill_parent"
+                android:layout_height="100dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_gravity="center_horizontal"
+                local:cardBackgroundColor="@color/white"
+                local:cardUseCompatPadding="true"
+                local:cardCornerRadius="0dp">
+                <TextView
+                    style="@style/TextAppearance.AppCompat.Title"
+                    android:textColor="@color/gray"
+                    android:fontFamily="sans-serif-thin"
+                    android:gravity="center_horizontal"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="12dp"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/whatsapp_installed"
+                    android:singleLine="true" />
+                <TextView
+                    android:id="@+id/whatsapp_installed_version"
+                    style="@style/TextAppearance.AppCompat.Title"
+                    android:textColor="@color/gray"
+                    android:fontFamily="sans-serif-light"
+                    android:gravity="center_horizontal"
+                    android:paddingTop="45dp"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true" />
+            </android.support.v7.widget.CardView>
+            <android.support.v7.widget.CardView
+                android:layout_width="fill_parent"
+                android:layout_height="100dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_gravity="center_horizontal"
+                local:cardBackgroundColor="@color/white"
+                local:cardUseCompatPadding="true"
+                local:cardCornerRadius="0dp">
+                <TextView
+                    style="@style/TextAppearance.AppCompat.Title"
+                    android:textColor="@color/gray"
+                    android:fontFamily="sans-serif-thin"
+                    android:gravity="center_horizontal"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="12dp"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/whatsapp_latest"
+                    android:singleLine="true" />
+                <TextView
+                    android:id="@+id/whatsapp_latest_version"
+                    style="@style/TextAppearance.AppCompat.Title"
+                    android:textColor="@color/gray"
+                    android:fontFamily="sans-serif-light"
+                    android:gravity="center_horizontal"
+                    android:paddingTop="45dp"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true" />
+            </android.support.v7.widget.CardView>
+            <Button
+                android:id="@+id/whatsapp_button_update"
+                style="?android:attr/borderlessButtonStyle"
+                android:fontFamily="sans-serif-condensed"
+                android:textColor="@color/gray"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:onClick="updateWhatsApp" />
+            <LinearLayout
+                android:id="@+id/adView"
+                android:orientation="vertical"
+                android:layout_alignParentBottom="true"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp" />
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

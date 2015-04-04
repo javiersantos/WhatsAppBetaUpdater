@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="whatsapp_installed">Versión instalada:</string>
+	<string name="whatsapp_latest">Última versión:</string>
+	<string name="downloading">Descargando</string>
+	<string name="download_again">Descargar otra vez</string>
+	<string name="download_error">Algo fue mal</string>
+	<string name="download_error_description">no ha podido ser instalado. Por favor, inténtalo de nuevo.</string>
+	<string name="latest_installed">La última versión está instalada</string>
+	<string name="latest_installed_description">está instalado. Tienes la última versión.</string>
+
+	<string name="whatsapp_button_update">¡Actualizar WhatsApp!</string>
+	<string name="whatsapp_button_latest">Tienes la última versión</string>
+</resources>

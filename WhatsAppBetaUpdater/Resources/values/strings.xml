@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="app_name">WhatsApp Beta Updater</string>
+	<string name="whatsapp_installed">Installed Version:</string>
+	<string name="whatsapp_latest">Latest Version:</string>
+	<string name="downloading">Downloading</string>
+	<string name="download_again">Download again</string>
+	<string name="download_error">Something gone wrong</string>
+	<string name="download_error_description">can\u0027t be installed. Please, try again.</string>
+	<string name="latest_installed">Latest version installed</string>
+	<string name="latest_installed_description">is installed. You have the latest version.</string>
+
+	<string name="whatsapp_button_update">Update WhatsApp!</string>
+	<string name="whatsapp_button_latest">You have the latest version</string>
+
+	<string name="admob">ca-app-pub-0459828968162938/8355158874</string>
+</resources>
