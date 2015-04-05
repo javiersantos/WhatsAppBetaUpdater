@@ -17,6 +17,7 @@ using Android.Content;
 using Android.Support.V4.Widget;
 using System.Threading.Tasks;
 using Android.Gms.Ads;
+using Java.Lang;
 
 namespace WhatsAppBetaUpdater {
 	[Activity (Label = "@string/app_name", MainLauncher = true, Icon = "@drawable/ic_launcher")]
@@ -83,7 +84,7 @@ namespace WhatsAppBetaUpdater {
 			// Show update or latest version button
 			Button whatsapp_button_update = FindViewById<Button> (Resource.Id.whatsapp_button_update);
 
-			if (installedVersion.CompareTo (latestVersion) > 0) {
+			if (versionCompare(installedVersion, latestVersion) < 0) {
 				whatsapp_button_update.Text = Resources.GetString (Resource.String.whatsapp_button_update);
 				whatsapp_button_update.Click += delegate {
 					var webClient = new WebClient ();
@@ -97,7 +98,7 @@ namespace WhatsAppBetaUpdater {
 				whatsapp_button_update.Click += delegate {
 					var errorInstalled = new AlertDialog.Builder (this).Create ();
 					errorInstalled.SetTitle (Resources.GetString(Resource.String.latest_installed));
-					errorInstalled.SetMessage ("WhatsApp " + installedVersion + " " + Resource.String.latest_installed_description);
+					errorInstalled.SetMessage ("WhatsApp " + installedVersion + " " + Resources.GetString(Resource.String.latest_installed_description));
 					errorInstalled.Show ();
 				};
 			}
@@ -138,6 +139,21 @@ namespace WhatsAppBetaUpdater {
 			await GetLatestVersion (webUrl);
 		}
 
+		public int versionCompare (string oldVersion, string newVersion) {
+			string[] splitOld = oldVersion.Split (new char[] { '.' });
+			string[] splitNew = newVersion.Split (new char[] { '.' });
+			int i = 0;
+			while (i < splitOld.Length && i < splitNew.Length && splitOld[i].Equals(splitNew[i])) {
+				i++;
+			}
+			if (i < splitOld.Length && i < splitNew.Length) {
+				int diff = Integer.ValueOf (splitOld [i]).CompareTo (Integer.ValueOf (splitNew [i]));
+				return Integer.Signum (diff);
+			} else {
+				return Integer.Signum (splitOld.Length - splitNew.Length);
+			}
+		}
+
 		public override bool OnCreateOptionsMenu (IMenu menu) {
 			MenuInflater.Inflate (Resource.Menu.items, menu);
 			return base.OnCreateOptionsMenu (menu);
@@ -146,7 +162,7 @@ namespace WhatsAppBetaUpdater {
 			switch (item.ItemId) {
 			case Resource.Id.menu_refresh:
 				GetLatestVersion (webUrl);
-				if (installedVersion.CompareTo (latestVersion) > 0) {
+				if (versionCompare(installedVersion, latestVersion) < 0) {
 					Toast.MakeText (this, "WhatsApp " + latestVersion + " " + Resources.GetString (Resource.String.available), ToastLength.Short).Show ();
 				} else {
 					Toast.MakeText (this, "WhatsApp " + installedVersion + " " + Resources.GetString (Resource.String.latest_installed_description), ToastLength.Short).Show ();
