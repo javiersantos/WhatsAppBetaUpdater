@@ -57,7 +57,7 @@
       <HintPath>..\packages\Xamarin.Android.Support.v7.MediaRouter.21.0.3.0\lib\MonoAndroid403\Xamarin.Android.Support.v7.MediaRouter.dll</HintPath>
     </Reference>
     <Reference Include="GooglePlayServicesLib">
-      <HintPath>..\packages\Xamarin.GooglePlayServices.22.0.0.0\lib\MonoAndroid41\GooglePlayServicesLib.dll</HintPath>
+      <HintPath>..\packages\Xamarin.GooglePlayServices.22.0.0.2\lib\MonoAndroid41\GooglePlayServicesLib.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -85,6 +85,10 @@
     <AndroidResource Include="Resources\drawable-xxhdpi\ic_launcher.png" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\ic_launcher.png" />
     <AndroidResource Include="Resources\values-es\strings.xml" />
+    <AndroidResource Include="Resources\menu\items.xml" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_refresh.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_refresh.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_refresh.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>
@@ -104,5 +108,6 @@
   <ItemGroup>
     <Folder Include="Resources\values-v21\" />
     <Folder Include="Resources\values-es\" />
+    <Folder Include="Resources\menu\" />
   </ItemGroup>
 </Project>

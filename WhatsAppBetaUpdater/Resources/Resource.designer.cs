@@ -1510,61 +1510,64 @@ namespace WhatsAppBetaUpdater
 			public const int ic_plusone_tall_off_client = 2130837585;
 			
 			// aapt resource value: 0x7f020052
-			public const int mr_ic_audio_vol = 2130837586;
+			public const int ic_refresh = 2130837586;
 			
 			// aapt resource value: 0x7f020053
-			public const int mr_ic_media_route_connecting_holo_dark = 2130837587;
+			public const int mr_ic_audio_vol = 2130837587;
 			
 			// aapt resource value: 0x7f020054
-			public const int mr_ic_media_route_connecting_holo_light = 2130837588;
+			public const int mr_ic_media_route_connecting_holo_dark = 2130837588;
 			
 			// aapt resource value: 0x7f020055
-			public const int mr_ic_media_route_disabled_holo_dark = 2130837589;
+			public const int mr_ic_media_route_connecting_holo_light = 2130837589;
 			
 			// aapt resource value: 0x7f020056
-			public const int mr_ic_media_route_disabled_holo_light = 2130837590;
+			public const int mr_ic_media_route_disabled_holo_dark = 2130837590;
 			
 			// aapt resource value: 0x7f020057
-			public const int mr_ic_media_route_holo_dark = 2130837591;
+			public const int mr_ic_media_route_disabled_holo_light = 2130837591;
 			
 			// aapt resource value: 0x7f020058
-			public const int mr_ic_media_route_holo_light = 2130837592;
+			public const int mr_ic_media_route_holo_dark = 2130837592;
 			
 			// aapt resource value: 0x7f020059
-			public const int mr_ic_media_route_off_holo_dark = 2130837593;
+			public const int mr_ic_media_route_holo_light = 2130837593;
 			
 			// aapt resource value: 0x7f02005a
-			public const int mr_ic_media_route_off_holo_light = 2130837594;
+			public const int mr_ic_media_route_off_holo_dark = 2130837594;
 			
 			// aapt resource value: 0x7f02005b
-			public const int mr_ic_media_route_on_0_holo_dark = 2130837595;
+			public const int mr_ic_media_route_off_holo_light = 2130837595;
 			
 			// aapt resource value: 0x7f02005c
-			public const int mr_ic_media_route_on_0_holo_light = 2130837596;
+			public const int mr_ic_media_route_on_0_holo_dark = 2130837596;
 			
 			// aapt resource value: 0x7f02005d
-			public const int mr_ic_media_route_on_1_holo_dark = 2130837597;
+			public const int mr_ic_media_route_on_0_holo_light = 2130837597;
 			
 			// aapt resource value: 0x7f02005e
-			public const int mr_ic_media_route_on_1_holo_light = 2130837598;
+			public const int mr_ic_media_route_on_1_holo_dark = 2130837598;
 			
 			// aapt resource value: 0x7f02005f
-			public const int mr_ic_media_route_on_2_holo_dark = 2130837599;
+			public const int mr_ic_media_route_on_1_holo_light = 2130837599;
 			
 			// aapt resource value: 0x7f020060
-			public const int mr_ic_media_route_on_2_holo_light = 2130837600;
+			public const int mr_ic_media_route_on_2_holo_dark = 2130837600;
 			
 			// aapt resource value: 0x7f020061
-			public const int mr_ic_media_route_on_holo_dark = 2130837601;
+			public const int mr_ic_media_route_on_2_holo_light = 2130837601;
 			
 			// aapt resource value: 0x7f020062
-			public const int mr_ic_media_route_on_holo_light = 2130837602;
+			public const int mr_ic_media_route_on_holo_dark = 2130837602;
 			
 			// aapt resource value: 0x7f020063
-			public const int powered_by_google_dark = 2130837603;
+			public const int mr_ic_media_route_on_holo_light = 2130837603;
 			
 			// aapt resource value: 0x7f020064
-			public const int powered_by_google_light = 2130837604;
+			public const int powered_by_google_dark = 2130837604;
+			
+			// aapt resource value: 0x7f020065
+			public const int powered_by_google_light = 2130837605;
 			
 			static Drawable()
 			{
@@ -1621,8 +1624,8 @@ namespace WhatsAppBetaUpdater
 			// aapt resource value: 0x7f0b0035
 			public const int activity_chooser_view_content = 2131427381;
 			
-			// aapt resource value: 0x7f0b0059
-			public const int adView = 2131427417;
+			// aapt resource value: 0x7f0b0058
+			public const int adView = 2131427416;
 			
 			// aapt resource value: 0x7f0b001e
 			public const int adjust_height = 2131427358;
@@ -1720,26 +1723,29 @@ namespace WhatsAppBetaUpdater
 			// aapt resource value: 0x7f0b0039
 			public const int list_item = 2131427385;
 			
-			// aapt resource value: 0x7f0b0055
-			public const int main_content = 2131427413;
+			// aapt resource value: 0x7f0b0054
+			public const int main_content = 2131427412;
 			
 			// aapt resource value: 0x7f0b002a
 			public const int match_parent = 2131427370;
 			
-			// aapt resource value: 0x7f0b005d
-			public const int media_route_control_frame = 2131427421;
+			// aapt resource value: 0x7f0b005c
+			public const int media_route_control_frame = 2131427420;
 			
-			// aapt resource value: 0x7f0b005e
-			public const int media_route_disconnect_button = 2131427422;
+			// aapt resource value: 0x7f0b005d
+			public const int media_route_disconnect_button = 2131427421;
+			
+			// aapt resource value: 0x7f0b0059
+			public const int media_route_list = 2131427417;
 			
 			// aapt resource value: 0x7f0b005a
-			public const int media_route_list = 2131427418;
+			public const int media_route_volume_layout = 2131427418;
 			
 			// aapt resource value: 0x7f0b005b
-			public const int media_route_volume_layout = 2131427419;
+			public const int media_route_volume_slider = 2131427419;
 			
-			// aapt resource value: 0x7f0b005c
-			public const int media_route_volume_slider = 2131427420;
+			// aapt resource value: 0x7f0b005e
+			public const int menu_refresh = 2131427422;
 			
 			// aapt resource value: 0x7f0b0015
 			public const int middle = 2131427349;
@@ -1767,9 +1773,6 @@ namespace WhatsAppBetaUpdater
 			
 			// aapt resource value: 0x7f0b003f
 			public const int radio = 2131427391;
-			
-			// aapt resource value: 0x7f0b0054
-			public const int refresher = 2131427412;
 			
 			// aapt resource value: 0x7f0b0026
 			public const int sandbox = 2131427366;
@@ -1849,14 +1852,14 @@ namespace WhatsAppBetaUpdater
 			// aapt resource value: 0x7f0b0012
 			public const int useLogo = 2131427346;
 			
-			// aapt resource value: 0x7f0b0058
-			public const int whatsapp_button_update = 2131427416;
+			// aapt resource value: 0x7f0b0057
+			public const int whatsapp_button_update = 2131427415;
+			
+			// aapt resource value: 0x7f0b0055
+			public const int whatsapp_installed_version = 2131427413;
 			
 			// aapt resource value: 0x7f0b0056
-			public const int whatsapp_installed_version = 2131427414;
-			
-			// aapt resource value: 0x7f0b0057
-			public const int whatsapp_latest_version = 2131427415;
+			public const int whatsapp_latest_version = 2131427414;
 			
 			// aapt resource value: 0x7f0b001a
 			public const int withText = 2131427354;
@@ -1993,6 +1996,22 @@ namespace WhatsAppBetaUpdater
 			}
 		}
 		
+		public partial class Menu
+		{
+			
+			// aapt resource value: 0x7f0d0000
+			public const int items = 2131558400;
+			
+			static Menu()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Menu()
+			{
+			}
+		}
+		
 		public partial class Raw
 		{
 			
@@ -2063,11 +2082,14 @@ namespace WhatsAppBetaUpdater
 			// aapt resource value: 0x7f060018
 			public const int accept = 2131099672;
 			
-			// aapt resource value: 0x7f060044
-			public const int admob = 2131099716;
+			// aapt resource value: 0x7f060046
+			public const int admob = 2131099718;
 			
 			// aapt resource value: 0x7f060039
 			public const int app_name = 2131099705;
+			
+			// aapt resource value: 0x7f060043
+			public const int available = 2131099715;
 			
 			// aapt resource value: 0x7f06001f
 			public const int common_android_wear_notification_needs_update_text = 2131099679;
@@ -2162,23 +2184,23 @@ namespace WhatsAppBetaUpdater
 			// aapt resource value: 0x7f060019
 			public const int decline = 2131099673;
 			
-			// aapt resource value: 0x7f06003d
-			public const int download_again = 2131099709;
-			
 			// aapt resource value: 0x7f06003e
-			public const int download_error = 2131099710;
+			public const int download_again = 2131099710;
 			
 			// aapt resource value: 0x7f06003f
-			public const int download_error_description = 2131099711;
-			
-			// aapt resource value: 0x7f06003c
-			public const int downloading = 2131099708;
+			public const int download_error = 2131099711;
 			
 			// aapt resource value: 0x7f060040
-			public const int latest_installed = 2131099712;
+			public const int download_error_description = 2131099712;
+			
+			// aapt resource value: 0x7f06003d
+			public const int downloading = 2131099709;
 			
 			// aapt resource value: 0x7f060041
-			public const int latest_installed_description = 2131099713;
+			public const int latest_installed = 2131099713;
+			
+			// aapt resource value: 0x7f060042
+			public const int latest_installed_description = 2131099714;
 			
 			// aapt resource value: 0x7f060000
 			public const int mr_media_route_button_content_description = 2131099648;
@@ -2198,6 +2220,9 @@ namespace WhatsAppBetaUpdater
 			// aapt resource value: 0x7f060005
 			public const int mr_user_route_category_name = 2131099653;
 			
+			// aapt resource value: 0x7f06003a
+			public const int refresh = 2131099706;
+			
 			// aapt resource value: 0x7f060017
 			public const int store_picture_message = 2131099671;
 			
@@ -2207,17 +2232,17 @@ namespace WhatsAppBetaUpdater
 			// aapt resource value: 0x7f060038
 			public const int wallet_buy_button_place_holder = 2131099704;
 			
-			// aapt resource value: 0x7f060043
-			public const int whatsapp_button_latest = 2131099715;
+			// aapt resource value: 0x7f060045
+			public const int whatsapp_button_latest = 2131099717;
 			
-			// aapt resource value: 0x7f060042
-			public const int whatsapp_button_update = 2131099714;
-			
-			// aapt resource value: 0x7f06003a
-			public const int whatsapp_installed = 2131099706;
+			// aapt resource value: 0x7f060044
+			public const int whatsapp_button_update = 2131099716;
 			
 			// aapt resource value: 0x7f06003b
-			public const int whatsapp_latest = 2131099707;
+			public const int whatsapp_installed = 2131099707;
+			
+			// aapt resource value: 0x7f06003c
+			public const int whatsapp_latest = 2131099708;
 			
 			static String()
 			{
