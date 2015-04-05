@@ -34,7 +34,7 @@ namespace WhatsAppBetaUpdater {
 			SetContentView (Resource.Layout.main);
 
 			var toolbar = FindViewById<Toolbar> (Resource.Id.toolbar);
-			var refresher = FindViewById<SwipeRefreshLayout> (Resource.Id.refresher);
+//			var refresher = FindViewById<SwipeRefreshLayout> (Resource.Id.refresher);
 
 			SetSupportActionBar (toolbar);
 			SupportActionBar.Title = "WhatsApp Beta Updater";
@@ -48,8 +48,8 @@ namespace WhatsAppBetaUpdater {
 			var admob = FindViewById<LinearLayout> (Resource.Id.adView);
 			admob.AddView (ad);
 
-			refresher.SetColorScheme (Resource.Color.xam_dark_blue, Resource.Color.xam_purple, Resource.Color.xam_gray, Resource.Color.xam_green);
-			refresher.Refresh += HandleRefresh;
+//			refresher.SetColorScheme (Resource.Color.xam_dark_blue, Resource.Color.xam_purple, Resource.Color.xam_gray, Resource.Color.xam_green);
+//			refresher.Refresh += HandleRefresh;
 
 			GetLatestVersion (webUrl);
 
@@ -137,6 +137,25 @@ namespace WhatsAppBetaUpdater {
 		async void HandleRefresh (object sender, EventArgs e) {
 			await GetLatestVersion (webUrl);
 		}
+
+		public override bool OnCreateOptionsMenu (IMenu menu) {
+			MenuInflater.Inflate (Resource.Menu.items, menu);
+			return base.OnCreateOptionsMenu (menu);
+		}
+		public override bool OnOptionsItemSelected (IMenuItem item) {
+			switch (item.ItemId) {
+			case Resource.Id.menu_refresh:
+				GetLatestVersion (webUrl);
+				if (latestVersion.CompareTo (installedVersion) > 0) {
+					Toast.MakeText (this, "WhatsApp " + latestVersion + " " + Resources.GetString (Resource.String.available), ToastLength.Short).Show ();
+				} else {
+					Toast.MakeText (this, "WhatsApp " + latestVersion + " " + Resources.GetString (Resource.String.latest_installed_description), ToastLength.Short).Show ();
+				}
+				return true;
+			}
+			return base.OnOptionsItemSelected (item);
+		}
+
 	}
 }
 
