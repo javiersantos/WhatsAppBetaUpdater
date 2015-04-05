@@ -37,7 +37,7 @@ namespace WhatsAppBetaUpdater {
 //			var refresher = FindViewById<SwipeRefreshLayout> (Resource.Id.refresher);
 
 			SetSupportActionBar (toolbar);
-			SupportActionBar.Title = "WhatsApp Beta Updater";
+			SupportActionBar.Title = Resources.GetString (Resource.String.app_name);;
 			SupportActionBar.SetIcon (Resource.Drawable.ic_launcher);
 
 			AdView ad = new AdView (this);
