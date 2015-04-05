@@ -83,7 +83,7 @@ namespace WhatsAppBetaUpdater {
 			// Show update or latest version button
 			Button whatsapp_button_update = FindViewById<Button> (Resource.Id.whatsapp_button_update);
 
-			if (latestVersion.CompareTo (installedVersion) > 0) {
+			if (installedVersion.CompareTo (latestVersion) > 0) {
 				whatsapp_button_update.Text = Resources.GetString (Resource.String.whatsapp_button_update);
 				whatsapp_button_update.Click += delegate {
 					var webClient = new WebClient ();
@@ -97,7 +97,7 @@ namespace WhatsAppBetaUpdater {
 				whatsapp_button_update.Click += delegate {
 					var errorInstalled = new AlertDialog.Builder (this).Create ();
 					errorInstalled.SetTitle (Resources.GetString(Resource.String.latest_installed));
-					errorInstalled.SetMessage ("WhatsApp " + latestVersion + " " + Resource.String.latest_installed_description);
+					errorInstalled.SetMessage ("WhatsApp " + installedVersion + " " + Resource.String.latest_installed_description);
 					errorInstalled.Show ();
 				};
 			}
@@ -146,10 +146,10 @@ namespace WhatsAppBetaUpdater {
 			switch (item.ItemId) {
 			case Resource.Id.menu_refresh:
 				GetLatestVersion (webUrl);
-				if (latestVersion.CompareTo (installedVersion) > 0) {
+				if (installedVersion.CompareTo (latestVersion) > 0) {
 					Toast.MakeText (this, "WhatsApp " + latestVersion + " " + Resources.GetString (Resource.String.available), ToastLength.Short).Show ();
 				} else {
-					Toast.MakeText (this, "WhatsApp " + latestVersion + " " + Resources.GetString (Resource.String.latest_installed_description), ToastLength.Short).Show ();
+					Toast.MakeText (this, "WhatsApp " + installedVersion + " " + Resources.GetString (Resource.String.latest_installed_description), ToastLength.Short).Show ();
 				}
 				return true;
 			}
