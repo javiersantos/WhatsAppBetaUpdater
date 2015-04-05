@@ -1,13 +1,13 @@
 ﻿<Properties StartupItem="WhatsAppBetaUpdater\WhatsAppBetaUpdater.Android.csproj">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" PreferredExecutionTarget="Android.0179459859c9a7a2" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" PreferredExecutionTarget="Android.SelectDevice" />
   <MonoDevelop.Ide.Workbench ActiveDocument="WhatsAppBetaUpdater\Properties\AndroidManifest.xml">
     <Files>
-      <File FileName="WhatsAppBetaUpdater\MainActivity.cs" Line="40" Column="76" />
+      <File FileName="WhatsAppBetaUpdater\MainActivity.cs" Line="149" Column="55" />
       <File FileName="WhatsAppBetaUpdater\Resources\values\strings.xml" Line="1" Column="1" />
       <File FileName="WhatsAppBetaUpdater\Properties\AndroidManifest.xml" Line="12" Column="12" />
-      <File FileName="WhatsAppBetaUpdater\Resources\values\styles.xml" Line="16" Column="42" />
+      <File FileName="WhatsAppBetaUpdater\Resources\values\styles.xml" Line="1" Column="1" />
       <File FileName="WhatsAppBetaUpdater\Resources\values\colors.xml" Line="1" Column="1" />
-      <File FileName="WhatsAppBetaUpdater\Resources\menu\items.xml" Line="6" Column="41" />
+      <File FileName="WhatsAppBetaUpdater\Resources\menu\items.xml" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
