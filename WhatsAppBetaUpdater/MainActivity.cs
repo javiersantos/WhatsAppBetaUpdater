@@ -5,16 +5,9 @@ using Android.Support.V7.App;
 using Android.Widget;
 using Toolbar = Android.Support.V7.Widget.Toolbar;
 using System.Net;
-using System.IO;
-using System.Net.Http;
-using System.Text;
 using System;
-using Java.Net;
-using Java.IO;
-using Android.Util;
 using System.ComponentModel;
 using Android.Content;
-using Android.Support.V4.Widget;
 using System.Threading.Tasks;
 using Android.Gms.Ads;
 using Java.Lang;
@@ -175,5 +168,3 @@ namespace WhatsAppBetaUpdater {
 
 	}
 }
-
-
