@@ -65,9 +65,10 @@ namespace WhatsAppBetaUpdater {
 			string[] split = htmlAndroid.Split (new char[] { '>' });
 			int i = 0;
 			while (i < split.Length) {
-				if (split.GetValue (i).ToString ().StartsWith ("V")) {
+				if (split.GetValue (i).ToString ().StartsWith ("Version")) {
 					split = split.GetValue (i).ToString ().Split (new char[] { ' ', '<' });
 					latestVersion = split.GetValue (1).ToString ().Trim ();
+					break;
 				}
 				i++;
 			}
