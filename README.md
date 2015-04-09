@@ -8,3 +8,8 @@ https://play.google.com/store/apps/details?id=com.javiersantos.whatsappbetaupdat
 
 ### Tools
 Built with Xamarin.
+
+### Upcoming features
+* Moving from Xamarin Studio (C#) to Android Studio (Java).
+* Some settings for WhatsApp updates: autodownload updates, choose APK download directory, etc.
+* Notifications.
