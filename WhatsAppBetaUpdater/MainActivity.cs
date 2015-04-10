@@ -28,7 +28,6 @@ namespace WhatsAppBetaUpdater {
 			SetContentView (Resource.Layout.main);
 
 			var toolbar = FindViewById<Toolbar> (Resource.Id.toolbar);
-//			var refresher = FindViewById<SwipeRefreshLayout> (Resource.Id.refresher);
 
 			SetSupportActionBar (toolbar);
 			SupportActionBar.Title = Resources.GetString (Resource.String.app_name);;
@@ -41,9 +40,6 @@ namespace WhatsAppBetaUpdater {
 			ad.LoadAd(requestBuilder.Build());
 			var admob = FindViewById<LinearLayout> (Resource.Id.adView);
 			admob.AddView (ad);
-
-//			refresher.SetColorScheme (Resource.Color.xam_dark_blue, Resource.Color.xam_purple, Resource.Color.xam_gray, Resource.Color.xam_green);
-//			refresher.Refresh += HandleRefresh;
 
 			GetLatestVersion (webUrl);
 
@@ -127,10 +123,6 @@ namespace WhatsAppBetaUpdater {
 				}
 				whatsapp_button_update.Enabled = true;
 			});
-		}
-
-		async void HandleRefresh (object sender, EventArgs e) {
-			await GetLatestVersion (webUrl);
 		}
 
 		public int versionCompare (string oldVersion, string newVersion) {

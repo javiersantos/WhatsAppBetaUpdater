@@ -6,10 +6,6 @@
     <include
         android:id="@+id/toolbar"
         layout="@layout/toolbar" />
-<!--    <swipetorefresh.ScrollChildSwipeRefreshLayout
-        android:id="@+id/refresher"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />-->
 <!--    <ScrollView
         android:layout_width="fill_parent"
         android:layout_height="fill_parent">-->
