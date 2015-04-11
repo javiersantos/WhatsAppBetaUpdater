@@ -24,7 +24,7 @@ namespace WhatsAppBetaUpdater {
 		private string latestVersion;
 		private string webUrl = "http://www.whatsapp.com/android/";
 		private string apkUrl = "http://www.whatsapp.com/android/current/WhatsApp.apk";
-		private string filename = "/sdcard/Download/WhatsApp.apk";
+		private string filename = Android.OS.Environment.GetExternalStoragePublicDirectory (Android.OS.Environment.DirectoryDownloads).ToString () + "/";
 
 		// Preferences variables
 		private bool prefAutoDownload;
@@ -39,7 +39,7 @@ namespace WhatsAppBetaUpdater {
 			var admob = FindViewById<LinearLayout> (Resource.Id.adView);
 
 			SetSupportActionBar (toolbar);
-			SupportActionBar.Title = Resources.GetString (Resource.String.app_name);;
+			SupportActionBar.Title = Resources.GetString (Resource.String.app_name);
 			SupportActionBar.SetIcon (Resource.Drawable.ic_launcher);
 
 
@@ -97,14 +97,14 @@ namespace WhatsAppBetaUpdater {
 					var webClient = new WebClient ();
 					webClient.DownloadProgressChanged += new DownloadProgressChangedEventHandler (downloadProgressChanged);
 					webClient.DownloadFileCompleted += new AsyncCompletedEventHandler (downloadFileCompleted);
-					webClient.DownloadFileAsync (new Uri (apkUrl), filename);
+					webClient.DownloadFileAsync (new Uri (apkUrl), filename + "WhatsApp_" + latestVersion + ".apk");
 					whatsapp_button_update.Text = Resources.GetString (Resource.String.downloading) + "...";
 				} else {
 					whatsapp_button_update.Click += delegate {
 						var webClient = new WebClient ();
 						webClient.DownloadProgressChanged += new DownloadProgressChangedEventHandler (downloadProgressChanged);
 						webClient.DownloadFileCompleted += new AsyncCompletedEventHandler (downloadFileCompleted);
-						webClient.DownloadFileAsync (new Uri (apkUrl), filename);
+						webClient.DownloadFileAsync (new Uri (apkUrl), filename + "WhatsApp_" + latestVersion + ".apk");
 						whatsapp_button_update.Text = Resources.GetString (Resource.String.downloading) + "...";
 					};
 				}
@@ -137,7 +137,7 @@ namespace WhatsAppBetaUpdater {
 				Button whatsapp_button_update = FindViewById<Button> (Resource.Id.whatsapp_button_update);
 				whatsapp_button_update.Text = Resources.GetString(Resource.String.download_again);
 				var installWhatsApp = new Intent(Intent.ActionView);
-				installWhatsApp.SetDataAndType(Android.Net.Uri.Parse("file://" + filename), "application/vnd.android.package-archive");
+				installWhatsApp.SetDataAndType(Android.Net.Uri.Parse("file://" + filename + "WhatsApp_" + latestVersion + ".apk"), "application/vnd.android.package-archive");
 				installWhatsApp.SetFlags(ActivityFlags.NewTask);
 				try {
 					StartActivity(installWhatsApp);
