@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical">
+    <PreferenceCategory
+        android:title="@string/settings">
+        <CheckBoxPreference
+            android:key="prefAutoDownload"
+            android:title="@string/settings_autodownload"
+            android:summary="@string/settings_autodownload_description"
+            android:defaultValue="false" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:layout="@layout/settings_about" />
+</PreferenceScreen>

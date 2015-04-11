@@ -1840,8 +1840,14 @@ namespace WhatsAppBetaUpdater
 			// aapt resource value: 0x7f0b0059
 			public const int media_route_list = 2131427417;
 			
-			// aapt resource value: 0x7f0b0066
-			public const int menu_refresh = 2131427430;
+			// aapt resource value: 0x7f0b0067
+			public const int menu_refresh = 2131427431;
+			
+			// aapt resource value: 0x7f0b0068
+			public const int menu_settings = 2131427432;
+			
+			// aapt resource value: 0x7f0b0069
+			public const int menu_share = 2131427433;
 			
 			// aapt resource value: 0x7f0b0015
 			public const int middle = 2131427349;
@@ -1917,6 +1923,9 @@ namespace WhatsAppBetaUpdater
 			
 			// aapt resource value: 0x7f0b005c
 			public const int settings = 2131427420;
+			
+			// aapt resource value: 0x7f0b0066
+			public const int settings_about = 2131427430;
 			
 			// aapt resource value: 0x7f0b003e
 			public const int shortcut = 2131427390;
@@ -2101,10 +2110,16 @@ namespace WhatsAppBetaUpdater
 			public const int mr_media_route_list_item = 2130903065;
 			
 			// aapt resource value: 0x7f03001a
-			public const int support_simple_spinner_dropdown_item = 2130903066;
+			public const int settings = 2130903066;
 			
 			// aapt resource value: 0x7f03001b
-			public const int toolbar = 2130903067;
+			public const int settings_about = 2130903067;
+			
+			// aapt resource value: 0x7f03001c
+			public const int support_simple_spinner_dropdown_item = 2130903068;
+			
+			// aapt resource value: 0x7f03001d
+			public const int toolbar = 2130903069;
 			
 			static Layout()
 			{
@@ -2202,14 +2217,14 @@ namespace WhatsAppBetaUpdater
 			// aapt resource value: 0x7f07001c
 			public const int accept = 2131165212;
 			
-			// aapt resource value: 0x7f07004a
-			public const int admob = 2131165258;
+			// aapt resource value: 0x7f07004d
+			public const int admob = 2131165261;
 			
 			// aapt resource value: 0x7f07003d
 			public const int app_name = 2131165245;
 			
-			// aapt resource value: 0x7f070047
-			public const int available = 2131165255;
+			// aapt resource value: 0x7f07004a
+			public const int available = 2131165258;
 			
 			// aapt resource value: 0x7f070023
 			public const int common_android_wear_notification_needs_update_text = 2131165219;
@@ -2304,23 +2319,23 @@ namespace WhatsAppBetaUpdater
 			// aapt resource value: 0x7f07001d
 			public const int decline = 2131165213;
 			
-			// aapt resource value: 0x7f070042
-			public const int download_again = 2131165250;
-			
-			// aapt resource value: 0x7f070043
-			public const int download_error = 2131165251;
-			
-			// aapt resource value: 0x7f070044
-			public const int download_error_description = 2131165252;
-			
-			// aapt resource value: 0x7f070041
-			public const int downloading = 2131165249;
-			
 			// aapt resource value: 0x7f070045
-			public const int latest_installed = 2131165253;
+			public const int download_again = 2131165253;
 			
 			// aapt resource value: 0x7f070046
-			public const int latest_installed_description = 2131165254;
+			public const int download_error = 2131165254;
+			
+			// aapt resource value: 0x7f070047
+			public const int download_error_description = 2131165255;
+			
+			// aapt resource value: 0x7f070044
+			public const int downloading = 2131165252;
+			
+			// aapt resource value: 0x7f070048
+			public const int latest_installed = 2131165256;
+			
+			// aapt resource value: 0x7f070049
+			public const int latest_installed_description = 2131165257;
 			
 			// aapt resource value: 0x7f070000
 			public const int mr_media_route_button_content_description = 2131165184;
@@ -2355,6 +2370,24 @@ namespace WhatsAppBetaUpdater
 			// aapt resource value: 0x7f07003e
 			public const int refresh = 2131165246;
 			
+			// aapt resource value: 0x7f07003f
+			public const int settings = 2131165247;
+			
+			// aapt resource value: 0x7f070050
+			public const int settings_about = 2131165264;
+			
+			// aapt resource value: 0x7f07004e
+			public const int settings_autodownload = 2131165262;
+			
+			// aapt resource value: 0x7f07004f
+			public const int settings_autodownload_description = 2131165263;
+			
+			// aapt resource value: 0x7f070040
+			public const int share = 2131165248;
+			
+			// aapt resource value: 0x7f070041
+			public const int share_description = 2131165249;
+			
 			// aapt resource value: 0x7f07001b
 			public const int store_picture_message = 2131165211;
 			
@@ -2364,17 +2397,17 @@ namespace WhatsAppBetaUpdater
 			// aapt resource value: 0x7f07003c
 			public const int wallet_buy_button_place_holder = 2131165244;
 			
-			// aapt resource value: 0x7f070049
-			public const int whatsapp_button_latest = 2131165257;
+			// aapt resource value: 0x7f07004c
+			public const int whatsapp_button_latest = 2131165260;
 			
-			// aapt resource value: 0x7f070048
-			public const int whatsapp_button_update = 2131165256;
+			// aapt resource value: 0x7f07004b
+			public const int whatsapp_button_update = 2131165259;
 			
-			// aapt resource value: 0x7f07003f
-			public const int whatsapp_installed = 2131165247;
+			// aapt resource value: 0x7f070042
+			public const int whatsapp_installed = 2131165250;
 			
-			// aapt resource value: 0x7f070040
-			public const int whatsapp_latest = 2131165248;
+			// aapt resource value: 0x7f070043
+			public const int whatsapp_latest = 2131165251;
 			
 			static String()
 			{

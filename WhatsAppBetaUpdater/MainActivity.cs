@@ -11,23 +11,31 @@ using Android.Content;
 using System.Threading.Tasks;
 using Android.Gms.Ads;
 using Java.Lang;
+using Android.Preferences;
+using Android.Content.PM;
 
 namespace WhatsAppBetaUpdater {
-	[Activity (Label = "@string/app_name", MainLauncher = true, Icon = "@drawable/ic_launcher")]
+	[Activity (Label = "@string/app_name", MainLauncher = true, Icon = "@drawable/ic_launcher", ScreenOrientation = ScreenOrientation.Portrait)]
 	public class MainActivity : ActionBarActivity {
+		
+		// Predefined variables
 		private string installedVersion;
 		private string latestVersion;
 		private string webUrl = "http://www.whatsapp.com/android/";
 		private string apkUrl = "http://www.whatsapp.com/android/current/WhatsApp.apk";
 		private string filename = "/sdcard/Download/WhatsApp.apk";
 
+		// Preferences variables
+		private bool prefAutoDownload;
+
+		// Start Beta Updates for WhatsApp
 		protected override void OnCreate (Bundle bundle) {
 			base.OnCreate (bundle);
 
-			// Set our view from the "main" layout resource
 			SetContentView (Resource.Layout.main);
 
 			var toolbar = FindViewById<Toolbar> (Resource.Id.toolbar);
+			var admob = FindViewById<LinearLayout> (Resource.Id.adView);
 
 			SetSupportActionBar (toolbar);
 			SupportActionBar.Title = Resources.GetString (Resource.String.app_name);;
@@ -38,9 +46,9 @@ namespace WhatsAppBetaUpdater {
 			ad.AdUnitId = Resources.GetString(Resource.String.admob);
 			var requestBuilder = new AdRequest.Builder ();
 			ad.LoadAd(requestBuilder.Build());
-			var admob = FindViewById<LinearLayout> (Resource.Id.adView);
 			admob.AddView (ad);
 
+			GetPreferences ();
 			GetLatestVersion (webUrl);
 
 		}
@@ -74,15 +82,26 @@ namespace WhatsAppBetaUpdater {
 			// Show update or latest version button
 			Button whatsapp_button_update = FindViewById<Button> (Resource.Id.whatsapp_button_update);
 
-			if (versionCompare(installedVersion, latestVersion) < 0) {
+			// Compare installed and latest WhatsApp version
+			if (versionCompare(installedVersion, latestVersion) < 0) { // There is a new version
 				whatsapp_button_update.Text = Resources.GetString (Resource.String.whatsapp_button_update);
-				whatsapp_button_update.Click += delegate {
+				// Preference: Autodownload
+				if (prefAutoDownload) {
 					var webClient = new WebClient ();
 					webClient.DownloadProgressChanged += new DownloadProgressChangedEventHandler (downloadProgressChanged);
 					webClient.DownloadFileCompleted += new AsyncCompletedEventHandler (downloadFileCompleted);
-					webClient.DownloadFileAsync (new Uri(apkUrl), filename);
-					whatsapp_button_update.Text = Resources.GetString(Resource.String.downloading) + "...";
-				};
+					webClient.DownloadFileAsync (new Uri (apkUrl), filename);
+					whatsapp_button_update.Text = Resources.GetString (Resource.String.downloading) + "...";
+				} else {
+					whatsapp_button_update.Click += delegate {
+						var webClient = new WebClient ();
+						webClient.DownloadProgressChanged += new DownloadProgressChangedEventHandler (downloadProgressChanged);
+						webClient.DownloadFileCompleted += new AsyncCompletedEventHandler (downloadFileCompleted);
+						webClient.DownloadFileAsync (new Uri (apkUrl), filename);
+						whatsapp_button_update.Text = Resources.GetString (Resource.String.downloading) + "...";
+					};
+				}
+			// There is not a new version
 			} else {
 				whatsapp_button_update.Text = Resources.GetString (Resource.String.whatsapp_button_latest);
 				whatsapp_button_update.Click += delegate {
@@ -119,7 +138,7 @@ namespace WhatsAppBetaUpdater {
 					var errorInstalled = new AlertDialog.Builder (this).Create ();
 					errorInstalled.SetTitle (Resources.GetString(Resource.String.download_error));
 					errorInstalled.SetMessage ("WhatsApp " + latestVersion + " " + Resources.GetString(Resource.String.download_error_description));
-					errorInstalled.Show ();
+					errorInstalled.Show ();	
 				}
 				whatsapp_button_update.Enabled = true;
 			});
@@ -154,8 +173,23 @@ namespace WhatsAppBetaUpdater {
 					Toast.MakeText (this, "WhatsApp " + installedVersion + " " + Resources.GetString (Resource.String.latest_installed_description), ToastLength.Short).Show ();
 				}
 				return true;
+			case Resource.Id.menu_settings:
+				StartActivity (typeof(SettingsActivity));
+				return true;
+			case Resource.Id.menu_share:
+				Intent shareIntent = new Intent (Android.Content.Intent.ActionSend);
+				shareIntent.SetType ("text/plain");
+				shareIntent.PutExtra (Android.Content.Intent.ExtraSubject, Resources.GetString (Resource.String.app_name));
+				shareIntent.PutExtra (Android.Content.Intent.ExtraText, Resources.GetString (Resource.String.share_description) + ": WhatsApp " + latestVersion + " " + "https://play.google.com/store/apps/details?id=com.javiersantos.whatsappbetaupdater");
+				StartActivity (Intent.CreateChooser(shareIntent, Resources.GetString(Resource.String.share)));
+				return true;
 			}
 			return base.OnOptionsItemSelected (item);
+		}
+
+		public void GetPreferences() {
+			ISharedPreferences prefs = PreferenceManager.GetDefaultSharedPreferences(this);
+			prefAutoDownload = prefs.GetBoolean ("prefAutoDownload", false);
 		}
 
 	}
