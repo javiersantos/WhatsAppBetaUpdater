@@ -25,4 +25,7 @@
 	<string name="settings_autodownload_description">Start to download and install new WhatsApp updates automatically</string>
 	<string name="settings_about">Made with \u2665 in Spain</string>
 
+	<!--- Error messages -->
+	<string name="error_noconnection">It seems you are not connected to Internet.\nPlease make sure you turned on WiFi or 3G.</string>
+
 </resources>

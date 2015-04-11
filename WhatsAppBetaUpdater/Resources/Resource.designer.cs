@@ -1657,10 +1657,13 @@ namespace WhatsAppBetaUpdater
 			public const int mr_ic_settings_light = 2130837623;
 			
 			// aapt resource value: 0x7f020078
-			public const int powered_by_google_dark = 2130837624;
+			public const int noconnection = 2130837624;
 			
 			// aapt resource value: 0x7f020079
-			public const int powered_by_google_light = 2130837625;
+			public const int powered_by_google_dark = 2130837625;
+			
+			// aapt resource value: 0x7f02007a
+			public const int powered_by_google_light = 2130837626;
 			
 			static Drawable()
 			{
@@ -1717,8 +1720,8 @@ namespace WhatsAppBetaUpdater
 			// aapt resource value: 0x7f0b0035
 			public const int activity_chooser_view_content = 2131427381;
 			
-			// aapt resource value: 0x7f0b0058
-			public const int adView = 2131427416;
+			// aapt resource value: 0x7f0b005a
+			public const int adView = 2131427418;
 			
 			// aapt resource value: 0x7f0b001e
 			public const int adjust_height = 2131427358;
@@ -1729,8 +1732,8 @@ namespace WhatsAppBetaUpdater
 			// aapt resource value: 0x7f0b0016
 			public const int always = 2131427350;
 			
-			// aapt resource value: 0x7f0b005f
-			public const int art = 2131427423;
+			// aapt resource value: 0x7f0b0061
+			public const int art = 2131427425;
 			
 			// aapt resource value: 0x7f0b0013
 			public const int beginning = 2131427347;
@@ -1738,8 +1741,8 @@ namespace WhatsAppBetaUpdater
 			// aapt resource value: 0x7f0b002b
 			public const int book_now = 2131427371;
 			
-			// aapt resource value: 0x7f0b0063
-			public const int buttons = 2131427427;
+			// aapt resource value: 0x7f0b0065
+			public const int buttons = 2131427429;
 			
 			// aapt resource value: 0x7f0b0028
 			public const int buyButton = 2131427368;
@@ -1765,8 +1768,8 @@ namespace WhatsAppBetaUpdater
 			// aapt resource value: 0x7f0b0038
 			public const int default_activity_button = 2131427384;
 			
-			// aapt resource value: 0x7f0b005e
-			public const int default_control_frame = 2131427422;
+			// aapt resource value: 0x7f0b0060
+			public const int default_control_frame = 2131427424;
 			
 			// aapt resource value: 0x7f0b001b
 			public const int dialog = 2131427355;
@@ -1774,8 +1777,8 @@ namespace WhatsAppBetaUpdater
 			// aapt resource value: 0x7f0b000c
 			public const int disableHome = 2131427340;
 			
-			// aapt resource value: 0x7f0b0064
-			public const int disconnect = 2131427428;
+			// aapt resource value: 0x7f0b0066
+			public const int disconnect = 2131427430;
 			
 			// aapt resource value: 0x7f0b002e
 			public const int donate_with_google = 2131427374;
@@ -1788,6 +1791,12 @@ namespace WhatsAppBetaUpdater
 			
 			// aapt resource value: 0x7f0b0014
 			public const int end = 2131427348;
+			
+			// aapt resource value: 0x7f0b0054
+			public const int error_ascii = 2131427412;
+			
+			// aapt resource value: 0x7f0b0055
+			public const int error_text = 2131427413;
 			
 			// aapt resource value: 0x7f0b0036
 			public const int expand_activities_button = 2131427382;
@@ -1828,26 +1837,26 @@ namespace WhatsAppBetaUpdater
 			// aapt resource value: 0x7f0b0039
 			public const int list_item = 2131427385;
 			
-			// aapt resource value: 0x7f0b0054
-			public const int main_content = 2131427412;
+			// aapt resource value: 0x7f0b0056
+			public const int main_content = 2131427414;
 			
 			// aapt resource value: 0x7f0b002a
 			public const int match_parent = 2131427370;
 			
-			// aapt resource value: 0x7f0b005d
-			public const int media_route_control_frame = 2131427421;
+			// aapt resource value: 0x7f0b005f
+			public const int media_route_control_frame = 2131427423;
 			
-			// aapt resource value: 0x7f0b0059
-			public const int media_route_list = 2131427417;
-			
-			// aapt resource value: 0x7f0b0067
-			public const int menu_refresh = 2131427431;
-			
-			// aapt resource value: 0x7f0b0068
-			public const int menu_settings = 2131427432;
+			// aapt resource value: 0x7f0b005b
+			public const int media_route_list = 2131427419;
 			
 			// aapt resource value: 0x7f0b0069
-			public const int menu_share = 2131427433;
+			public const int menu_refresh = 2131427433;
+			
+			// aapt resource value: 0x7f0b006a
+			public const int menu_settings = 2131427434;
+			
+			// aapt resource value: 0x7f0b006b
+			public const int menu_share = 2131427435;
 			
 			// aapt resource value: 0x7f0b0015
 			public const int middle = 2131427349;
@@ -1864,8 +1873,8 @@ namespace WhatsAppBetaUpdater
 			// aapt resource value: 0x7f0b000a
 			public const int normal = 2131427338;
 			
-			// aapt resource value: 0x7f0b0060
-			public const int play_pause = 2131427424;
+			// aapt resource value: 0x7f0b0062
+			public const int play_pause = 2131427426;
 			
 			// aapt resource value: 0x7f0b0025
 			public const int production = 2131427365;
@@ -1879,8 +1888,8 @@ namespace WhatsAppBetaUpdater
 			// aapt resource value: 0x7f0b003f
 			public const int radio = 2131427391;
 			
-			// aapt resource value: 0x7f0b005b
-			public const int route_name = 2131427419;
+			// aapt resource value: 0x7f0b005d
+			public const int route_name = 2131427421;
 			
 			// aapt resource value: 0x7f0b0026
 			public const int sandbox = 2131427366;
@@ -1921,11 +1930,11 @@ namespace WhatsAppBetaUpdater
 			// aapt resource value: 0x7f0b0029
 			public const int selectionDetails = 2131427369;
 			
-			// aapt resource value: 0x7f0b005c
-			public const int settings = 2131427420;
+			// aapt resource value: 0x7f0b005e
+			public const int settings = 2131427422;
 			
-			// aapt resource value: 0x7f0b0066
-			public const int settings_about = 2131427430;
+			// aapt resource value: 0x7f0b0068
+			public const int settings_about = 2131427432;
 			
 			// aapt resource value: 0x7f0b003e
 			public const int shortcut = 2131427390;
@@ -1942,8 +1951,8 @@ namespace WhatsAppBetaUpdater
 			// aapt resource value: 0x7f0b0007
 			public const int split_action_bar = 2131427335;
 			
-			// aapt resource value: 0x7f0b0065
-			public const int stop = 2131427429;
+			// aapt resource value: 0x7f0b0067
+			public const int stop = 2131427431;
 			
 			// aapt resource value: 0x7f0b0027
 			public const int strict_sandbox = 2131427367;
@@ -1951,8 +1960,8 @@ namespace WhatsAppBetaUpdater
 			// aapt resource value: 0x7f0b0050
 			public const int submit_area = 2131427408;
 			
-			// aapt resource value: 0x7f0b0062
-			public const int subtitle = 2131427426;
+			// aapt resource value: 0x7f0b0064
+			public const int subtitle = 2131427428;
 			
 			// aapt resource value: 0x7f0b000b
 			public const int tabMode = 2131427339;
@@ -1960,14 +1969,14 @@ namespace WhatsAppBetaUpdater
 			// aapt resource value: 0x7f0b0022
 			public const int terrain = 2131427362;
 			
-			// aapt resource value: 0x7f0b0061
-			public const int text_wrapper = 2131427425;
+			// aapt resource value: 0x7f0b0063
+			public const int text_wrapper = 2131427427;
 			
 			// aapt resource value: 0x7f0b003b
 			public const int title = 2131427387;
 			
-			// aapt resource value: 0x7f0b005a
-			public const int title_bar = 2131427418;
+			// aapt resource value: 0x7f0b005c
+			public const int title_bar = 2131427420;
 			
 			// aapt resource value: 0x7f0b0053
 			public const int toolbar = 2131427411;
@@ -1978,14 +1987,14 @@ namespace WhatsAppBetaUpdater
 			// aapt resource value: 0x7f0b0012
 			public const int useLogo = 2131427346;
 			
+			// aapt resource value: 0x7f0b0059
+			public const int whatsapp_button_update = 2131427417;
+			
 			// aapt resource value: 0x7f0b0057
-			public const int whatsapp_button_update = 2131427415;
+			public const int whatsapp_installed_version = 2131427415;
 			
-			// aapt resource value: 0x7f0b0055
-			public const int whatsapp_installed_version = 2131427413;
-			
-			// aapt resource value: 0x7f0b0056
-			public const int whatsapp_latest_version = 2131427414;
+			// aapt resource value: 0x7f0b0058
+			public const int whatsapp_latest_version = 2131427416;
 			
 			// aapt resource value: 0x7f0b001a
 			public const int withText = 2131427354;
@@ -2098,28 +2107,31 @@ namespace WhatsAppBetaUpdater
 			public const int abc_simple_dropdown_hint = 2130903061;
 			
 			// aapt resource value: 0x7f030016
-			public const int main = 2130903062;
+			public const int error_noconnection = 2130903062;
 			
 			// aapt resource value: 0x7f030017
-			public const int mr_media_route_chooser_dialog = 2130903063;
+			public const int main = 2130903063;
 			
 			// aapt resource value: 0x7f030018
-			public const int mr_media_route_controller_material_dialog_b = 2130903064;
+			public const int mr_media_route_chooser_dialog = 2130903064;
 			
 			// aapt resource value: 0x7f030019
-			public const int mr_media_route_list_item = 2130903065;
+			public const int mr_media_route_controller_material_dialog_b = 2130903065;
 			
 			// aapt resource value: 0x7f03001a
-			public const int settings = 2130903066;
+			public const int mr_media_route_list_item = 2130903066;
 			
 			// aapt resource value: 0x7f03001b
-			public const int settings_about = 2130903067;
+			public const int settings = 2130903067;
 			
 			// aapt resource value: 0x7f03001c
-			public const int support_simple_spinner_dropdown_item = 2130903068;
+			public const int settings_about = 2130903068;
 			
 			// aapt resource value: 0x7f03001d
-			public const int toolbar = 2130903069;
+			public const int support_simple_spinner_dropdown_item = 2130903069;
+			
+			// aapt resource value: 0x7f03001e
+			public const int toolbar = 2130903070;
 			
 			static Layout()
 			{
@@ -2330,6 +2342,9 @@ namespace WhatsAppBetaUpdater
 			
 			// aapt resource value: 0x7f070044
 			public const int downloading = 2131165252;
+			
+			// aapt resource value: 0x7f070051
+			public const int error_noconnection = 2131165265;
 			
 			// aapt resource value: 0x7f070048
 			public const int latest_installed = 2131165256;

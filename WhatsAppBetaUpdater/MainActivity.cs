@@ -13,6 +13,7 @@ using Android.Gms.Ads;
 using Java.Lang;
 using Android.Preferences;
 using Android.Content.PM;
+using Connectivity.Plugin;
 
 namespace WhatsAppBetaUpdater {
 	[Activity (Label = "@string/app_name", MainLauncher = true, Icon = "@drawable/ic_launcher", ScreenOrientation = ScreenOrientation.Portrait)]
@@ -41,15 +42,21 @@ namespace WhatsAppBetaUpdater {
 			SupportActionBar.Title = Resources.GetString (Resource.String.app_name);;
 			SupportActionBar.SetIcon (Resource.Drawable.ic_launcher);
 
-			AdView ad = new AdView (this);
-			ad.AdSize = AdSize.Banner;
-			ad.AdUnitId = Resources.GetString(Resource.String.admob);
-			var requestBuilder = new AdRequest.Builder ();
-			ad.LoadAd(requestBuilder.Build());
-			admob.AddView (ad);
 
 			GetPreferences ();
-			GetLatestVersion (webUrl);
+
+			if (CrossConnectivity.Current.IsConnected) {
+				AdView ad = new AdView (this);
+				ad.AdSize = AdSize.Banner;
+				ad.AdUnitId = Resources.GetString (Resource.String.admob);
+				var requestBuilder = new AdRequest.Builder ();
+				ad.LoadAd (requestBuilder.Build ());
+				admob.AddView (ad);
+
+				GetLatestVersion (webUrl);
+			} else {
+				StartActivity (typeof(ErrorActivity));
+			}
 
 		}
 

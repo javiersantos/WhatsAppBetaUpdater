@@ -23,4 +23,7 @@
 	<string name="settings_autodownload_description">Empezar a descargar e instalar nuevas actualizaciones de WhatsApp automáticamente</string>
 	<string name="settings_about">Hecho con \u2665 en España</string>
 
+	<!--- Error messages -->
+	<string name="error_noconnection">Parece que no estás conectado a Internet.\nPor favor, asegúrate de que tienes activado WiFi o 3G.</string>
+
 </resources>
