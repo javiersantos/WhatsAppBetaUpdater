@@ -2,6 +2,9 @@
 <resources>
 	<string name="app_name">Beta Updater para WhatsApp</string>
 	<string name="refresh">Buscar actualizaciones</string>
+	<string name="settings">Ajustes</string>
+	<string name="share">Compartir</string>
+	<string name="share_description">Acabo de descargar la última versión de WhatsApp usando \"Beta Updater para WhatsApp\"</string>
 	<string name="whatsapp_installed">Versión instalada:</string>
 	<string name="whatsapp_latest">Última versión:</string>
 	<string name="downloading">Descargando</string>
@@ -14,4 +17,10 @@
 
 	<string name="whatsapp_button_update">¡Actualizar WhatsApp!</string>
 	<string name="whatsapp_button_latest">Tienes la última versión</string>
+
+	<!--- Settings screen -->
+	<string name="settings_autodownload">Autodescargar actualizaciones</string>
+	<string name="settings_autodownload_description">Empezar a descargar e instalar nuevas actualizaciones de WhatsApp automáticamente</string>
+	<string name="settings_about">Hecho con \u2665 en España</string>
+
 </resources>
