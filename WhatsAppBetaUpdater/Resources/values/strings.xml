@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<string name="app_name">Beta Updater for WhatsApp</string>
 	<string name="refresh">Check for updates</string>
@@ -22,7 +22,7 @@
 
 	<!--- Settings screen -->
 	<string name="settings_autodownload">Autodownload updates</string>
-	<string name="settings_autodownload_description">Start to download and install new WhatsApp updates automatically</string>
+	<string name="settings_autodownload_description">Start to download and install new WhatsApp updates automatically when starting the application</string>
 	<string name="settings_about">Made with \u2665 in Spain</string>
 
 	<!--- Error messages -->

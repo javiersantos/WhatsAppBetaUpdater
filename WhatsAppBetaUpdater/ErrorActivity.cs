@@ -10,7 +10,7 @@ using Android.Content.PM;
 
 namespace WhatsAppBetaUpdater
 {
-	[Activity (Label = "ErrorActivity", ScreenOrientation = ScreenOrientation.Portrait)]			
+	[Activity (Label = "ErrorActivity", ScreenOrientation = ScreenOrientation.Portrait, NoHistory = true)]			
 	public class ErrorActivity : ActionBarActivity
 	{
 		protected override void OnCreate (Bundle bundle)

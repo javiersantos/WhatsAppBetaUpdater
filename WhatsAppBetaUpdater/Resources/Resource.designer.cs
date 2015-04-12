@@ -1849,14 +1849,14 @@ namespace WhatsAppBetaUpdater
 			// aapt resource value: 0x7f0b005b
 			public const int media_route_list = 2131427419;
 			
+			// aapt resource value: 0x7f0b0068
+			public const int menu_refresh = 2131427432;
+			
 			// aapt resource value: 0x7f0b0069
-			public const int menu_refresh = 2131427433;
+			public const int menu_settings = 2131427433;
 			
 			// aapt resource value: 0x7f0b006a
-			public const int menu_settings = 2131427434;
-			
-			// aapt resource value: 0x7f0b006b
-			public const int menu_share = 2131427435;
+			public const int menu_share = 2131427434;
 			
 			// aapt resource value: 0x7f0b0015
 			public const int middle = 2131427349;
@@ -1932,9 +1932,6 @@ namespace WhatsAppBetaUpdater
 			
 			// aapt resource value: 0x7f0b005e
 			public const int settings = 2131427422;
-			
-			// aapt resource value: 0x7f0b0068
-			public const int settings_about = 2131427432;
 			
 			// aapt resource value: 0x7f0b003e
 			public const int shortcut = 2131427390;

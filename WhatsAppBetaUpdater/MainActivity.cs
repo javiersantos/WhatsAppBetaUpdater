@@ -55,6 +55,7 @@ namespace WhatsAppBetaUpdater {
 
 				GetLatestVersion (webUrl);
 			} else {
+				Finish ();
 				StartActivity (typeof(ErrorActivity));
 			}
 
