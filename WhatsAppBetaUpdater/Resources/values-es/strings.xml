@@ -26,4 +26,7 @@
 	<!--- Error messages -->
 	<string name="error_noconnection">Parece que no estás conectado a Internet.\nPor favor, asegúrate de que tienes activado WiFi o 3G.</string>
 
+	<!-- Buttons -->
+	<string name="ok">¡Genial!</string>
+
 </resources>

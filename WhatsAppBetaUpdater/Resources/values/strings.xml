@@ -28,4 +28,7 @@
 	<!--- Error messages -->
 	<string name="error_noconnection">It seems you are not connected to Internet.\nPlease make sure you turned on WiFi or 3G.</string>
 
+	<!-- Buttons -->
+	<string name="ok">Awesome!</string>
+
 </resources>

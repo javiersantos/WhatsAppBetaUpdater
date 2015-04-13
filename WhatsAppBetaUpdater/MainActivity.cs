@@ -113,9 +113,10 @@ namespace WhatsAppBetaUpdater {
 			} else {
 				whatsapp_button_update.Text = Resources.GetString (Resource.String.whatsapp_button_latest);
 				whatsapp_button_update.Click += delegate {
-					var errorInstalled = new AlertDialog.Builder (this).Create ();
+					AlertDialog errorInstalled = new AlertDialog.Builder (this).Create ();
 					errorInstalled.SetTitle (Resources.GetString(Resource.String.latest_installed));
 					errorInstalled.SetMessage ("WhatsApp " + installedVersion + " " + Resources.GetString(Resource.String.latest_installed_description));
+					errorInstalled.SetButton (Resources.GetString(Resource.String.ok), (object sender, DialogClickEventArgs e) => errorInstalled.Dismiss ());
 					errorInstalled.Show ();
 				};
 			}

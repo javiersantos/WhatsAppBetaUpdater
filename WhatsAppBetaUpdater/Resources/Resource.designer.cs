@@ -2382,6 +2382,9 @@ namespace WhatsAppBetaUpdater
 			// aapt resource value: 0x7f070009
 			public const int mr_user_route_category_name = 2131165193;
 			
+			// aapt resource value: 0x7f070052
+			public const int ok = 2131165266;
+			
 			// aapt resource value: 0x7f07003e
 			public const int refresh = 2131165246;
 			
