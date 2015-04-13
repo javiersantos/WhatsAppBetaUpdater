@@ -36,24 +36,16 @@ namespace WhatsAppBetaUpdater {
 			SetContentView (Resource.Layout.main);
 
 			var toolbar = FindViewById<Toolbar> (Resource.Id.toolbar);
-			var admob = FindViewById<LinearLayout> (Resource.Id.adView);
 
 			SetSupportActionBar (toolbar);
 			SupportActionBar.Title = Resources.GetString (Resource.String.app_name);
 			SupportActionBar.SetIcon (Resource.Drawable.ic_launcher);
 
-
 			GetPreferences ();
 
 			if (CrossConnectivity.Current.IsConnected) {
-				AdView ad = new AdView (this);
-				ad.AdSize = AdSize.Banner;
-				ad.AdUnitId = Resources.GetString (Resource.String.admob);
-				var requestBuilder = new AdRequest.Builder ();
-				ad.LoadAd (requestBuilder.Build ());
-				admob.AddView (ad);
-
 				GetLatestVersion (webUrl);
+				SetAdmob ();
 			} else {
 				Finish ();
 				StartActivity (typeof(ErrorActivity));
@@ -199,6 +191,17 @@ namespace WhatsAppBetaUpdater {
 		public void GetPreferences() {
 			ISharedPreferences prefs = PreferenceManager.GetDefaultSharedPreferences(this);
 			prefAutoDownload = prefs.GetBoolean ("prefAutoDownload", false);
+		}
+
+		public void SetAdmob() {
+			var admob = FindViewById<LinearLayout> (Resource.Id.adView);
+
+			AdView ad = new AdView (this);
+			ad.AdSize = AdSize.Banner;
+			ad.AdUnitId = Resources.GetString (Resource.String.admob);
+			var requestBuilder = new AdRequest.Builder ();
+			ad.LoadAd (requestBuilder.Build ());
+			admob.AddView (ad);
 		}
 
 	}
