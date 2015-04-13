@@ -9,6 +9,6 @@
             android:summary="@string/settings_autodownload_description"
             android:defaultValue="false" />
     </PreferenceCategory>
-    <PreferenceCategory
-        android:layout="@layout/settings_about" />
+<!--    <PreferenceCategory
+        android:layout="@layout/settings_about" />-->
 </PreferenceScreen>

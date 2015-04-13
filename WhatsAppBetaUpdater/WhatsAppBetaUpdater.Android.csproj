@@ -96,10 +96,10 @@
     <AndroidResource Include="Resources\drawable-mdpi\ic_refresh.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\ic_refresh.png" />
     <AndroidResource Include="Resources\values\colors.xml" />
-    <AndroidResource Include="Resources\layout\settings.axml" />
-    <AndroidResource Include="Resources\layout\settings_about.xml" />
     <AndroidResource Include="Resources\layout\error_noconnection.axml" />
     <AndroidResource Include="Resources\drawable\noconnection.png" />
+    <AndroidResource Include="Resources\layout\settings.axml" />
+    <AndroidResource Include="Resources\layout\settings_prefs.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>
