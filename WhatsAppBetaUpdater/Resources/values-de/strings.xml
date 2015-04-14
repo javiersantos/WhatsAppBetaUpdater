@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="app_name">Beta Updater für WhatsApp</string>
+	<string name="refresh">Suche nach Updates</string>
+	<string name="settings">Einstellungen</string>
+	<string name="share">Aktie</string>
+	<string name="share_description">Just downloaded the latest WhatsApp version using \"Beta Updater for WhatsApp\"</string>
+	<string name="whatsapp_installed">Installierte Version:</string>
+	<string name="whatsapp_latest">Neueste Version:</string>
+	<string name="downloading">Herunterladen...</string>
+	<string name="download_again">Erneut Herunterladen</string>
+	<string name="download_error">Etwas lief schief</string>
+	<string name="download_error_description">konnte nicht installiert werden. Bitte versuchen Sie es erneut.</string>
+	<string name="latest_installed">Neueste Version installiert</string>
+	<string name="latest_installed_description">ist installiert. Sie haben die neueste Version.</string>
+	<string name="available">ist Verfügbar. Jetzt Updaten!</string>
+
+	<string name="whatsapp_button_update">Update WhatsApp!</string>
+	<string name="whatsapp_button_latest">Sie haben die neueste Version</string>
+
+	<!--- Settings screen -->
+	<string name="settings_autodownload">Auto Download Aktuelles</string>
+	<string name="settings_autodownload_description">Start to download and install new WhatsApp updates automatically when starting the application</string>
+	<string name="settings_about">Made with \u2665 in Spain</string>
+
+	<!--- Error messages -->
+	<string name="error_noconnection">It seems you are not connected to Internet.\nPlease make sure you turned on WiFi or 3G.</string>
+
+	<!-- Buttons -->
+	<string name="ok">OK</string>
+
+</resources>

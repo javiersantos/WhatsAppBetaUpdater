@@ -100,6 +100,7 @@
     <AndroidResource Include="Resources\drawable\noconnection.png" />
     <AndroidResource Include="Resources\layout\settings.axml" />
     <AndroidResource Include="Resources\layout\settings_prefs.xml" />
+    <AndroidResource Include="Resources\values-de\strings.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>
@@ -125,5 +126,6 @@
     <Folder Include="Resources\values-es\" />
     <Folder Include="Resources\menu\" />
     <Folder Include="Resources\drawable\" />
+    <Folder Include="Resources\values-de\" />
   </ItemGroup>
 </Project>
