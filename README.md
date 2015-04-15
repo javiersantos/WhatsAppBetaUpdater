@@ -11,5 +11,5 @@ Built with Xamarin.
 
 ### Upcoming features
 * Moving from Xamarin Studio (C#) to Android Studio (Java).
-* Some settings for WhatsApp updates: autodownload updates, choose APK download directory, etc.
+* More settings for WhatsApp updates: choose APK download directory, automatic downloads only with WiFi, etc.
 * Notifications.
