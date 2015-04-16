@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="app_name">Beta Updater per WhatsApp</string>
+  <string name="refresh">Cercar actualitzacions</string>
+  <string name="settings">Opcions</string>
+  <string name="share">Compartir</string>
+  <string name="share_description">Acabo de baixar-me l\'última versió de WhatsApp utilitzant \"Beta Updater per WhatsApp\"</string>
+  <string name="whatsapp_installed">Versió instal·lada:</string>
+  <string name="whatsapp_latest">Última versió:</string>
+  <string name="downloading">Baixant</string>
+  <string name="download_again">Baixar una altra vegada</string>
+  <string name="download_error">Alguna cosa ha fallat</string>
+  <string name="download_error_description">no ha pogut instal·lar-se. Si us plau, torna-ho a provar.</string>
+  <string name="latest_installed">La versió més nova està instal·lada</string>
+  <string name="latest_installed_description">està instal·lat. Tens l\'última versió.</string>
+  <string name="available">està disponible. Actualitza ara!</string>
+  <string name="whatsapp_button_update">Actualitzar WhatsApp!</string>
+  <string name="whatsapp_button_latest">Tens l\'última versió</string>
+  <string name="settings_autodownload">Baixar automàticament les actualitzacions</string>
+  <string name="settings_autodownload_description">Comenca a baixar i instal·lar actualitzacions noves WhatsApp automàticament al iniciar l\'aplicació</string>
+  <string name="settings_about">Fet amb \u2665 a Espanya</string>
+  <string name="error_noconnection">Sembla que no estàs connectat a Internet.\nSi us plau comprova si tens activat el WiFi o el 3G.</string>
+  <string name="ok">Impressionant!</string>
+</resources>
