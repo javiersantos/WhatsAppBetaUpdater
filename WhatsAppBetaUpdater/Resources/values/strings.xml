@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+	<!--- Home screen -->
 	<string name="app_name">Beta Updater for WhatsApp</string>
 	<string name="refresh">Check for updates</string>
 	<string name="settings">Settings</string>
@@ -15,10 +16,9 @@
 	<string name="latest_installed_description">is installed. You have the latest version.</string>
 	<string name="available">is available. Update now!</string>
 
+	<!--- Buttons -->
 	<string name="whatsapp_button_update">Update WhatsApp!</string>
 	<string name="whatsapp_button_latest">You have the latest version</string>
-
-	<string name="admob">ca-app-pub-0459828968162938/8355158874</string>
 
 	<!--- Settings screen -->
 	<string name="settings_autodownload">Autodownload updates</string>
@@ -31,4 +31,6 @@
 	<!-- Buttons -->
 	<string name="ok">Awesome!</string>
 
+	<!--- Others -->
+	<string name="admob">ca-app-pub-0459828968162938/8355158874</string>
 </resources>

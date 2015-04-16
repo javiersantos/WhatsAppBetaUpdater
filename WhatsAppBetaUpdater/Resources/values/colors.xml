@@ -1,5 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <resources>
+	<color name="primary">#065C4F</color>
+	<color name="primaryDark">#024D41</color>
+	<color name="accent">#8BC34A</color>
+
     <color name="background">#FFFFFF</color>
     <color name="white">#FFFFFF</color>
     <color name="green">#689F38</color>
@@ -14,12 +18,4 @@
     <color name="indigoLight">#304FFE</color>
     <color name="deepPurple">#673AB7</color>
     <color name="banana">#FFCC00</color>
-
-    <!-- Refresh -->
-	<color name="xam_purple">#B455B6</color>
-	<color name="xam_blue">#3498DB</color>
-	<color name="xam_dark_blue">#2C3E50</color>
-	<color name="xam_green">#77D065</color>
-	<color name="xam_gray">#738182</color>
-	<color name="xam_light_gray">#B4BCBC</color>
 </resources>
