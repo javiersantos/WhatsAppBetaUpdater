@@ -15,6 +15,7 @@ using Android.Preferences;
 using Android.Content.PM;
 using Connectivity.Plugin;
 using com.refractored.fab;
+using System.IO;
 
 namespace WhatsAppBetaUpdater {
 	[Activity (Label = "@string/app_name", MainLauncher = true, Icon = "@drawable/ic_launcher", ScreenOrientation = ScreenOrientation.Portrait)]
@@ -26,9 +27,11 @@ namespace WhatsAppBetaUpdater {
 		private string webUrl = "http://www.whatsapp.com/android/";
 		private string apkUrl = "http://www.whatsapp.com/android/current/WhatsApp.apk";
 		private string filename = Android.OS.Environment.GetExternalStoragePublicDirectory (Android.OS.Environment.DirectoryDownloads).ToString () + "/";
+		private string fullLatestFilename;
 
 		// Preferences variables
 		private bool prefAutoDownload;
+		private bool doubleBackPressed = false;
 
 		// ProgressDialog
 		private ProgressDialog progressDialog;
@@ -48,12 +51,33 @@ namespace WhatsAppBetaUpdater {
 
 			if (CrossConnectivity.Current.IsConnected) {
 				GetLatestVersion (webUrl);
-				SetAdmob ();
+				SetAdmobBanner ();
 			} else {
 				Finish ();
 				StartActivity (typeof(ErrorActivity));
 			}
 
+		}
+
+		protected override void OnResume () {
+			base.OnResume ();
+			doubleBackPressed = false;
+		}
+
+		public override void OnBackPressed () {
+			Random random = new Random ();
+
+			if (doubleBackPressed) {
+				base.OnBackPressed ();
+				return;
+			} else {
+				doubleBackPressed = true;
+				Toast.MakeText(this, Resources.GetString(Resource.String.toast_tap), ToastLength.Short).Show ();
+				var showAd = random.Next (5);
+				if (showAd == 0) {
+					SetAdmobInterstitial ();
+				}
+			}
 		}
 
 		// Retrieve WhatsApp HTML code
@@ -82,6 +106,8 @@ namespace WhatsAppBetaUpdater {
 			whatsapp_installed_version.Text = installedVersion;
 			whatsapp_latest_version.Text = latestVersion;
 
+			fullLatestFilename = filename + "WhatsApp_" + latestVersion + ".apk";
+
 			// Load Floating Button
 			var fab = FindViewById<FloatingActionButton> (Resource.Id.fab);
 
@@ -94,7 +120,7 @@ namespace WhatsAppBetaUpdater {
 					var webClient = new WebClient ();
 					webClient.DownloadProgressChanged += new DownloadProgressChangedEventHandler (downloadProgressChanged);
 					webClient.DownloadFileCompleted += new AsyncCompletedEventHandler (downloadFileCompleted);
-					webClient.DownloadFileAsync (new Uri (apkUrl), filename + "WhatsApp_" + latestVersion + ".apk");
+					webClient.DownloadFileAsync (new Uri (apkUrl), fullLatestFilename);
 					progressDialog.Show ();
 				} else {
 					fab.Click += delegate {
@@ -102,7 +128,7 @@ namespace WhatsAppBetaUpdater {
 						var webClient = new WebClient ();
 						webClient.DownloadProgressChanged += new DownloadProgressChangedEventHandler (downloadProgressChanged);
 						webClient.DownloadFileCompleted += new AsyncCompletedEventHandler (downloadFileCompleted);
-						webClient.DownloadFileAsync (new Uri (apkUrl), filename + "WhatsApp_" + latestVersion + ".apk");
+						webClient.DownloadFileAsync (new Uri (apkUrl), fullLatestFilename);
 						progressDialog.Show ();
 					};
 				}
@@ -113,7 +139,7 @@ namespace WhatsAppBetaUpdater {
 					AlertDialog errorInstalled = new AlertDialog.Builder (this).Create ();
 					errorInstalled.SetTitle (Resources.GetString(Resource.String.latest_installed));
 					errorInstalled.SetMessage ("WhatsApp " + installedVersion + " " + Resources.GetString(Resource.String.latest_installed_description));
-					errorInstalled.SetButton (Resources.GetString(Resource.String.ok), (object sender, DialogClickEventArgs e) => errorInstalled.Dismiss ());
+					errorInstalled.SetButton (Resources.GetString(Resource.String.ok), (object senderClose, DialogClickEventArgs eClose) => errorInstalled.Dismiss ());
 					errorInstalled.Show ();
 				};
 			}
@@ -133,10 +159,16 @@ namespace WhatsAppBetaUpdater {
 			RunOnUiThread (() => {
 				progressDialog.Dismiss ();
 				var installWhatsApp = new Intent(Intent.ActionView);
-				installWhatsApp.SetDataAndType(Android.Net.Uri.Parse("file://" + filename + "WhatsApp_" + latestVersion + ".apk"), "application/vnd.android.package-archive");
+				installWhatsApp.SetDataAndType(Android.Net.Uri.Parse("file://" + fullLatestFilename), "application/vnd.android.package-archive");
 				installWhatsApp.SetFlags(ActivityFlags.NewTask);
 				try {
 					StartActivity(installWhatsApp);
+					AlertDialog errorInstalled = new AlertDialog.Builder (this).Create ();
+					errorInstalled.SetTitle (Resources.GetString(Resource.String.delete));
+					errorInstalled.SetMessage (Resources.GetString(Resource.String.delete_description));
+					errorInstalled.SetButton (Resources.GetString(Resource.String.delete_button_delete), (object senderDelete, DialogClickEventArgs eDelete) => File.Delete(fullLatestFilename));
+					errorInstalled.SetButton2 (Resources.GetString(Resource.String.delete_button_cancel), (object senderCancel, DialogClickEventArgs eCancel) => errorInstalled.Dismiss ());
+					errorInstalled.Show ();
 				} catch (ActivityNotFoundException ex) {
 					var errorInstalled = new AlertDialog.Builder (this).Create ();
 					errorInstalled.SetTitle (Resources.GetString(Resource.String.download_error));
@@ -203,15 +235,18 @@ namespace WhatsAppBetaUpdater {
 			prefAutoDownload = prefs.GetBoolean ("prefAutoDownload", false);
 		}
 
-		public void SetAdmob() {
+		public void SetAdmobBanner () {
 			var admob = FindViewById<LinearLayout> (Resource.Id.adView);
-
-			AdView ad = new AdView (this);
-			ad.AdSize = AdSize.Banner;
-			ad.AdUnitId = Resources.GetString (Resource.String.admob);
-			var requestBuilder = new AdRequest.Builder ();
-			ad.LoadAd (requestBuilder.Build ());
-			admob.AddView (ad);
+			var bannerAd = AdWrapper.ConstructStandardBanner(this, AdSize.Banner, Resources.GetString (Resource.String.admob_banner));
+			bannerAd.CustomBuild ();
+			admob.AddView (bannerAd);
+		}
+		public void SetAdmobInterstitial () {
+			var fullAd = AdWrapper.ConstructFullPageAdd(this, Resources.GetString(Resource.String.admob_interstitial));
+			var intListener = new AdEventListerner ();
+			intListener.AdLoaded += () => { if (fullAd.IsLoaded)fullAd.Show (); };
+			fullAd.AdListener = intListener;
+			fullAd.CustomBuild ();
 		}
 
 	}
