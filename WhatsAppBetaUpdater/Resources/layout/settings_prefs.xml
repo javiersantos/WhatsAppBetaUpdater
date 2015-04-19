@@ -9,4 +9,14 @@
             android:summary="@string/settings_autodownload_description"
             android:defaultValue="false" />
     </PreferenceCategory>
+    <PreferenceCategory
+        android:title="@string/about">
+        <Preference
+            android:title="@string/settings_googleplay"
+            android:summary="@string/settings_googleplay_description">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://play.google.com/store/apps/details?id=com.javiersantos.whatsappbetaupdater" />
+        </Preference>
+    </PreferenceCategory>
 </PreferenceScreen>
