@@ -81,7 +81,8 @@
             android:orientation="vertical"
             android:layout_alignParentBottom="true"
             android:layout_width="fill_parent"
-            android:layout_height="50dp" />
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp" />
     </LinearLayout>
     <FrameLayout
         android:layout_width="match_parent"
@@ -93,7 +94,6 @@
             android:layout_gravity="bottom|right"
             android:layout_margin="16dp"
             android:src="@drawable/ic_download"
-            android:onClick="update"
             local:fab_colorNormal="@color/primary"
             local:fab_colorPressed="@color/primaryDark" />
     </FrameLayout>
