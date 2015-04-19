@@ -1,5 +1,4 @@
 ﻿
-using Android.OS;
 using Android.Gms.Ads;
 
 namespace WhatsAppBetaUpdater {
