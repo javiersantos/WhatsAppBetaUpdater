@@ -1,3 +1,10 @@
+### 1.2
+##### Status: Beta
+* [NEW] (https://github.com/javiersantos/WhatsAppBetaUpdater.Android/commit/b38af7caf795b8de30783e6b27f67be8de7485c1) FAB (Material Design).
+* [NEW] (https://github.com/javiersantos/WhatsAppBetaUpdater.Android/commit/32d6a57011e03f4518fb2a1c149e2ddeacdf8d1b)Dialog to delete APK.
+* [IMPROVE] (https://github.com/javiersantos/WhatsAppBetaUpdater.Android/commit/9ec7eea5a52546e0d464c4881f1d9a73a82ab611)"Rate on Google Play" and "Join the community" added to Settings.
+* [IMPROVE] (https://github.com/javiersantos/WhatsAppBetaUpdater.Android/commit/674b90deab08bc891279d8324a1cfb178e271ee8)Ads now are displayed faster.
+
 ### 1.1
 ##### Released: 15 April, 2015
 * [NEW](https://github.com/javiersantos/WhatsAppBetaUpdater.Android/commit/847ad397ec3df6dd3998c8ac81c1e6f82ce26a5c) Settings: autodownload when a new version is available.
