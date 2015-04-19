@@ -25,6 +25,8 @@
 	<string name="settings_autodownload_description">Empezar a descargar e instalar nuevas actualizaciones de WhatsApp automáticamente al iniciar la aplicación</string>
 	<string name="settings_googleplay">Valorar en Google Play</string>
 	<string name="settings_googleplay_description">¿Tienes unos segundos para valorar esta aplicación? Queremos escuchar tu opinión</string>
+	<string name="settings_googleplus">Únete a la comunidad en Google+</string>
+	<string name="settings_googleplus_description">¿Quieres hablar de las nuevas versiones de WhatsApp y estar al tanto de las novedades de la aplicación? ¡Únete a nuestra comunidad!</string>
 	<string name="settings_about">Hecho con \u2665 en España</string>
 	<string name="error_noconnection">Parece que no estás conectado a Internet.\nPor favor, asegúrate de que tienes activado WiFi o 3G.</string>
 	<string name="ok">¡Genial!</string>

@@ -30,6 +30,8 @@
 	<string name="settings_autodownload_description">Start to download and install new WhatsApp updates automatically when starting the application</string>
 	<string name="settings_googleplay">Rate on Google Play</string>
 	<string name="settings_googleplay_description">Do you have a few seconds to rate this app? We want to hear your opinion</string>
+	<string name="settings_googleplus">Join the community on Google+</string>
+	<string name="settings_googleplus_description">Want to talk about new versions of WhatsApp and keep abreast of developments in the application? Join to our community!</string>
 	<string name="settings_about">Made with \u2665 in Spain</string>
 
 	<!--- Error messages -->
