@@ -4,6 +4,7 @@
 	<string name="refresh">Buscar actualizaciones</string>
 	<string name="settings">Ajustes</string>
 	<string name="share">Compartir</string>
+	<string name="about">Acerca de</string>
 	<string name="share_description">Acabo de descargar la última versión de WhatsApp usando \"Beta Updater para WhatsApp\"</string>
 	<string name="whatsapp_installed">Versión instalada:</string>
 	<string name="whatsapp_latest">Última versión:</string>
@@ -11,14 +12,21 @@
 	<string name="download_again">Descargar otra vez</string>
 	<string name="download_error">Algo fue mal</string>
 	<string name="download_error_description">no ha podido ser instalado. Por favor, inténtalo de nuevo.</string>
+	<string name="delete">¿Quieres guardar la actualización?</string>
+	<string name="delete_description">Es posible guardar o eliminar la actualización descargada (APK). ¿Qué quieres hacer?</string>
 	<string name="latest_installed">La última versión está instalada</string>
 	<string name="latest_installed_description">está instalado. Tienes la última versión.</string>
 	<string name="available">está disponible. ¡Actualiza ahora!</string>
 	<string name="whatsapp_button_update">¡Actualizar WhatsApp!</string>
 	<string name="whatsapp_button_latest">Tienes la última versión</string>
+	<string name="delete_button_delete">¡Sí, eliminarlo!</string>
+	<string name="delete_button_cancel">¡Oh no, prefiero guardarlo!</string>
 	<string name="settings_autodownload">Autodescargar actualizaciones</string>
 	<string name="settings_autodownload_description">Empezar a descargar e instalar nuevas actualizaciones de WhatsApp automáticamente al iniciar la aplicación</string>
+	<string name="settings_googleplay">Valorar en Google Play</string>
+	<string name="settings_googleplay_description">¿Tienes unos segundos para valorar esta aplicación? Queremos escuchar tu opinión</string>
 	<string name="settings_about">Hecho con \u2665 en España</string>
 	<string name="error_noconnection">Parece que no estás conectado a Internet.\nPor favor, asegúrate de que tienes activado WiFi o 3G.</string>
 	<string name="ok">¡Genial!</string>
+	<string name="toast_tap">Pulsa de nuevo para cerrar la aplicación</string>
 </resources>

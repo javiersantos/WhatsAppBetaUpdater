@@ -5,6 +5,7 @@
 	<string name="refresh">Check for updates</string>
 	<string name="settings">Settings</string>
 	<string name="share">Share</string>
+	<string name="about">About</string>
 	<string name="share_description">Just downloaded the latest WhatsApp version using \"Beta Updater for WhatsApp\"</string>
 	<string name="whatsapp_installed">Installed Version:</string>
 	<string name="whatsapp_latest">Latest Version:</string>
@@ -12,6 +13,8 @@
 	<string name="download_again">Download again</string>
 	<string name="download_error">Something gone wrong</string>
 	<string name="download_error_description">can\u0027t be installed. Please, try again.</string>
+	<string name="delete">Do you want to keep the update?</string>
+	<string name="delete_description">It\u0027s possible to keep or delete the downloaded update (APK). What do you want to do?</string>
 	<string name="latest_installed">Latest version installed</string>
 	<string name="latest_installed_description">is installed. You have the latest version.</string>
 	<string name="available">is available. Update now!</string>
@@ -19,10 +22,14 @@
 	<!--- Buttons -->
 	<string name="whatsapp_button_update">Update WhatsApp!</string>
 	<string name="whatsapp_button_latest">You have the latest version</string>
+	<string name="delete_button_delete">Yes, delete it!</string>
+	<string name="delete_button_cancel">Oh no, keep it!</string>
 
 	<!--- Settings screen -->
 	<string name="settings_autodownload">Autodownload updates</string>
 	<string name="settings_autodownload_description">Start to download and install new WhatsApp updates automatically when starting the application</string>
+	<string name="settings_googleplay">Rate on Google Play</string>
+	<string name="settings_googleplay_description">Do you have a few seconds to rate this app? We want to hear your opinion</string>
 	<string name="settings_about">Made with \u2665 in Spain</string>
 
 	<!--- Error messages -->
@@ -31,6 +38,10 @@
 	<!-- Buttons -->
 	<string name="ok">Awesome!</string>
 
+	<!--- Notifications and toasts -->
+	<string name="toast_tap">Tap again to close the app</string>
+
 	<!--- Others -->
-	<string name="admob">ca-app-pub-0459828968162938/8355158874</string>
+	<string name="admob_banner">ca-app-pub-0459828968162938/8355158874</string>
+	<string name="admob_interstitial">ca-app-pub-0459828968162938/3192832072</string>
 </resources>
