@@ -8,13 +8,10 @@ using Android.Content;
 using Android.Views;
 using Android.Content.PM;
 
-namespace WhatsAppBetaUpdater
-{
+namespace WhatsAppBetaUpdater {
 	[Activity (Label = "ErrorActivity", ScreenOrientation = ScreenOrientation.Portrait, NoHistory = true)]			
-	public class ErrorActivity : ActionBarActivity
-	{
-		protected override void OnCreate (Bundle bundle)
-		{
+	public class ErrorActivity : ActionBarActivity {
+		protected override void OnCreate (Bundle bundle) {
 			base.OnCreate (bundle);
 
 			SetContentView (Resource.Layout.error_noconnection);
