@@ -78,6 +78,8 @@
     <Compile Include="SettingsActivity.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="ErrorActivity.cs" />
+    <Compile Include="Ad\AdEventListerner.cs" />
+    <Compile Include="Ad\AdWrapper.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -104,7 +106,6 @@
     <AndroidResource Include="Resources\layout\error_noconnection.axml" />
     <AndroidResource Include="Resources\drawable\noconnection.png" />
     <AndroidResource Include="Resources\layout\settings.axml" />
-    <AndroidResource Include="Resources\layout\settings_prefs.xml" />
     <AndroidResource Include="Resources\values-de\strings.xml" />
     <AndroidResource Include="Resources\values-ca\strings.xml" />
     <AndroidResource Include="Resources\layout\main.axml" />
@@ -116,6 +117,7 @@
     <AndroidResource Include="Resources\drawable-xhdpi\ic_menu_about.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\ic_menu_about.png" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\ic_menu_about.png" />
+    <AndroidResource Include="Resources\layout\settings_prefs.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>
@@ -143,5 +145,6 @@
     <Folder Include="Resources\drawable\" />
     <Folder Include="Resources\values-de\" />
     <Folder Include="Resources\values-ca\" />
+    <Folder Include="Ad\" />
   </ItemGroup>
 </Project>
