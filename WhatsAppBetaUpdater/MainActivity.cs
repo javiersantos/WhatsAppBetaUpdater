@@ -14,6 +14,7 @@ using Java.Lang;
 using Android.Preferences;
 using Android.Content.PM;
 using Connectivity.Plugin;
+using com.refractored.fab;
 
 namespace WhatsAppBetaUpdater {
 	[Activity (Label = "@string/app_name", MainLauncher = true, Icon = "@drawable/ic_launcher", ScreenOrientation = ScreenOrientation.Portrait)]
@@ -29,6 +30,9 @@ namespace WhatsAppBetaUpdater {
 		// Preferences variables
 		private bool prefAutoDownload;
 
+		// ProgressDialog
+		private ProgressDialog progressDialog;
+
 		// Start Beta Updates for WhatsApp
 		protected override void OnCreate (Bundle bundle) {
 			base.OnCreate (bundle);
@@ -39,7 +43,6 @@ namespace WhatsAppBetaUpdater {
 
 			SetSupportActionBar (toolbar);
 			SupportActionBar.Title = Resources.GetString (Resource.String.app_name);
-			SupportActionBar.SetIcon (Resource.Drawable.ic_launcher);
 
 			GetPreferences ();
 
@@ -79,32 +82,34 @@ namespace WhatsAppBetaUpdater {
 			whatsapp_installed_version.Text = installedVersion;
 			whatsapp_latest_version.Text = latestVersion;
 
-			// Show update or latest version button
-			Button whatsapp_button_update = FindViewById<Button> (Resource.Id.whatsapp_button_update);
+			// Load Floating Button
+			var fab = FindViewById<FloatingActionButton> (Resource.Id.fab);
 
 			// Compare installed and latest WhatsApp version
-			if (versionCompare(installedVersion, latestVersion) < 0) { // There is a new version
-				whatsapp_button_update.Text = Resources.GetString (Resource.String.whatsapp_button_update);
+			if (VersionCompare(installedVersion, latestVersion) < 0) { // There is a new version
+				fab.SetImageDrawable(Resources.GetDrawable(Resource.Drawable.ic_download));
 				// Preference: Autodownload
 				if (prefAutoDownload) {
+					SetDownloadDialog ();
 					var webClient = new WebClient ();
 					webClient.DownloadProgressChanged += new DownloadProgressChangedEventHandler (downloadProgressChanged);
 					webClient.DownloadFileCompleted += new AsyncCompletedEventHandler (downloadFileCompleted);
 					webClient.DownloadFileAsync (new Uri (apkUrl), filename + "WhatsApp_" + latestVersion + ".apk");
-					whatsapp_button_update.Text = Resources.GetString (Resource.String.downloading) + "...";
+					progressDialog.Show ();
 				} else {
-					whatsapp_button_update.Click += delegate {
+					fab.Click += delegate {
+						SetDownloadDialog ();
 						var webClient = new WebClient ();
 						webClient.DownloadProgressChanged += new DownloadProgressChangedEventHandler (downloadProgressChanged);
 						webClient.DownloadFileCompleted += new AsyncCompletedEventHandler (downloadFileCompleted);
 						webClient.DownloadFileAsync (new Uri (apkUrl), filename + "WhatsApp_" + latestVersion + ".apk");
-						whatsapp_button_update.Text = Resources.GetString (Resource.String.downloading) + "...";
+						progressDialog.Show ();
 					};
 				}
 			// There is not a new version
 			} else {
-				whatsapp_button_update.Text = Resources.GetString (Resource.String.whatsapp_button_latest);
-				whatsapp_button_update.Click += delegate {
+				fab.SetImageDrawable(Resources.GetDrawable(Resource.Drawable.ic_menu_about));
+				fab.Click += delegate {
 					AlertDialog errorInstalled = new AlertDialog.Builder (this).Create ();
 					errorInstalled.SetTitle (Resources.GetString(Resource.String.latest_installed));
 					errorInstalled.SetMessage ("WhatsApp " + installedVersion + " " + Resources.GetString(Resource.String.latest_installed_description));
@@ -120,16 +125,13 @@ namespace WhatsAppBetaUpdater {
 			var percentage = (int)(bytesIn / totalBytes * 100);
 
 			RunOnUiThread (() => {
-				Button whatsapp_button_update = FindViewById<Button> (Resource.Id.whatsapp_button_update);
-				whatsapp_button_update.Text = Resources.GetString(Resource.String.downloading) + ": " + percentage + " %";
-				whatsapp_button_update.Enabled = false;
+				progressDialog.Progress = percentage;
 			});
 		}
 
 		void downloadFileCompleted (object sender, AsyncCompletedEventArgs e) {
 			RunOnUiThread (() => {
-				Button whatsapp_button_update = FindViewById<Button> (Resource.Id.whatsapp_button_update);
-				whatsapp_button_update.Text = Resources.GetString(Resource.String.download_again);
+				progressDialog.Dismiss ();
 				var installWhatsApp = new Intent(Intent.ActionView);
 				installWhatsApp.SetDataAndType(Android.Net.Uri.Parse("file://" + filename + "WhatsApp_" + latestVersion + ".apk"), "application/vnd.android.package-archive");
 				installWhatsApp.SetFlags(ActivityFlags.NewTask);
@@ -141,11 +143,10 @@ namespace WhatsAppBetaUpdater {
 					errorInstalled.SetMessage ("WhatsApp " + latestVersion + " " + Resources.GetString(Resource.String.download_error_description));
 					errorInstalled.Show ();	
 				}
-				whatsapp_button_update.Enabled = true;
 			});
 		}
 
-		public int versionCompare (string oldVersion, string newVersion) {
+		public int VersionCompare (string oldVersion, string newVersion) {
 			string[] splitOld = oldVersion.Split (new char[] { '.' });
 			string[] splitNew = newVersion.Split (new char[] { '.' });
 			int i = 0;
@@ -160,6 +161,15 @@ namespace WhatsAppBetaUpdater {
 			}
 		}
 
+		public void SetDownloadDialog () {
+			progressDialog = new ProgressDialog (this);
+			progressDialog.SetProgressStyle (ProgressDialogStyle.Horizontal);
+			progressDialog.SetTitle (Resources.GetString(Resource.String.downloading) +  " WhatsApp " + latestVersion + "...");
+			progressDialog.Progress = 0;
+			progressDialog.Max = 100;
+			progressDialog.SetCancelable (false);
+		}
+
 		public override bool OnCreateOptionsMenu (IMenu menu) {
 			MenuInflater.Inflate (Resource.Menu.items, menu);
 			return base.OnCreateOptionsMenu (menu);
@@ -168,7 +178,7 @@ namespace WhatsAppBetaUpdater {
 			switch (item.ItemId) {
 			case Resource.Id.menu_refresh:
 				GetLatestVersion (webUrl);
-				if (versionCompare(installedVersion, latestVersion) < 0) {
+				if (VersionCompare(installedVersion, latestVersion) < 0) {
 					Toast.MakeText (this, "WhatsApp " + latestVersion + " " + Resources.GetString (Resource.String.available), ToastLength.Short).Show ();
 				} else {
 					Toast.MakeText (this, "WhatsApp " + installedVersion + " " + Resources.GetString (Resource.String.latest_installed_description), ToastLength.Short).Show ();
