@@ -26,6 +26,9 @@
 	<string name="delete_button_cancel">Oh no, keep it!</string>
 
 	<!--- Settings screen -->
+	<string name="notifications">Notifications</string>
+	<string name="settings_notifications">Enable notifications</string>
+	<string name="settings_notifications_description">Check new WhatsApp updates automatically every 6 hours and notify me when a new one is available</string>
 	<string name="settings_autodownload">Autodownload updates</string>
 	<string name="settings_autodownload_description">Start to download and install new WhatsApp updates automatically when starting the application</string>
 	<string name="settings_googleplay">Rate on Google Play</string>
@@ -42,6 +45,8 @@
 
 	<!--- Notifications and toasts -->
 	<string name="toast_tap">Tap again to close the app</string>
+	<string name="notification_title">is available</string>
+	<string name="notification_description">Update now using</string>
 
 	<!--- Others -->
 	<string name="admob_banner">ca-app-pub-0459828968162938/8355158874</string>

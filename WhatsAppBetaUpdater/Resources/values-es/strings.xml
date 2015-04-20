@@ -21,6 +21,9 @@
 	<string name="whatsapp_button_latest">Tienes la última versión</string>
 	<string name="delete_button_delete">¡Sí, eliminarlo!</string>
 	<string name="delete_button_cancel">¡Oh no, prefiero guardarlo!</string>
+	<string name="notifications">Notificaciones</string>
+	<string name="settings_notifications">Activar notificaciones</string>
+	<string name="settings_notifications_description">Comprobar nuevas actualizaciones de WhatsApp automáticamente cada 6 horas y notificarme cuando una nueva versión esté disponible</string>
 	<string name="settings_autodownload">Autodescargar actualizaciones</string>
 	<string name="settings_autodownload_description">Empezar a descargar e instalar nuevas actualizaciones de WhatsApp automáticamente al iniciar la aplicación</string>
 	<string name="settings_googleplay">Valorar en Google Play</string>
@@ -31,4 +34,6 @@
 	<string name="error_noconnection">Parece que no estás conectado a Internet.\nPor favor, asegúrate de que tienes activado WiFi o 3G.</string>
 	<string name="ok">¡Genial!</string>
 	<string name="toast_tap">Pulsa de nuevo para cerrar la aplicación</string>
+	<string name="notification_title">está disponible</string>
+	<string name="notification_description">Actualiza ahora usando</string>
 </resources>

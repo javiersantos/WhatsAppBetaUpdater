@@ -78,8 +78,11 @@
     <Compile Include="SettingsActivity.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="ErrorActivity.cs" />
-    <Compile Include="Ad\AdEventListerner.cs" />
     <Compile Include="Ad\AdWrapper.cs" />
+    <Compile Include="Ad\AdEventListener.cs" />
+    <Compile Include="Receiver\AlarmReceiver.cs" />
+    <Compile Include="Receiver\CompareVersionReceiver.cs" />
+    <Compile Include="Receiver\RetrieveLatestReceiver.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -146,5 +149,6 @@
     <Folder Include="Resources\values-de\" />
     <Folder Include="Resources\values-ca\" />
     <Folder Include="Ad\" />
+    <Folder Include="Receiver\" />
   </ItemGroup>
 </Project>

@@ -31,6 +31,7 @@ namespace WhatsAppBetaUpdater {
 
 		// Preferences variables
 		private bool prefAutoDownload;
+		private bool prefEnableNotifications;
 		private bool doubleBackPressed = false;
 
 		// ProgressDialog
@@ -80,6 +81,35 @@ namespace WhatsAppBetaUpdater {
 			}
 		}
 
+		public override bool OnCreateOptionsMenu (IMenu menu) {
+			MenuInflater.Inflate (Resource.Menu.items, menu);
+			return base.OnCreateOptionsMenu (menu);
+		}
+
+		public override bool OnOptionsItemSelected (IMenuItem item) {
+			switch (item.ItemId) {
+			case Resource.Id.menu_refresh:
+				GetLatestVersion (webUrl);
+				if (CompareVersionReceiver.VersionCompare(installedVersion, latestVersion) < 0) {
+					Toast.MakeText (this, "WhatsApp " + latestVersion + " " + Resources.GetString (Resource.String.available), ToastLength.Short).Show ();
+				} else {
+					Toast.MakeText (this, "WhatsApp " + installedVersion + " " + Resources.GetString (Resource.String.latest_installed_description), ToastLength.Short).Show ();
+				}
+				return true;
+			case Resource.Id.menu_settings:
+				StartActivity (typeof(SettingsActivity));
+				return true;
+			case Resource.Id.menu_share:
+				Intent shareIntent = new Intent (Intent.ActionSend);
+				shareIntent.SetType ("text/plain");
+				shareIntent.PutExtra (Intent.ExtraSubject, Resources.GetString (Resource.String.app_name));
+				shareIntent.PutExtra (Intent.ExtraText, Resources.GetString (Resource.String.share_description) + ": WhatsApp " + latestVersion + " " + "https://play.google.com/store/apps/details?id=com.javiersantos.whatsappbetaupdater");
+				StartActivity (Intent.CreateChooser(shareIntent, Resources.GetString(Resource.String.share)));
+				return true;
+			}
+			return base.OnOptionsItemSelected (item);
+		}
+
 		// Retrieve WhatsApp HTML code
 		public async Task GetLatestVersion (string pageUrl) {
 			var getVersion = new WebClient();
@@ -112,7 +142,7 @@ namespace WhatsAppBetaUpdater {
 			var fab = FindViewById<FloatingActionButton> (Resource.Id.fab);
 
 			// Compare installed and latest WhatsApp version
-			if (VersionCompare(installedVersion, latestVersion) < 0) { // There is a new version
+			if (CompareVersionReceiver.VersionCompare(installedVersion, latestVersion) < 0) { // There is a new version
 				fab.SetImageDrawable(Resources.GetDrawable(Resource.Drawable.ic_download));
 				// Preference: Autodownload
 				if (prefAutoDownload) {
@@ -178,21 +208,6 @@ namespace WhatsAppBetaUpdater {
 			});
 		}
 
-		public int VersionCompare (string oldVersion, string newVersion) {
-			string[] splitOld = oldVersion.Split (new char[] { '.' });
-			string[] splitNew = newVersion.Split (new char[] { '.' });
-			int i = 0;
-			while (i < splitOld.Length && i < splitNew.Length && splitOld[i].Equals(splitNew[i])) {
-				i++;
-			}
-			if (i < splitOld.Length && i < splitNew.Length) {
-				int diff = Integer.ValueOf (splitOld [i]).CompareTo (Integer.ValueOf (splitNew [i]));
-				return Integer.Signum (diff);
-			} else {
-				return Integer.Signum (splitOld.Length - splitNew.Length);
-			}
-		}
-
 		public void SetDownloadDialog () {
 			progressDialog = new ProgressDialog (this);
 			progressDialog.SetProgressStyle (ProgressDialogStyle.Horizontal);
@@ -202,37 +217,12 @@ namespace WhatsAppBetaUpdater {
 			progressDialog.SetCancelable (false);
 		}
 
-		public override bool OnCreateOptionsMenu (IMenu menu) {
-			MenuInflater.Inflate (Resource.Menu.items, menu);
-			return base.OnCreateOptionsMenu (menu);
-		}
-		public override bool OnOptionsItemSelected (IMenuItem item) {
-			switch (item.ItemId) {
-			case Resource.Id.menu_refresh:
-				GetLatestVersion (webUrl);
-				if (VersionCompare(installedVersion, latestVersion) < 0) {
-					Toast.MakeText (this, "WhatsApp " + latestVersion + " " + Resources.GetString (Resource.String.available), ToastLength.Short).Show ();
-				} else {
-					Toast.MakeText (this, "WhatsApp " + installedVersion + " " + Resources.GetString (Resource.String.latest_installed_description), ToastLength.Short).Show ();
-				}
-				return true;
-			case Resource.Id.menu_settings:
-				StartActivity (typeof(SettingsActivity));
-				return true;
-			case Resource.Id.menu_share:
-				Intent shareIntent = new Intent (Android.Content.Intent.ActionSend);
-				shareIntent.SetType ("text/plain");
-				shareIntent.PutExtra (Android.Content.Intent.ExtraSubject, Resources.GetString (Resource.String.app_name));
-				shareIntent.PutExtra (Android.Content.Intent.ExtraText, Resources.GetString (Resource.String.share_description) + ": WhatsApp " + latestVersion + " " + "https://play.google.com/store/apps/details?id=com.javiersantos.whatsappbetaupdater");
-				StartActivity (Intent.CreateChooser(shareIntent, Resources.GetString(Resource.String.share)));
-				return true;
-			}
-			return base.OnOptionsItemSelected (item);
-		}
-
 		public void GetPreferences() {
 			ISharedPreferences prefs = PreferenceManager.GetDefaultSharedPreferences(this);
 			prefAutoDownload = prefs.GetBoolean ("prefAutoDownload", false);
+			prefEnableNotifications = prefs.GetBoolean ("prefEnableNotifications", true);
+
+			SetNotification ();
 		}
 
 		public void SetAdmobBanner () {
@@ -241,12 +231,26 @@ namespace WhatsAppBetaUpdater {
 			bannerAd.CustomBuild ();
 			admob.AddView (bannerAd);
 		}
+
 		public void SetAdmobInterstitial () {
 			var fullAd = AdWrapper.ConstructFullPageAdd(this, Resources.GetString(Resource.String.admob_interstitial));
-			var intListener = new AdEventListerner ();
+			var intListener = new AdEventListener ();
 			intListener.AdLoaded += () => { if (fullAd.IsLoaded)fullAd.Show (); };
 			fullAd.AdListener = intListener;
 			fullAd.CustomBuild ();
+		}
+
+		public void SetNotification () {
+			Intent alarmIntent = new Intent (this, typeof(AlarmReceiver));
+
+			PendingIntent pendingIntent = PendingIntent.GetBroadcast (this, 0, alarmIntent, PendingIntentFlags.UpdateCurrent);
+			AlarmManager alarmManager = (AlarmManager)this.GetSystemService (Context.AlarmService);
+
+			if (prefEnableNotifications) {
+				alarmManager.SetRepeating (AlarmType.ElapsedRealtimeWakeup, SystemClock.ElapsedRealtime (), 6 * 60 * 60 * 1000, pendingIntent);
+			} else {
+				alarmManager.Cancel (pendingIntent);
+			}
 		}
 
 	}

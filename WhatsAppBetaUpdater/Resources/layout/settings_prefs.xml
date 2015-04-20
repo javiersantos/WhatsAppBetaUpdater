@@ -10,6 +10,14 @@
             android:defaultValue="false" />
     </PreferenceCategory>
     <PreferenceCategory
+        android:title="@string/notifications">
+        <CheckBoxPreference
+            android:key="prefEnableNotifications"
+            android:title="@string/settings_notifications"
+            android:summary="@string/settings_notifications_description"
+            android:defaultValue="true" />
+    </PreferenceCategory>
+    <PreferenceCategory
         android:title="@string/about">
         <Preference
             android:title="@string/settings_googleplay"
