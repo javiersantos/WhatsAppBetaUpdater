@@ -1,3 +1,7 @@
+### 2.0
+##### Status: Beta
+* [NEW] (https://github.com/javiersantos/WhatsAppBetaUpdater.Android/commit/546c80e9ee2654db9024767d7a8db4544f1642c7) Notifications
+
 ### 1.2
 ##### Status: Beta
 * [NEW] (https://github.com/javiersantos/WhatsAppBetaUpdater.Android/commit/b38af7caf795b8de30783e6b27f67be8de7485c1) FAB (Material Design).

@@ -9,11 +9,9 @@ https://play.google.com/store/apps/details?id=com.javiersantos.whatsappbetaupdat
 ### Upcoming features
 * Moving from Xamarin Studio (C#) to Android Studio (Java).
 * More settings for WhatsApp updates: choose APK download directory, automatic downloads only with WiFi, etc.
-* Notifications.
-* Replace regular buttom to a Floating buttom with Progress Dialog.
 
 ### Translations
-[Help translations the app](https://crowdin.com/project/beta-updater-whatsapp)
+[Help translating this app](https://crowdin.com/project/beta-updater-whatsapp)
 * English
 * Spanish
 * German
