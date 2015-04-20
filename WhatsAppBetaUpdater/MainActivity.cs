@@ -10,7 +10,6 @@ using System.ComponentModel;
 using Android.Content;
 using System.Threading.Tasks;
 using Android.Gms.Ads;
-using Java.Lang;
 using Android.Preferences;
 using Android.Content.PM;
 using Connectivity.Plugin;
