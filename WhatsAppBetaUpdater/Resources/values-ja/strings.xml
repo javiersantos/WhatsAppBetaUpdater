@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<resources>
+  <string name="app_name">WhatsApp 用ベータ版アップデーター</string>
+  <string name="refresh">アップデートの確認</string>
+  <string name="settings">設定</string>
+  <string name="share">共有</string>
+  <string name="about">アプリについて</string>
+  <string name="share_description">\"WhatsApp のベータ版アップデーター\" を使用して最新の WhatsApp バージョンをダウンロードします</string>
+  <string name="whatsapp_installed">インストール済のバージョン:</string>
+  <string name="whatsapp_latest">最新バージョン:</string>
+  <string name="downloading">ダウンロード中</string>
+  <string name="download_again">再度ダウンロード</string>
+  <string name="download_error">何か問題が発生しました</string>
+  <string name="download_error_description">インストールできません。再度実行してください。</string>
+  <string name="delete">アップデートを残しておきますか?</string>
+  <string name="delete_description">ダウンロードしたアップデート (APK) は保存または削除することができます。どうしますか?</string>
+  <string name="latest_installed">最新バージョンがインストールされました</string>
+  <string name="latest_installed_description">がインストールされています。最新のバージョンです。</string>
+  <string name="available">が利用可能なです。今すぐ更新してください!</string>
+  <string name="whatsapp_button_update">WhatsApp を更新!</string>
+  <string name="whatsapp_button_latest">最新のバージョンです</string>
+  <string name="delete_button_delete">はい、削除します!</string>
+  <string name="delete_button_cancel">いいえ、保存します!</string>
+  <string name="notifications">通知</string>
+  <string name="settings_notifications">通知を有効にする</string>
+  <string name="settings_notifications_description">6 時間ごとに自動的に WhatsApp の新しいアップデートをチェックし、新しいアップデートが利用可能なときに通知します</string>
+  <string name="settings_autodownload">アップデートを自動ダウンロード</string>
+  <string name="settings_autodownload_description">アプリケーションの起動時に、自動的に WhatsApp の新しいアップデートをダウンロードして、インストールを開始します</string>
+  <string name="settings_googleplay">Google Play で評価</string>
+  <string name="settings_googleplay_description">このアプリを評価する時間が少しありますか? あなたの意見を聞かせていただきたいです</string>
+  <string name="settings_googleplus">Google+ でコミュニティに参加</string>
+  <string name="settings_googleplus_description">WhatsApp の新バージョンについて話したり、アプリケーションの開発をフォローしたいですか? 私たちのコミュニティに参加してください!</string>
+  <string name="settings_about">スペインの \u2665 で作られました</string>
+  <string name="error_noconnection">インターネットに接続されていないようです。\nWiFi または 3G がオンになっていることを確認してください。</string>
+  <string name="ok">素晴らしい!</string>
+  <string name="toast_tap">もう一度タップすると、アプリを閉じます</string>
+  <string name="notification_title">が利用可能です</string>
+  <string name="notification_description">今すぐアップデート...</string>
+</resources>

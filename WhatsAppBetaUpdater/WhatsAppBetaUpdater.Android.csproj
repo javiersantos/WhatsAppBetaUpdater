@@ -121,6 +121,7 @@
     <AndroidResource Include="Resources\drawable-xxhdpi\ic_menu_about.png" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\ic_menu_about.png" />
     <AndroidResource Include="Resources\layout\settings_prefs.xml" />
+    <AndroidResource Include="Resources\values-ja\strings.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>
@@ -150,5 +151,6 @@
     <Folder Include="Resources\values-ca\" />
     <Folder Include="Ad\" />
     <Folder Include="Receiver\" />
+    <Folder Include="Resources\values-ja\" />
   </ItemGroup>
 </Project>
