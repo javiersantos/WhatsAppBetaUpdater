@@ -10,8 +10,8 @@ namespace WhatsAppBetaUpdater {
 	public class AlarmReceiver : BroadcastReceiver {
 		public override void OnReceive (Context context, Intent intent) {
 			if (RetreiveLatestReceiver.IsAvailableVersion(context)) {
-				intent.PutExtra ("title", "WhatsApp " + RetreiveLatestReceiver.GetLatestVersion () + " " + Resource.String.notification_title);
-				intent.PutExtra ("message", Resource.String.notification_description + " " + Resource.String.app_name);
+				intent.PutExtra ("title", "WhatsApp " + RetreiveLatestReceiver.GetLatestVersion () + " " + context.Resources.GetString(Resource.String.notification_title));
+				intent.PutExtra ("message", context.Resources.GetString(Resource.String.notification_description) + " " + context.Resources.GetString(Resource.String.app_name));
 				var message = intent.GetStringExtra ("message");
 				var title = intent.GetStringExtra ("title");
 
