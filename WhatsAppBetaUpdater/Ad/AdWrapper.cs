@@ -4,16 +4,16 @@ using Android.Gms.Ads;
 
 namespace WhatsAppBetaUpdater {	
 	public static class AdWrapper {
-		public static InterstitialAd ConstructFullPageAdd(Context con, string UnitID)
+		public static InterstitialAd ConstructFullPageAdd(Context context, string UnitID)
 		{
-			var ad = new InterstitialAd(con);
+			var ad = new InterstitialAd(context);
 			ad.AdUnitId = UnitID;
 			return ad;
 		}
 
-		public static AdView ConstructStandardBanner(Context con, AdSize adSize, string UnitID)
+		public static AdView ConstructStandardBanner(Context context, AdSize adSize, string UnitID)
 		{
-			var ad = new AdView(con);
+			var ad = new AdView(context);
 			ad.AdSize = adSize;
 			ad.AdUnitId = UnitID;
 			return ad;

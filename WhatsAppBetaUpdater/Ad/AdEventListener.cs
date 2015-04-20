@@ -2,7 +2,7 @@
 using Android.Gms.Ads;
 
 namespace WhatsAppBetaUpdater {
-	class AdEventListerner : AdListener {
+	class AdEventListener : AdListener {
 		// Declare the delegate (if using non-generic pattern). 
 		public delegate void AdLoadedEvent();
 		public delegate void AdClosedEvent();
