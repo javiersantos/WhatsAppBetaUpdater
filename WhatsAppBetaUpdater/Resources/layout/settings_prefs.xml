@@ -33,5 +33,9 @@
                 android:action="android.intent.action.VIEW"
                 android:data="https://plus.google.com/communities/102574612559329723462" />
         </Preference>
+        <Preference
+            android:key="prefVersion"
+            android:title="@string/app_name"
+            android:summary="@string/settings_about" />
     </PreferenceCategory>
 </PreferenceScreen>

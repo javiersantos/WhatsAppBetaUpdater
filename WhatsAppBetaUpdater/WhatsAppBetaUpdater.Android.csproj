@@ -108,7 +108,6 @@
     <AndroidResource Include="Resources\values\colors.xml" />
     <AndroidResource Include="Resources\layout\error_noconnection.axml" />
     <AndroidResource Include="Resources\drawable\noconnection.png" />
-    <AndroidResource Include="Resources\layout\settings.axml" />
     <AndroidResource Include="Resources\values-de\strings.xml" />
     <AndroidResource Include="Resources\values-ca\strings.xml" />
     <AndroidResource Include="Resources\layout\main.axml" />
