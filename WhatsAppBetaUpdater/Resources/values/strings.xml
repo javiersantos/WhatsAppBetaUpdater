@@ -23,7 +23,7 @@
 	<string name="whatsapp_button_update">Update WhatsApp!</string>
 	<string name="whatsapp_button_latest">You have the latest version</string>
 	<string name="delete_button_delete">Delete</string>
-	<string name="delete_button_cancel">Save in "Downloads"</string>
+	<string name="delete_button_cancel">Save in \"Downloads\"</string>
 
 	<!--- Settings screen -->
 	<string name="notifications">Notifications</string>
