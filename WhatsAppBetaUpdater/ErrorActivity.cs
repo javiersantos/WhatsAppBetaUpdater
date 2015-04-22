@@ -20,7 +20,6 @@ namespace WhatsAppBetaUpdater {
 
 			SetSupportActionBar (toolbar);
 			SupportActionBar.Title = Resources.GetString (Resource.String.app_name);
-			SupportActionBar.SetIcon (Resource.Drawable.ic_launcher);
 
 		}
 
