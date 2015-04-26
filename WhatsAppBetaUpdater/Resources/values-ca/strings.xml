@@ -21,6 +21,7 @@
   <string name="whatsapp_button_latest">Tens l\'última versió</string>
   <string name="delete_button_delete">Si, eliminar-lo!</string>
   <string name="delete_button_cancel">Oh no, prefereixo guardar-lo!</string>
+  <string name="cancel_button">Cancel·lar</string>
   <string name="notifications">Notificacions</string>
   <string name="settings_notifications">Habilita les notificacions</string>
   <string name="settings_notifications_description">Comprova si hi han noves actualitzacions de WhatsApp automàticament cada 6 hores, i notifica\'m quan n\'hi hagi una de disponible</string>

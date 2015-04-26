@@ -1,7 +1,6 @@
 ﻿
 using Android.App;
 using Android.OS;
-using Android.Widget;
 using Android.Support.V7.App;
 using Toolbar = Android.Support.V7.Widget.Toolbar;
 using Android.Content;

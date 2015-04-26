@@ -24,6 +24,8 @@
 	<string name="whatsapp_button_latest">You have the latest version</string>
 	<string name="delete_button_delete">Delete</string>
 	<string name="delete_button_cancel">Save in \"Downloads\"</string>
+	<string name="ok">Awesome!</string>
+	<string name="cancel_button">Cancel</string>
 
 	<!--- Settings screen -->
 	<string name="notifications">Notifications</string>
@@ -39,9 +41,6 @@
 
 	<!--- Error messages -->
 	<string name="error_noconnection">It seems you are not connected to Internet.\nPlease make sure you turned on WiFi or 3G.</string>
-
-	<!-- Buttons -->
-	<string name="ok">Awesome!</string>
 
 	<!--- Notifications and toasts -->
 	<string name="toast_tap">Tap again to close the app</string>

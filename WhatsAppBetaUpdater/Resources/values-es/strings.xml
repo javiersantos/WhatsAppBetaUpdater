@@ -21,6 +21,7 @@
 	<string name="whatsapp_button_latest">Tienes la última versión</string>
 	<string name="delete_button_delete">Eliminar</string>
 	<string name="delete_button_cancel">Guardar en \"Descargas\"</string>
+	<string name="cancel_button">Cancelar</string>
 	<string name="notifications">Notificaciones</string>
 	<string name="settings_notifications">Activar notificaciones</string>
 	<string name="settings_notifications_description">Comprobar nuevas actualizaciones de WhatsApp automáticamente cada 6 horas y notificarme cuando una nueva versión esté disponible</string>
