@@ -36,10 +36,9 @@ namespace WhatsAppBetaUpdater {
 				StartActivity (typeof(SettingsActivity));
 				return true;
 			case Resource.Id.menu_share:
-				Intent shareIntent = new Intent (Android.Content.Intent.ActionSend);
+				Intent shareIntent = new Intent (Intent.ActionSend);
 				shareIntent.SetType ("text/plain");
-				shareIntent.PutExtra (Android.Content.Intent.ExtraSubject, Resources.GetString (Resource.String.app_name));
-				shareIntent.PutExtra (Android.Content.Intent.ExtraText, Resources.GetString (Resource.String.share_description) + " " + "https://play.google.com/store/apps/details?id=com.javiersantos.whatsappbetaupdater");
+				shareIntent.PutExtra (Intent.ExtraText, string.Format(Resources.GetString (Resource.String.share_description), Resources.GetString (Resource.String.app_name)) + "https://play.google.com/store/apps/details?id=com.javiersantos.whatsappbetaupdater");
 				StartActivity (Intent.CreateChooser(shareIntent, Resources.GetString(Resource.String.share)));
 				return true;
 			}

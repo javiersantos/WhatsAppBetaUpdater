@@ -6,13 +6,13 @@
 	<string name="share">Aktie</string>
 	<string name="whatsapp_installed">Installierte Version:</string>
 	<string name="whatsapp_latest">Neueste Version:</string>
-	<string name="downloading">Herunterladen...</string>
+	<string name="downloading">Herunterladen {0}</string>
 	<string name="download_again">Erneut Herunterladen</string>
 	<string name="download_error">Etwas lief schief</string>
-	<string name="download_error_description">konnte nicht installiert werden. Bitte versuchen Sie es erneut.</string>
+	<string name="download_error_description">{0} konnte nicht installiert werden. Bitte versuchen Sie es erneut.</string>
 	<string name="latest_installed">Neueste Version installiert</string>
-	<string name="latest_installed_description">ist installiert. Sie haben die neueste Version.</string>
-	<string name="available">ist Verfügbar. Jetzt Updaten!</string>
+	<string name="latest_installed_description">{0} ist installiert. Sie haben die neueste Version.</string>
+	<string name="available">{0} ist Verfügbar. Jetzt Updaten!</string>
 	<string name="whatsapp_button_latest">Sie haben die neueste Version</string>
 	<string name="settings_autodownload">Auto Download Aktuelles</string>
 	<string name="ok">OK</string>

@@ -5,18 +5,14 @@
   <string name="settings">設定</string>
   <string name="share">共有</string>
   <string name="about">アプリについて</string>
-  <string name="share_description">\"WhatsApp のベータ版アップデーター\" を使用して最新の WhatsApp バージョンをダウンロードします</string>
+  <string name="share_description">\"{0}\" を使用して最新の WhatsApp バージョンをダウンロードします</string>
   <string name="whatsapp_installed">インストール済のバージョン:</string>
   <string name="whatsapp_latest">最新バージョン:</string>
-  <string name="downloading">ダウンロード中</string>
   <string name="download_again">再度ダウンロード</string>
   <string name="download_error">何か問題が発生しました</string>
-  <string name="download_error_description">インストールできません。再度実行してください。</string>
   <string name="delete">アップデートを残しておきますか?</string>
   <string name="delete_description">ダウンロードしたアップデート (APK) は保存または削除することができます。どうしますか?</string>
   <string name="latest_installed">最新バージョンがインストールされました</string>
-  <string name="latest_installed_description">がインストールされています。最新のバージョンです。</string>
-  <string name="available">が利用可能なです。今すぐ更新してください!</string>
   <string name="whatsapp_button_update">WhatsApp を更新!</string>
   <string name="whatsapp_button_latest">最新のバージョンです</string>
   <string name="delete_button_delete">はい、削除します!</string>
@@ -34,6 +30,4 @@
   <string name="error_noconnection">インターネットに接続されていないようです。\nWiFi または 3G がオンになっていることを確認してください。</string>
   <string name="ok">素晴らしい!</string>
   <string name="toast_tap">もう一度タップすると、アプリを閉じます</string>
-  <string name="notification_title">が利用可能です</string>
-  <string name="notification_description">今すぐアップデート...</string>
 </resources>

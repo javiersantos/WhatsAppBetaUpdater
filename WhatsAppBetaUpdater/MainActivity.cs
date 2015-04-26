@@ -90,9 +90,9 @@ namespace WhatsAppBetaUpdater {
 			case Resource.Id.menu_refresh:
 				GetLatestVersion (webUrl);
 				if (CompareVersionReceiver.VersionCompare(installedVersion, latestVersion) < 0) {
-					Toast.MakeText (this, "WhatsApp " + latestVersion + " " + Resources.GetString (Resource.String.available), ToastLength.Short).Show ();
+					Toast.MakeText (this, string.Format(Resources.GetString (Resource.String.available), "WhatsApp " + latestVersion + " "), ToastLength.Short).Show ();
 				} else {
-					Toast.MakeText (this, "WhatsApp " + installedVersion + " " + Resources.GetString (Resource.String.latest_installed_description), ToastLength.Short).Show ();
+					Toast.MakeText (this, string.Format(Resources.GetString (Resource.String.latest_installed_description), "WhatsApp " + installedVersion + " "), ToastLength.Short).Show ();
 				}
 				return true;
 			case Resource.Id.menu_settings:
@@ -101,8 +101,7 @@ namespace WhatsAppBetaUpdater {
 			case Resource.Id.menu_share:
 				Intent shareIntent = new Intent (Intent.ActionSend);
 				shareIntent.SetType ("text/plain");
-				shareIntent.PutExtra (Intent.ExtraSubject, Resources.GetString (Resource.String.app_name));
-				shareIntent.PutExtra (Intent.ExtraText, Resources.GetString (Resource.String.share_description) + ": WhatsApp " + latestVersion + " " + "https://play.google.com/store/apps/details?id=com.javiersantos.whatsappbetaupdater");
+				shareIntent.PutExtra (Intent.ExtraText, string.Format(Resources.GetString (Resource.String.share_description), Resources.GetString (Resource.String.app_name)) + ": WhatsApp " + latestVersion + " " + "https://play.google.com/store/apps/details?id=com.javiersantos.whatsappbetaupdater");
 				StartActivity (Intent.CreateChooser(shareIntent, Resources.GetString(Resource.String.share)));
 				return true;
 			}
@@ -167,7 +166,7 @@ namespace WhatsAppBetaUpdater {
 				fab.Click += delegate {
 					AlertDialog errorInstalled = new AlertDialog.Builder (this).Create ();
 					errorInstalled.SetTitle (Resources.GetString(Resource.String.latest_installed));
-					errorInstalled.SetMessage ("WhatsApp " + installedVersion + " " + Resources.GetString(Resource.String.latest_installed_description));
+					errorInstalled.SetMessage (string.Format(Resources.GetString(Resource.String.latest_installed_description), "WhatsApp " + installedVersion + " "));
 					errorInstalled.SetButton (Resources.GetString(Resource.String.ok), (object senderClose, DialogClickEventArgs eClose) => errorInstalled.Dismiss ());
 					errorInstalled.Show ();
 				};
@@ -201,7 +200,7 @@ namespace WhatsAppBetaUpdater {
 				} catch (ActivityNotFoundException ex) {
 					var errorInstalled = new AlertDialog.Builder (this).Create ();
 					errorInstalled.SetTitle (Resources.GetString(Resource.String.download_error));
-					errorInstalled.SetMessage ("WhatsApp " + latestVersion + " " + Resources.GetString(Resource.String.download_error_description));
+					errorInstalled.SetMessage (string.Format(Resources.GetString(Resource.String.download_error_description, "WhatsApp " + latestVersion + " ")));
 					errorInstalled.Show ();	
 				}
 			});
@@ -210,7 +209,7 @@ namespace WhatsAppBetaUpdater {
 		public void SetDownloadDialog () {
 			progressDialog = new ProgressDialog (this);
 			progressDialog.SetProgressStyle (ProgressDialogStyle.Horizontal);
-			progressDialog.SetTitle (Resources.GetString(Resource.String.downloading) +  " WhatsApp " + latestVersion + "...");
+			progressDialog.SetTitle (string.Format(Resources.GetString(Resource.String.downloading), "WhatsApp " + latestVersion + "..."));
 			progressDialog.Progress = 0;
 			progressDialog.Max = 100;
 			progressDialog.SetCancelable (false);

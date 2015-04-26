@@ -5,18 +5,18 @@
   <string name="settings">Opcions</string>
   <string name="share">Compartir</string>
   <string name="about">Quant a</string>
-  <string name="share_description">Acabo de baixar-me l\'última versió de WhatsApp utilitzant \"Beta Updater per WhatsApp\"</string>
+  <string name="share_description">Acabo de baixar-me l\'última versió de WhatsApp utilitzant \"{0}\"</string>
   <string name="whatsapp_installed">Versió instal·lada:</string>
   <string name="whatsapp_latest">Última versió:</string>
-  <string name="downloading">Baixant</string>
+  <string name="downloading">Baixant {0}</string>
   <string name="download_again">Baixar una altra vegada</string>
   <string name="download_error">Alguna cosa ha fallat</string>
-  <string name="download_error_description">no ha pogut instal·lar-se. Si us plau, torna-ho a provar.</string>
+  <string name="download_error_description">{0} no ha pogut instal·lar-se. Si us plau, torna-ho a provar.</string>
   <string name="delete">Vols guardar l\'actualització?</string>
   <string name="delete_description">És possible guardar o eliminar l\'actalització baixada (APK). Què vols fer?</string>
   <string name="latest_installed">La versió més nova està instal·lada</string>
-  <string name="latest_installed_description">està instal·lat. Tens l\'última versió.</string>
-  <string name="available">està disponible. Actualitza ara!</string>
+  <string name="latest_installed_description">{0} està instal·lat. Tens l\'última versió.</string>
+  <string name="available">{0} està disponible. Actualitza ara!</string>
   <string name="whatsapp_button_update">Actualitzar WhatsApp!</string>
   <string name="whatsapp_button_latest">Tens l\'última versió</string>
   <string name="delete_button_delete">Si, eliminar-lo!</string>
@@ -34,6 +34,6 @@
   <string name="error_noconnection">Sembla que no estàs connectat a Internet.\nSi us plau comprova si tens activat el WiFi o el 3G.</string>
   <string name="ok">Impressionant!</string>
   <string name="toast_tap">Prem novament per tancar l\'aplicació</string>
-  <string name="notification_title">està disponible</string>
-  <string name="notification_description">Actualitzar ara utilitzant</string>
+  <string name="notification_title">{0} està disponible</string>
+  <string name="notification_description">Actualitzar ara utilitzant {0}</string>
 </resources>
