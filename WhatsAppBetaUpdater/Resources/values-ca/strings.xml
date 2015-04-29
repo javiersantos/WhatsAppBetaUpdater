@@ -21,6 +21,7 @@
   <string name="whatsapp_button_latest">Tens l\'última versió</string>
   <string name="delete_button_delete">Si, eliminar-lo!</string>
   <string name="delete_button_cancel">Oh no, prefereixo guardar-lo!</string>
+  <string name="ok">Impressionant!</string>
   <string name="cancel_button">Cancel·lar</string>
   <string name="notifications">Notificacions</string>
   <string name="settings_notifications">Habilita les notificacions</string>
@@ -33,7 +34,6 @@
   <string name="settings_googleplus_description">Vols parlar sobre les noves actualitzacions de WhatsApp i estar al corrent de les novetats de l\'aplicació? Uneix-te a la nostra comunitat!</string>
   <string name="settings_about">Fet amb \u2665 a Espanya</string>
   <string name="error_noconnection">Sembla que no estàs connectat a Internet.\nSi us plau comprova si tens activat el WiFi o el 3G.</string>
-  <string name="ok">Impressionant!</string>
   <string name="toast_tap">Prem novament per tancar l\'aplicació</string>
   <string name="notification_title">{0} està disponible</string>
   <string name="notification_description">Actualitzar ara utilitzant {0}</string>
