@@ -4,6 +4,7 @@ using Android.OS;
 using Android.Support.V7.App;
 using Android.Widget;
 using Toolbar = Android.Support.V7.Widget.Toolbar;
+using AlertDialog = Android.Support.V7.App.AlertDialog;
 using System.Net;
 using System;
 using System.ComponentModel;
@@ -18,7 +19,7 @@ using System.IO;
 
 namespace WhatsAppBetaUpdater {
 	[Activity (Label = "@string/app_name", MainLauncher = true, Icon = "@drawable/ic_launcher", ScreenOrientation = ScreenOrientation.Portrait)]
-	public class MainActivity : ActionBarActivity {
+	public class MainActivity : AppCompatActivity {
 		
 		// Predefined variables
 		private string installedVersion;
@@ -152,7 +153,7 @@ namespace WhatsAppBetaUpdater {
 					webClient.DownloadProgressChanged += new DownloadProgressChangedEventHandler (downloadProgressChanged);
 					webClient.DownloadFileCompleted += new AsyncCompletedEventHandler (downloadFileCompleted);
 					webClient.DownloadFileAsync (new Uri (apkUrl), fullLatestFilename);
-					progressDialog.SetButton (Resources.GetString(Resource.String.cancel_button), (object senderCancel, DialogClickEventArgs eCancel) => {webClient.CancelAsync ();});
+					progressDialog.SetButton (Resources.GetString(Resource.String.cancel_button), (object senderCancel, DialogClickEventArgs eCancel) => {webClient.CancelAsync (); progressDialog.Dismiss ();});
 					progressDialog.Show ();
 				} else {
 					fab.Click += delegate {
@@ -172,7 +173,7 @@ namespace WhatsAppBetaUpdater {
 					AlertDialog errorInstalled = new AlertDialog.Builder (this).Create ();
 					errorInstalled.SetTitle (Resources.GetString(Resource.String.latest_installed));
 					errorInstalled.SetMessage (string.Format(Resources.GetString(Resource.String.latest_installed_description), "WhatsApp " + installedVersion));
-					errorInstalled.SetButton (Resources.GetString(Resource.String.ok), (object senderClose, DialogClickEventArgs eClose) => errorInstalled.Dismiss ());
+					errorInstalled.SetButton ((int)DialogButtonType.Positive, Resources.GetString(Resource.String.ok), (object senderClose, DialogClickEventArgs eClose) => errorInstalled.Dismiss ());
 					errorInstalled.Show ();
 				};
 			}
@@ -203,8 +204,8 @@ namespace WhatsAppBetaUpdater {
 						AlertDialog errorInstalled = new AlertDialog.Builder (this).Create ();
 						errorInstalled.SetTitle (Resources.GetString(Resource.String.delete));
 						errorInstalled.SetMessage (Resources.GetString(Resource.String.delete_description));
-						errorInstalled.SetButton (Resources.GetString(Resource.String.delete_button_delete), (object senderDelete, DialogClickEventArgs eDelete) => File.Delete(fullLatestFilename));
-						errorInstalled.SetButton2 (Resources.GetString(Resource.String.delete_button_cancel), (object senderCancel, DialogClickEventArgs eCancel) => errorInstalled.Dismiss ());
+						errorInstalled.SetButton ((int)DialogButtonType.Positive, Resources.GetString(Resource.String.delete_button_delete), (object senderDelete, DialogClickEventArgs eDelete) => File.Delete(fullLatestFilename));
+						errorInstalled.SetButton ((int)DialogButtonType.Negative, Resources.GetString(Resource.String.delete_button_cancel), (object senderCancel, DialogClickEventArgs eCancel) => errorInstalled.Dismiss ());
 						errorInstalled.Show ();
 					} catch (ActivityNotFoundException ex) {
 						var errorInstalled = new AlertDialog.Builder (this).Create ();
@@ -215,10 +216,6 @@ namespace WhatsAppBetaUpdater {
 					downloadedOK = false;
 				} else {
 					File.Delete(fullLatestFilename);
-					var errorInstalled = new AlertDialog.Builder (this).Create ();
-					errorInstalled.SetTitle (Resources.GetString(Resource.String.download_error));
-					errorInstalled.SetMessage (string.Format(Resources.GetString(Resource.String.download_error_description), "WhatsApp " + latestVersion));
-					errorInstalled.Show ();	
 				}
 			});
 		}

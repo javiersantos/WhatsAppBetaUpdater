@@ -9,7 +9,7 @@ using Android.Content.PM;
 
 namespace WhatsAppBetaUpdater {
 	[Activity (Label = "ErrorActivity", ScreenOrientation = ScreenOrientation.Portrait, NoHistory = true)]			
-	public class ErrorActivity : ActionBarActivity {
+	public class ErrorActivity : AppCompatActivity {
 		protected override void OnCreate (Bundle bundle) {
 			base.OnCreate (bundle);
 
