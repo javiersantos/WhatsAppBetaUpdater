@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<resources>
+  <string name="app_name">Beta Updater para o WhatsApp</string>
+  <string name="refresh">Procurar atualizações</string>
+  <string name="settings">Definições</string>
+  <string name="share">Partilhar</string>
+  <string name="about">Informações</string>
+  <string name="share_description">Acabei de descarregar a última versão do WhatsApp a partir da \"{0}\"</string>
+  <string name="whatsapp_installed">Versão instalada:</string>
+  <string name="whatsapp_latest">Versão mais recente:</string>
+  <string name="downloading">A descarregar o {0}</string>
+  <string name="download_again">Voltar a descarregar</string>
+  <string name="download_error">Ocorreu um erro</string>
+  <string name="download_error_description">Não foi possível instalar o {0}. Por favor, volte a tentar.</string>
+  <string name="delete">Pretende manter o ficheiro da atualização?</string>
+  <string name="delete_description">Pode manter ou apagar o ficheiro da atualização (APK) que descarregou. O que pretende fazer?</string>
+  <string name="latest_installed">Nenhuma atualização disponível</string>
+  <string name="latest_installed_description">Está a utilizar o {0}. Não há versões mais recentes.</string>
+  <string name="available">O {0} já está disponível. Atualize agora!</string>
+  <string name="whatsapp_button_update">Atualizar o WhatsApp</string>
+  <string name="whatsapp_button_latest">Já tem a versão mais recente</string>
+  <string name="delete_button_delete">Apagar</string>
+  <string name="delete_button_cancel">Guardar nas \"Descargas\"</string>
+  <string name="ok">OK</string>
+  <string name="cancel_button">Cancelar</string>
+  <string name="notifications">Notificações</string>
+  <string name="settings_notifications">Ativar as notificações</string>
+  <string name="settings_notifications_description">Procurar versões novas do WhatsApp de 6 em 6 horas e mostrar uma notificação quando houver uma atualização disponível</string>
+  <string name="settings_autodownload">Descarregar automaticamente</string>
+  <string name="settings_autodownload_description">Descarregar e instalar a versão mais recente do WhatsApp quando a aplicação for aberta</string>
+  <string name="settings_googleplay">Classificar no Google Play</string>
+  <string name="settings_googleplay_description">Pode classificar esta aplicação? Queremos saber a sua opinião</string>
+  <string name="settings_googleplus">Comunidade no Google+</string>
+  <string name="settings_googleplus_description">Pretende conversar com outros utilizadores acerca das novas versões do WhatsApp e saber sempre de todas as novidades? Junte-se à nossa comunidade!</string>
+  <string name="settings_about">Desenvolvida com \u2665 em Espanha</string>
+  <string name="error_noconnection">Não há ligação à Internet.\nPor favor, certifique-se de que ativou o Wi-Fi ou os dados móveis.</string>
+  <string name="toast_tap">Volte a tocar para fechar</string>
+  <string name="notification_title">O {0} já está disponível</string>
+  <string name="notification_description">Atualize agora com {0}</string>
+</resources>
