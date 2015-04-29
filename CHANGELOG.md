@@ -1,12 +1,18 @@
+### 2.1
+##### Released: 29 April, 2015
+* NEW Frech, Italian, Portuguese, Turkish and Japanese languages.
+* [IMPROVE](https://github.com/javiersantos/WhatsAppBetaUpdater.Android/commit/dba8c1277e4f19e46d6216dabdd033904dfa6798) AppCompat v7 to AlertDialog.
+* [IMPROVE](https://github.com/javiersantos/WhatsAppBetaUpdater.Android/commit/1956ebedf2014e70e3b63dc313ffcf603516bdec) Cancel button to download dialog.
+
 ### 2.0
 ##### Released: 22 April, 2015
-* [NEW] (https://github.com/javiersantos/WhatsAppBetaUpdater.Android/commit/546c80e9ee2654db9024767d7a8db4544f1642c7) Notifications
-* [NEW] (https://github.com/javiersantos/WhatsAppBetaUpdater.Android/commit/b38af7caf795b8de30783e6b27f67be8de7485c1) FAB (Material Design).
-* [NEW] (https://github.com/javiersantos/WhatsAppBetaUpdater.Android/commit/32d6a57011e03f4518fb2a1c149e2ddeacdf8d1b) Dialog to delete APK.
-* [NEW] (https://github.com/javiersantos/WhatsAppBetaUpdater.Android/commit/6b07f1cac2751965ca24ff0322dd9bbe39380f3d) Catalan translation - Thanks to Marc C -
-* [NEW] (https://github.com/javiersantos/WhatsAppBetaUpdater.Android/commit/d9e40f0441ad2a989ead6d5c76425b91b7b50c7c) Japanese translation.
-* [IMPROVE] (https://github.com/javiersantos/WhatsAppBetaUpdater.Android/commit/9ec7eea5a52546e0d464c4881f1d9a73a82ab611) "Rate on Google Play" and "Join the community" added to Settings.
-* [IMPROVE] (https://github.com/javiersantos/WhatsAppBetaUpdater.Android/commit/674b90deab08bc891279d8324a1cfb178e271ee8) Ads now are displayed faster.
+* [NEW](https://github.com/javiersantos/WhatsAppBetaUpdater.Android/commit/546c80e9ee2654db9024767d7a8db4544f1642c7) Notifications.
+* [NEW](https://github.com/javiersantos/WhatsAppBetaUpdater.Android/commit/b38af7caf795b8de30783e6b27f67be8de7485c1) FAB (Material Design).
+* [NEW](https://github.com/javiersantos/WhatsAppBetaUpdater.Android/commit/32d6a57011e03f4518fb2a1c149e2ddeacdf8d1b) Dialog to delete APK.
+* [NEW](https://github.com/javiersantos/WhatsAppBetaUpdater.Android/commit/6b07f1cac2751965ca24ff0322dd9bbe39380f3d) Catalan translation - Thanks to Marc C -
+* [NEW](https://github.com/javiersantos/WhatsAppBetaUpdater.Android/commit/d9e40f0441ad2a989ead6d5c76425b91b7b50c7c) Japanese translation.
+* [IMPROVE](https://github.com/javiersantos/WhatsAppBetaUpdater.Android/commit/9ec7eea5a52546e0d464c4881f1d9a73a82ab611) "Rate on Google Play" and "Join the community" added to Settings.
+* [IMPROVE](https://github.com/javiersantos/WhatsAppBetaUpdater.Android/commit/674b90deab08bc891279d8324a1cfb178e271ee8) Ads are now displayed faster.
 
 ### 1.1
 ##### Released: 15 April, 2015
@@ -22,7 +28,7 @@
 ### 1.0.0.4 / 1.0.0.3
 ##### Released: 5 April, 2015
 * [IMPROVED](https://github.com/javiersantos/WhatsAppBetaUpdater.Android/commit/de875c2325b9e6761ab0be01f1b72d73dc86b999) Add better function to compare versions.
-* [FIX] Layout margin.
+* FIX Layout margin.
 
 ### 1.0.0.2
 ##### Released: 5 April, 2015
