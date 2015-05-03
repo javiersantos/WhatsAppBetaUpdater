@@ -3,7 +3,7 @@ App to update to the latest version of WhatsApp for Android. Beta Updater for Wh
 
 ## APK Download
 * [Download on GitHub](https://github.com/javiersantos/WhatsAppBetaUpdater.Android/releases)
-* [Download on Aptoide](http://fjaviersantos.store.aptoide.com/app/market/com.javiersantos.whatsappbetaupdater/11/9143639/Beta+Updater+for+WhatsApp)
+* [Download on Aptoide](http://fjaviersantos.store.aptoide.com/app/market/com.javiersantos.whatsappbetaupdater/12/9176879/Beta+Updater+for+WhatsApp)
 
 ![Beta Updater for WhatsApp](http://i.imgur.com/bz5n9iZ.png)
 
