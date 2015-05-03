@@ -22,16 +22,25 @@ namespace WhatsAppBetaUpdater {
 	public class MainActivity : AppCompatActivity {
 		
 		// Predefined variables
-		private string installedVersion;
-		private string latestVersion;
-		private string webUrl = "http://www.whatsapp.com/android/";
-		private string apkUrl = "http://www.whatsapp.com/android/current/WhatsApp.apk";
+		private string installedWhatsAppVersion;
+		private string latestWhatsAppVersion;
+		private string installedAppVersion;
+		private string latestAppVersion;
+		private string appUrl = "https://github.com/javiersantos/WhatsAppBetaUpdater.Android/tags";
+		private string appApk = "https://github.com/javiersantos/WhatsAppBetaUpdater.Android/releases/download/";
+		private string whatsAppUrl = "http://www.whatsapp.com/android/";
+		private string whatsAppApk = "http://www.whatsapp.com/android/current/WhatsApp.apk";
 		private string filename = Android.OS.Environment.GetExternalStoragePublicDirectory (Android.OS.Environment.DirectoryDownloads).ToString () + "/";
-		private string fullLatestFilename;
+		private string fullLatestWhatsAppFilename;
+		private string fullLatestAppFilename = Android.OS.Environment.GetExternalStoragePublicDirectory (Android.OS.Environment.DirectoryDownloads).ToString () + "/com.javiersantos.whatsappbetaupdater.apk";
 
 		// Preferences variables
+		private ISharedPreferences prefs;
 		private bool prefAutoDownload;
 		private bool prefEnableNotifications;
+		private int prefHoursNotifications;
+		private bool prefShowAppUpdates;
+		private long millisecondsNotifications;
 		private bool doubleBackPressed = false;
 		private bool downloadedOK;
 
@@ -52,8 +61,11 @@ namespace WhatsAppBetaUpdater {
 			GetPreferences ();
 
 			if (CrossConnectivity.Current.IsConnected) {
-				GetLatestVersion (webUrl);
-				SetAdmobBanner ();
+				if (prefShowAppUpdates) {
+					GetLatestAppVersion (appUrl);
+				}
+				GetLatestWhatsAppVersion (whatsAppUrl);
+//				SetAdmobBanner ();
 			} else {
 				Finish ();
 				StartActivity (typeof(ErrorActivity));
@@ -77,7 +89,7 @@ namespace WhatsAppBetaUpdater {
 				Toast.MakeText(this, Resources.GetString(Resource.String.toast_tap), ToastLength.Short).Show ();
 				var showAd = random.Next (5);
 				if (showAd == 0) {
-					SetAdmobInterstitial ();
+//					SetAdmobInterstitial ();
 				}
 			}
 		}
@@ -93,27 +105,28 @@ namespace WhatsAppBetaUpdater {
 				Finish ();
 				StartActivity (typeof(MainActivity));
 				OverridePendingTransition (Resource.Animation.abc_fade_in, Resource.Animation.abc_fade_out);
-				if (CompareVersionReceiver.VersionCompare(installedVersion, latestVersion) < 0) {
-					Toast.MakeText (this, string.Format(Resources.GetString (Resource.String.available), "WhatsApp " + latestVersion), ToastLength.Long).Show ();
+				if (CompareVersionReceiver.VersionCompare(installedWhatsAppVersion, latestWhatsAppVersion) < 0) {
+					Toast.MakeText (this, string.Format(Resources.GetString (Resource.String.available), "WhatsApp " + latestWhatsAppVersion), ToastLength.Long).Show ();
 				} else {
-					Toast.MakeText (this, string.Format(Resources.GetString (Resource.String.latest_installed_description), "WhatsApp " + installedVersion), ToastLength.Long).Show ();
+					Toast.MakeText (this, string.Format(Resources.GetString (Resource.String.latest_installed_description), "WhatsApp " + installedWhatsAppVersion), ToastLength.Long).Show ();
 				}
 				return true;
 			case Resource.Id.menu_settings:
+				Finish ();
 				StartActivity (typeof(SettingsActivity));
 				return true;
 			case Resource.Id.menu_share:
 				Intent shareIntent = new Intent (Intent.ActionSend);
 				shareIntent.SetType ("text/plain");
-				shareIntent.PutExtra (Intent.ExtraText, string.Format(Resources.GetString (Resource.String.share_description), Resources.GetString (Resource.String.app_name)) + ": WhatsApp " + latestVersion + " " + "https://play.google.com/store/apps/details?id=com.javiersantos.whatsappbetaupdater");
+				shareIntent.PutExtra (Intent.ExtraText, string.Format(Resources.GetString (Resource.String.share_description), Resources.GetString (Resource.String.app_name)) + ": WhatsApp " + latestWhatsAppVersion + " " + "http://bit.ly/BetaUpdaterAndroid");
 				StartActivity (Intent.CreateChooser(shareIntent, Resources.GetString(Resource.String.share)));
 				return true;
 			}
 			return base.OnOptionsItemSelected (item);
 		}
 
-		// Retrieve WhatsApp HTML code
-		public async Task GetLatestVersion (string pageUrl) {
+		// Retrieve latest version of WhatsApp
+		public async Task GetLatestWhatsAppVersion (string pageUrl) {
 			var getVersion = new WebClient();
 			string htmlAndroid = getVersion.DownloadString (new Uri(pageUrl));
 
@@ -123,7 +136,7 @@ namespace WhatsAppBetaUpdater {
 			while (i < split.Length) {
 				if (split.GetValue (i).ToString ().StartsWith ("Version")) {
 					split = split.GetValue (i).ToString ().Split (new char[] { ' ', '<' });
-					latestVersion = split.GetValue (1).ToString ().Trim ();
+					latestWhatsAppVersion = split.GetValue (1).ToString ().Trim ();
 					break;
 				}
 				i++;
@@ -133,26 +146,27 @@ namespace WhatsAppBetaUpdater {
 			TextView whatsapp_installed_version = FindViewById<TextView> (Resource.Id.whatsapp_installed_version);
 			TextView whatsapp_latest_version = FindViewById<TextView> (Resource.Id.whatsapp_latest_version);
 
-			installedVersion = PackageManager.GetPackageInfo ("com.whatsapp", 0).VersionName.Trim ();
+			installedWhatsAppVersion = PackageManager.GetPackageInfo ("com.whatsapp", 0).VersionName.Trim ();
 
-			whatsapp_installed_version.Text = installedVersion;
-			whatsapp_latest_version.Text = latestVersion;
+			whatsapp_installed_version.Text = installedWhatsAppVersion;
+			whatsapp_latest_version.Text = latestWhatsAppVersion;
 
-			fullLatestFilename = filename + "WhatsApp_" + latestVersion + ".apk";
+			fullLatestWhatsAppFilename = filename + "WhatsApp_" + latestWhatsAppVersion + ".apk";
 
 			// Load Floating Button
 			var fab = FindViewById<FloatingActionButton> (Resource.Id.fab);
 
 			// Compare installed and latest WhatsApp version
-			if (CompareVersionReceiver.VersionCompare(installedVersion, latestVersion) < 0) { // There is a new version
+			if (CompareVersionReceiver.VersionCompare(installedWhatsAppVersion, latestWhatsAppVersion) < 0) { // There is a new version
 				fab.SetImageDrawable(Resources.GetDrawable(Resource.Drawable.ic_download));
 				// Preference: Autodownload
 				if (prefAutoDownload) {
 					SetDownloadDialog ();
 					var webClient = new WebClient ();
 					webClient.DownloadProgressChanged += new DownloadProgressChangedEventHandler (downloadProgressChanged);
-					webClient.DownloadFileCompleted += new AsyncCompletedEventHandler (downloadFileCompleted);
-					webClient.DownloadFileAsync (new Uri (apkUrl), fullLatestFilename);
+					webClient.DownloadFileCompleted += new AsyncCompletedEventHandler (downloadWhatsAppFileCompleted);
+					webClient.DownloadFileAsync (new Uri (whatsAppApk), fullLatestWhatsAppFilename);
+					progressDialog.SetTitle (string.Format(Resources.GetString(Resource.String.downloading), "WhatsApp " + latestWhatsAppVersion + "..."));
 					progressDialog.SetButton (Resources.GetString(Resource.String.cancel_button), (object senderCancel, DialogClickEventArgs eCancel) => {webClient.CancelAsync (); progressDialog.Dismiss ();});
 					progressDialog.Show ();
 				} else {
@@ -160,8 +174,9 @@ namespace WhatsAppBetaUpdater {
 						SetDownloadDialog ();
 						var webClient = new WebClient ();
 						webClient.DownloadProgressChanged += new DownloadProgressChangedEventHandler (downloadProgressChanged);
-						webClient.DownloadFileCompleted += new AsyncCompletedEventHandler (downloadFileCompleted);
-						webClient.DownloadFileAsync (new Uri (apkUrl), fullLatestFilename);
+						webClient.DownloadFileCompleted += new AsyncCompletedEventHandler (downloadWhatsAppFileCompleted);
+						webClient.DownloadFileAsync (new Uri (whatsAppApk), fullLatestWhatsAppFilename);
+						progressDialog.SetTitle (string.Format(Resources.GetString(Resource.String.downloading), "WhatsApp " + latestWhatsAppVersion + "..."));
 						progressDialog.SetButton (Resources.GetString(Resource.String.cancel_button), (object senderCancel, DialogClickEventArgs eCancel) => {webClient.CancelAsync (); progressDialog.Dismiss ();});
 						progressDialog.Show ();
 					};
@@ -172,10 +187,52 @@ namespace WhatsAppBetaUpdater {
 				fab.Click += delegate {
 					AlertDialog errorInstalled = new AlertDialog.Builder (this).Create ();
 					errorInstalled.SetTitle (Resources.GetString(Resource.String.latest_installed));
-					errorInstalled.SetMessage (string.Format(Resources.GetString(Resource.String.latest_installed_description), "WhatsApp " + installedVersion));
+					errorInstalled.SetMessage (string.Format(Resources.GetString(Resource.String.latest_installed_description), "WhatsApp " + installedWhatsAppVersion));
 					errorInstalled.SetButton ((int)DialogButtonType.Positive, Resources.GetString(Resource.String.ok), (object senderClose, DialogClickEventArgs eClose) => errorInstalled.Dismiss ());
 					errorInstalled.Show ();
 				};
+			}
+		}
+
+		// Retrieve latest version of Beta Updater
+		public async Task GetLatestAppVersion (string pageUrl) {
+			var getVersion = new WebClient();
+			string htmlAndroid = getVersion.DownloadString (new Uri(pageUrl));
+
+			// Get WhatsApp latest version
+			string[] split = htmlAndroid.Split (new char[] { '>' });
+			int i = 0;
+			while (i < split.Length) {
+				if (split.GetValue (i).ToString ().StartsWith ("v")) {
+					split = split.GetValue (i).ToString ().Split (new char[] { 'v', '<' });
+					latestAppVersion = split.GetValue (1).ToString ().Trim ();
+					break;
+				}
+				i++;
+			}
+
+			installedAppVersion = PackageManager.GetPackageInfo ("com.javiersantos.whatsappbetaupdater", 0).VersionName.Trim ();
+
+			if (CompareVersionReceiver.VersionCompare (installedAppVersion, latestAppVersion) < 0) {
+				appApk = appApk + "v" + latestAppVersion + "/com.javiersantos.whatsappbetaupdater.apk";
+
+				AlertDialog appUpdateDialog = new AlertDialog.Builder (this).Create ();
+				appUpdateDialog.SetTitle (string.Format(Resources.GetString(Resource.String.app_update), latestAppVersion));
+				appUpdateDialog.SetMessage (string.Format(Resources.GetString(Resource.String.app_update_description), Resources.GetString(Resource.String.app_name)));
+				appUpdateDialog.SetButton ((int)DialogButtonType.Positive, Resources.GetString (Resource.String.update_button), (object senderUpdateAppOK, DialogClickEventArgs eUpdateAppOK) => {
+					SetDownloadDialog ();
+					var webClient = new WebClient ();
+					webClient.DownloadProgressChanged += new DownloadProgressChangedEventHandler (downloadProgressChanged);
+					webClient.DownloadFileCompleted += new AsyncCompletedEventHandler (downloadAppFileCompleted);
+					webClient.DownloadFileAsync (new Uri (appApk), fullLatestAppFilename);
+					progressDialog.SetTitle (string.Format(Resources.GetString(Resource.String.downloading), Resources.GetString(Resource.String.app_name) + " " + latestAppVersion + "..."));
+					progressDialog.SetButton (Resources.GetString(Resource.String.cancel_button), (object senderCancel, DialogClickEventArgs eCancel) => {webClient.CancelAsync (); progressDialog.Dismiss ();});
+					progressDialog.Show ();
+				});
+				appUpdateDialog.SetButton ((int)DialogButtonType.Negative, Resources.GetString(Resource.String.cancel_button), (object senderUpdateAppCancel, DialogClickEventArgs eUpdateAppCancel) => appUpdateDialog.Dismiss ());
+				appUpdateDialog.SetButton ((int)DialogButtonType.Neutral, Resources.GetString(Resource.String.never_button), (object senderUpdateAppNever, DialogClickEventArgs eUpdateAppNever) => {prefs.Edit().PutBoolean("prefShowAppUpdates", false).Commit(); appUpdateDialog.Dismiss (); });
+				appUpdateDialog.SetCancelable (false);
+				appUpdateDialog.Show ();
 			}
 		}
 
@@ -192,30 +249,53 @@ namespace WhatsAppBetaUpdater {
 			});
 		}
 
-		void downloadFileCompleted (object sender, AsyncCompletedEventArgs e) {
+		void downloadWhatsAppFileCompleted (object sender, AsyncCompletedEventArgs e) {
 			RunOnUiThread (() => {
 				progressDialog.Dismiss ();
 				if (downloadedOK) {
-					var installWhatsApp = new Intent(Intent.ActionView);
-					installWhatsApp.SetDataAndType(Android.Net.Uri.Parse("file://" + fullLatestFilename), "application/vnd.android.package-archive");
-					installWhatsApp.SetFlags(ActivityFlags.NewTask);
+					var installApk = new Intent(Intent.ActionView);
+					installApk.SetDataAndType(Android.Net.Uri.Parse("file://" + fullLatestWhatsAppFilename), "application/vnd.android.package-archive");
+					installApk.SetFlags(ActivityFlags.NewTask);
 					try {
-						StartActivity(installWhatsApp);
-						AlertDialog errorInstalled = new AlertDialog.Builder (this).Create ();
-						errorInstalled.SetTitle (Resources.GetString(Resource.String.delete));
-						errorInstalled.SetMessage (Resources.GetString(Resource.String.delete_description));
-						errorInstalled.SetButton ((int)DialogButtonType.Positive, Resources.GetString(Resource.String.delete_button_delete), (object senderDelete, DialogClickEventArgs eDelete) => File.Delete(fullLatestFilename));
-						errorInstalled.SetButton ((int)DialogButtonType.Negative, Resources.GetString(Resource.String.delete_button_cancel), (object senderCancel, DialogClickEventArgs eCancel) => errorInstalled.Dismiss ());
-						errorInstalled.Show ();
+						StartActivity(installApk);
+						AlertDialog deleteWhatsApp = new AlertDialog.Builder (this).Create ();
+						deleteWhatsApp.SetTitle (Resources.GetString(Resource.String.delete));
+						deleteWhatsApp.SetMessage (Resources.GetString(Resource.String.delete_description));
+						deleteWhatsApp.SetButton ((int)DialogButtonType.Positive, Resources.GetString(Resource.String.delete_button_delete), (object senderDelete, DialogClickEventArgs eDelete) => File.Delete(fullLatestWhatsAppFilename));
+						deleteWhatsApp.SetButton ((int)DialogButtonType.Negative, Resources.GetString(Resource.String.delete_button_cancel), (object senderCancel, DialogClickEventArgs eCancel) => deleteWhatsApp.Dismiss ());
+						deleteWhatsApp.SetCancelable (false);
+						deleteWhatsApp.Show ();
 					} catch (ActivityNotFoundException ex) {
 						var errorInstalled = new AlertDialog.Builder (this).Create ();
 						errorInstalled.SetTitle (Resources.GetString(Resource.String.download_error));
-						errorInstalled.SetMessage (string.Format(Resources.GetString(Resource.String.download_error_description), "WhatsApp " + latestVersion));
+						errorInstalled.SetMessage (string.Format(Resources.GetString(Resource.String.download_error_description), "WhatsApp " + latestWhatsAppVersion));
 						errorInstalled.Show ();	
 					}
 					downloadedOK = false;
 				} else {
-					File.Delete(fullLatestFilename);
+					File.Delete(fullLatestWhatsAppFilename);
+				}
+			});
+		}
+
+		void downloadAppFileCompleted (object sender, AsyncCompletedEventArgs e) {
+			RunOnUiThread (() => {
+				progressDialog.Dismiss ();
+				if (downloadedOK) {
+					var installApk = new Intent(Intent.ActionView);
+					installApk.SetDataAndType(Android.Net.Uri.Parse("file://" + fullLatestAppFilename), "application/vnd.android.package-archive");
+					installApk.SetFlags(ActivityFlags.NewTask);
+					try {
+						StartActivity(installApk);
+					} catch (ActivityNotFoundException ex) {
+						var errorInstalled = new AlertDialog.Builder (this).Create ();
+						errorInstalled.SetTitle (Resources.GetString(Resource.String.download_error));
+						errorInstalled.SetMessage (string.Format(Resources.GetString(Resource.String.download_error_description), Resources.GetString(Resource.String.app_name) + " " + latestAppVersion));
+						errorInstalled.Show ();	
+					}
+					downloadedOK = false;
+				} else {
+					File.Delete(fullLatestAppFilename);
 				}
 			});
 		}
@@ -223,7 +303,6 @@ namespace WhatsAppBetaUpdater {
 		public void SetDownloadDialog () {
 			progressDialog = new ProgressDialog (this);
 			progressDialog.SetProgressStyle (ProgressDialogStyle.Horizontal);
-			progressDialog.SetTitle (string.Format(Resources.GetString(Resource.String.downloading), "WhatsApp " + latestVersion + "..."));
 			progressDialog.Progress = 0;
 			progressDialog.Max = 100;
 			progressDialog.SetCancelable (false);
@@ -231,9 +310,24 @@ namespace WhatsAppBetaUpdater {
 		}
 
 		public void GetPreferences() {
-			ISharedPreferences prefs = PreferenceManager.GetDefaultSharedPreferences(this);
+			prefs = PreferenceManager.GetDefaultSharedPreferences(this);
 			prefAutoDownload = prefs.GetBoolean ("prefAutoDownload", false);
 			prefEnableNotifications = prefs.GetBoolean ("prefEnableNotifications", true);
+			prefShowAppUpdates = prefs.GetBoolean ("prefShowAppUpdates", true);
+			prefHoursNotifications = int.Parse(prefs.GetString ("prefHoursNotifications", "4"))-1;
+			if (prefHoursNotifications == 1) {
+				millisecondsNotifications = 3 * 60 * 60 * 1000;
+			} else if (prefHoursNotifications == 2) {
+				millisecondsNotifications = 6 * 60 * 60 * 1000;
+			} else if (prefHoursNotifications == 3) {
+				millisecondsNotifications = 9 * 60 * 60 * 1000;
+			} else if (prefHoursNotifications == 4) {
+				millisecondsNotifications = 12 * 60 * 60 * 1000;
+			} else if (prefHoursNotifications == 5) {
+				millisecondsNotifications = 24 * 60 * 60 * 1000;
+			} else {
+				millisecondsNotifications = 12 * 60 * 60 * 1000;
+			}
 
 			SetNotification ();
 		}
@@ -260,7 +354,7 @@ namespace WhatsAppBetaUpdater {
 			AlarmManager alarmManager = (AlarmManager)this.GetSystemService (Context.AlarmService);
 
 			if (prefEnableNotifications) {
-				alarmManager.SetRepeating (AlarmType.ElapsedRealtimeWakeup, SystemClock.ElapsedRealtime (), 6 * 60 * 60 * 1000, pendingIntent);
+				alarmManager.SetRepeating (AlarmType.ElapsedRealtimeWakeup, SystemClock.ElapsedRealtime (), millisecondsNotifications, pendingIntent);
 			} else {
 				alarmManager.Cancel (pendingIntent);
 			}

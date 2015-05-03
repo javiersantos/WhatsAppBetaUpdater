@@ -8,6 +8,11 @@
             android:title="@string/settings_autodownload"
             android:summary="@string/settings_autodownload_description"
             android:defaultValue="false" />
+        <CheckBoxPreference
+            android:key="prefShowAppUpdates"
+            android:title="@string/settings_app_update"
+            android:summary="@string/settings_app_update_description"
+            android:defaultValue="true" />
     </PreferenceCategory>
     <PreferenceCategory
         android:title="@string/notifications">
@@ -16,6 +21,13 @@
             android:title="@string/settings_notifications"
             android:summary="@string/settings_notifications_description"
             android:defaultValue="true" />
+        <ListPreference
+            android:key="prefHoursNotifications"
+            android:title="@string/settings_interval"
+            android:summary="@string/settings_interval_description"
+            android:entries="@array/hours"
+            android:entryValues="@array/hours_values"
+            android:defaultValue="4" />
     </PreferenceCategory>
     <PreferenceCategory
         android:title="@string/about">
@@ -32,6 +44,13 @@
             <intent
                 android:action="android.intent.action.VIEW"
                 android:data="https://plus.google.com/communities/102574612559329723462" />
+        </Preference>
+        <Preference
+            android:title="@string/settings_donation"
+            android:summary="@string/settings_donation_description">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="http://www.javiersantos.me/donate" />
         </Preference>
         <Preference
             android:key="prefVersion"
