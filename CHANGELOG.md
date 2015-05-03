@@ -1,3 +1,9 @@
+### 2.2
+##### Released: 3 May, 2015
+* [ADD](https://github.com/javiersantos/WhatsAppBetaUpdater.Android/commit/7023ae0dc22ffd00920e00b0fffc079734ce8fa7) In-App Updater.
+* [ADD](https://github.com/javiersantos/WhatsAppBetaUpdater.Android/commit/7023ae0dc22ffd00920e00b0fffc079734ce8fa7) Notifications frequency is available in Settings.
+* [OFFICIAL ANNOUNCEMENT](https://plus.google.com/+JavierSantos/posts/S1bNZARRPi7) Say goodbye to the ads!
+
 ### 2.1
 ##### Released: 29 April, 2015
 * NEW Frech, Italian, Portuguese, Turkish and Japanese languages.
