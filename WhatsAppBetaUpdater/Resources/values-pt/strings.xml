@@ -25,7 +25,7 @@
   <string name="cancel_button">Cancelar</string>
   <string name="notifications">Notificações</string>
   <string name="settings_notifications">Ativar as notificações</string>
-  <string name="settings_notifications_description">Procurar versões novas do WhatsApp de 6 em 6 horas e mostrar uma notificação quando houver uma atualização disponível</string>
+  <string name="settings_notifications_description">Procurar versões novas do WhatsApp e mostrar uma notificação quando houver uma atualização disponível</string>
   <string name="settings_autodownload">Descarregar automaticamente</string>
   <string name="settings_autodownload_description">Descarregar e instalar a versão mais recente do WhatsApp quando a aplicação for aberta</string>
   <string name="settings_googleplay">Classificar no Google Play</string>

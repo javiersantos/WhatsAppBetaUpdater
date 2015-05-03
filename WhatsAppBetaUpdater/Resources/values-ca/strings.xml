@@ -25,7 +25,7 @@
   <string name="cancel_button">Cancel·lar</string>
   <string name="notifications">Notificacions</string>
   <string name="settings_notifications">Habilita les notificacions</string>
-  <string name="settings_notifications_description">Comprova si hi han noves actualitzacions de WhatsApp automàticament cada 6 hores, i notifica\'m quan n\'hi hagi una de disponible</string>
+  <string name="settings_notifications_description">Comprova si hi han noves actualitzacions de WhatsApp automàticament, i notifica\'m quan n\'hi hagi una de disponible</string>
   <string name="settings_autodownload">Baixar automàticament les actualitzacions</string>
   <string name="settings_autodownload_description">Comenca a baixar i instal·lar actualitzacions noves WhatsApp automàticament al iniciar l\'aplicació</string>
   <string name="settings_googleplay">Valorar a Google Play</string>

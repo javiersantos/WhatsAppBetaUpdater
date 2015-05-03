@@ -25,7 +25,7 @@
   <string name="cancel_button">Annuler</string>
   <string name="notifications">Notifications</string>
   <string name="settings_notifications">Activer les notifications</string>
-  <string name="settings_notifications_description">Vérifier les nouvelles mises à jour de WhatsApp automatiquement toutes les 6 heures et me notifier lorsqu\'une nouvelle version est disponible</string>
+  <string name="settings_notifications_description">Vérifier les nouvelles mises à jour de WhatsApp automatiquement et me notifier lorsqu\'une nouvelle version est disponible</string>
   <string name="settings_autodownload">Mettre a jour automatiquement</string>
   <string name="settings_autodownload_description">Commencez à télécharger et installer les nouvelles mises à jour de WhatsApp automatiquement au démarrage de l\'application</string>
   <string name="settings_googleplay">Évaluer sur Google Play</string>

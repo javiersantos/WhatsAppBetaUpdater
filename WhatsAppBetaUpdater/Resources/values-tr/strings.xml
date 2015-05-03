@@ -25,7 +25,7 @@
   <string name="cancel_button">İptal</string>
   <string name="notifications">Bildirimler</string>
   <string name="settings_notifications">Bildirimleri etkinleştir</string>
-  <string name="settings_notifications_description">WhatsApp güncellemelerini her 6 saate bir kontrol et ve yenisi geldiği zaman beni bilgilendir</string>
+  <string name="settings_notifications_description">WhatsApp güncellemelerini her kontrol et ve yenisi geldiği zaman beni bilgilendir</string>
   <string name="settings_autodownload">Otomatik indirme güncellemeleri</string>
   <string name="settings_autodownload_description">Uygulama başlatıldığı zaman otomatik olarak Whatsapp güncellemesini kurması için başlatın</string>
   <string name="settings_googleplay">Google Play ile oylayın</string>
