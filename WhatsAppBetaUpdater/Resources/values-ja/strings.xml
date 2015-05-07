@@ -17,24 +17,47 @@
   <string name="latest_installed">最新バージョンがインストールされました</string>
   <string name="latest_installed_description">{0} がインストールされています。最新のバージョンです。</string>
   <string name="available">{0} が利用可能です。今すぐ更新してください!</string>
-  <string name="whatsapp_button_update">WhatsApp を更新!</string>
+  <string name="app_update">アップデート {0} が利用できます</string>
+  <string name="app_update_description">新しいバージョンの \"{0}\" をダウンロードする準備ができています。最新の改善とバグ修正のため最新バージョンにアップデートする必要があります。</string>
   <string name="whatsapp_button_latest">最新のバージョンです</string>
   <string name="delete_button_delete">はい、削除します!</string>
   <string name="delete_button_cancel">いいえ、保存します!</string>
   <string name="ok">素晴らしい!</string>
+  <string name="update_button">アップデート</string>
+  <string name="never_button">次回から表示しない</string>
   <string name="cancel_button">キャンセル</string>
   <string name="notifications">通知</string>
   <string name="settings_notifications">通知を有効にする</string>
   <string name="settings_notifications_description">6 時間ごとに自動的に WhatsApp の新しいアップデートをチェックし、新しいアップデートが利用可能なときに通知します</string>
+  <string name="settings_interval">通知の頻度</string>
+  <string name="settings_interval_description">{0} ごと</string>
+  <string name="settings_app_update">このアプリのアップデートをチェック</string>
+  <string name="settings_app_update_description">Google Play で除去されたため、アプリ内アップデータがアプリに追加されました。アプリから最新のアップデートを受け取りますか?</string>
   <string name="settings_autodownload">アップデートを自動ダウンロード</string>
   <string name="settings_autodownload_description">アプリケーションの起動時に、自動的に WhatsApp の新しいアップデートをダウンロードして、インストールを開始します</string>
   <string name="settings_googleplay">Google Play で評価</string>
   <string name="settings_googleplay_description">このアプリを評価する時間が少しありますか? あなたの意見を聞かせていただきたいです</string>
   <string name="settings_googleplus">Google+ でコミュニティに参加</string>
   <string name="settings_googleplus_description">WhatsApp の新バージョンについて話したり、アプリケーションの開発をフォローしたいですか? 私たちのコミュニティに参加してください!</string>
+  <string name="settings_donation">PayPal で寄付</string>
+  <string name="settings_donation_description">このアプリを気に入っていただけましたでしょうか? コーヒーで作者を支援する</string>
   <string name="settings_about">スペインの \u2665 で作られました</string>
   <string name="error_noconnection">インターネットに接続されていないようです。\nWiFi または 3G がオンになっていることを確認してください。</string>
   <string name="toast_tap">もう一度タップすると、アプリを閉じます</string>
   <string name="notification_title">{0} が利用できます。</string>
   <string name="notification_description">{0} を使用して今すぐ更新します</string>
+  <string-array name="hours">
+    <item>3 時間</item>
+    <item>6 時間</item>
+    <item>9 時間</item>
+    <item>12 時間 (デフォルト)</item>
+    <item>24 時間</item>
+  </string-array>
+  <string-array name="hours_values">
+    <item>1</item>
+    <item>2</item>
+    <item>3</item>
+    <item>4</item>
+    <item>5</item>
+  </string-array>
 </resources>
