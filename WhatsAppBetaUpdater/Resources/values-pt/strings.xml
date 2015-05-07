@@ -17,24 +17,47 @@
   <string name="latest_installed">Nenhuma atualização disponível</string>
   <string name="latest_installed_description">Está a utilizar o {0}. Não há versões mais recentes.</string>
   <string name="available">O {0} já está disponível. Atualize agora!</string>
-  <string name="whatsapp_button_update">Atualizar o WhatsApp</string>
+  <string name="app_update">A versão {0} está disponível</string>
+  <string name="app_update_description">Há uma atualização disponível para a \"{0}\". Para desfrutar das últimas melhorias e correções de problemas técnicos, instale a versão mais recente.</string>
   <string name="whatsapp_button_latest">Já tem a versão mais recente</string>
   <string name="delete_button_delete">Apagar</string>
   <string name="delete_button_cancel">Guardar nas \"Descargas\"</string>
   <string name="ok">OK</string>
+  <string name="update_button">Atualizar</string>
+  <string name="never_button">Não voltar a mostrar</string>
   <string name="cancel_button">Cancelar</string>
   <string name="notifications">Notificações</string>
   <string name="settings_notifications">Ativar as notificações</string>
   <string name="settings_notifications_description">Procurar versões novas do WhatsApp e mostrar uma notificação quando houver uma atualização disponível</string>
+  <string name="settings_interval">Frequência das notificações</string>
+  <string name="settings_interval_description">A cada {0}</string>
+  <string name="settings_app_update">Procurar atualizações para esta app</string>
+  <string name="settings_app_update_description">Uma vez que a aplicação foi removida do Google Play, as atualizações passaram a estar integradas na aplicação. Pretende receber as últimas atualizações desta aplicação?</string>
   <string name="settings_autodownload">Descarregar automaticamente</string>
   <string name="settings_autodownload_description">Descarregar e instalar a versão mais recente do WhatsApp quando a aplicação for aberta</string>
   <string name="settings_googleplay">Classificar no Google Play</string>
   <string name="settings_googleplay_description">Pode classificar esta aplicação? Queremos saber a sua opinião</string>
   <string name="settings_googleplus">Comunidade no Google+</string>
   <string name="settings_googleplus_description">Pretende conversar com outros utilizadores acerca das novas versões do WhatsApp e saber sempre de todas as novidades? Junte-se à nossa comunidade!</string>
+  <string name="settings_donation">Doar com o PayPal</string>
+  <string name="settings_donation_description">Gosta desta aplicação? Pague um café ao criador</string>
   <string name="settings_about">Desenvolvida com \u2665 em Espanha</string>
   <string name="error_noconnection">Não há ligação à Internet.\nPor favor, certifique-se de que ativou o Wi-Fi ou os dados móveis.</string>
   <string name="toast_tap">Volte a tocar para fechar</string>
   <string name="notification_title">O {0} já está disponível</string>
   <string name="notification_description">Atualize agora com {0}</string>
+  <string-array name="hours">
+    <item>3 horas</item>
+    <item>6 horas</item>
+    <item>9 horas</item>
+    <item>12 horas (predefinição)</item>
+    <item>24 horas</item>
+  </string-array>
+  <string-array name="hours_values">
+    <item>1</item>
+    <item>2</item>
+    <item>3</item>
+    <item>4</item>
+    <item>5</item>
+  </string-array>
 </resources>
