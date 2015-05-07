@@ -17,24 +17,47 @@
   <string name="latest_installed">En son sürüm yüklü</string>
   <string name="latest_installed_description">{0} yüklendi. En son sürüme sahipsiniz.</string>
   <string name="available">{0} kullanılabilir. Şimdi güncelleyin!</string>
-  <string name="whatsapp_button_update">WhatsApp\'ı güncelleyin!</string>
+  <string name="app_update">Güncelleme {0} kullanılabilir</string>
+  <string name="app_update_description">\"{0}\" yeni sürümü indirilmek için hazır. En son yenilikleri ve hata düzeltmelerini edinmek için en yeni sürüme güncellemelisiniz.</string>
   <string name="whatsapp_button_latest">En son sürüme sahipsiniz</string>
   <string name="delete_button_delete">Sil</string>
   <string name="delete_button_cancel">\"İndirilenler\" kısmına kaydet</string>
   <string name="ok">Müthiş!</string>
+  <string name="update_button">Güncelle</string>
+  <string name="never_button">Bunu tekrar gösterme</string>
   <string name="cancel_button">İptal</string>
   <string name="notifications">Bildirimler</string>
   <string name="settings_notifications">Bildirimleri etkinleştir</string>
   <string name="settings_notifications_description">WhatsApp güncellemelerini her kontrol et ve yenisi geldiği zaman beni bilgilendir</string>
+  <string name="settings_interval">Bildirim aralığı</string>
+  <string name="settings_interval_description">Her {0}</string>
+  <string name="settings_app_update">Bu uygulama için güncellemeleri kontrol et</string>
+  <string name="settings_app_update_description">Google Play içinde kaldırıldığı için, uygulamaya, uygulama içi güncelleyici yüklendi. Uygulamadan en son güncellemeleri almak istiyor musunuz?</string>
   <string name="settings_autodownload">Otomatik indirme güncellemeleri</string>
   <string name="settings_autodownload_description">Uygulama başlatıldığı zaman otomatik olarak Whatsapp güncellemesini kurması için başlatın</string>
   <string name="settings_googleplay">Google Play ile oylayın</string>
   <string name="settings_googleplay_description">Bu uygulamayı oylamak için bir kaç saniyeniz var mıydı? Görüşlerinizi duymak istiyoruz</string>
   <string name="settings_googleplus">Google+ topluluğumuza katılın</string>
   <string name="settings_googleplus_description">WhatsApp\'ın yeni sürümleri hakkında konuşmak ve geliştirmeleri takip etmek ister misiniz? O zaman topluluğumuza katılın!</string>
+  <string name="settings_donation">PayPal ile bağış yap</string>
+  <string name="settings_donation_description">Bu uygulamayı sevdiniz mi? Yapımcıya bir kahve ile destek olun</string>
   <string name="settings_about">İspanya\'da \u2665 ile yapıldı</string>
   <string name="error_noconnection">Görünüşe bakılırsa internete bağlı değilsiniz.\nLütfen Kablosuz ağı veya 3G\'yi açtığınızdan emin olun.</string>
   <string name="toast_tap">Uygulamayı kapatmak için tekrar dokunun</string>
   <string name="notification_title">{0} kullanılabilir</string>
   <string name="notification_description">{0} kullanarak güncelleyin</string>
+  <string-array name="hours">
+    <item>3 saat</item>
+    <item>6 saat</item>
+    <item>9 saat</item>
+    <item>12 saat (varsayılan)</item>
+    <item>24 saat</item>
+  </string-array>
+  <string-array name="hours_values">
+    <item>1</item>
+    <item>2</item>
+    <item>3</item>
+    <item>4</item>
+    <item>5</item>
+  </string-array>
 </resources>
