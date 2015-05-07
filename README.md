@@ -21,7 +21,7 @@ App to update to the latest version of WhatsApp for Android. Beta Updater for Wh
 * French
 * Japanese
 * Portuguese
-* Turkish
+* Turkish - Thanks to Furkan Taşkın -
 
 ### Tools
 Built with Xamarin.
