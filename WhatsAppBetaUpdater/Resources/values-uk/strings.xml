@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="app_name">Beta Updater для WhatsApp</string>
+  <string name="refresh">Перевірка оновлень</string>
+  <string name="settings">Налаштування</string>
+  <string name="share">Поширити</string>
+  <string name="about">Про додаток</string>
+  <string name="share_description">Щойно завантажено останню версію WhatsApp за допомогою \"{0}\"</string>
+  <string name="whatsapp_installed">Встановлена версія:</string>
+  <string name="whatsapp_latest">Остання версія:</string>
+  <string name="downloading">Завантаження {0}</string>
+  <string name="download_again">Завантажити знову</string>
+  <string name="download_error">Щось пішло не так</string>
+  <string name="download_error_description">{0} не може бути встановлена. Будь-ласка, спробуйте ще раз.</string>
+  <string name="delete">Ви хочете зберегти оновлення?</string>
+  <string name="delete_description">Можна зберегти або видалити завантажене оновлення (АРК). Що Ви хочете зробити?</string>
+  <string name="latest_installed">Встановлена остання версія</string>
+  <string name="latest_installed_description">Установлено. У Вас остання версія {0}.</string>
+  <string name="available">{0} доступно. Оновіть зараз!</string>
+  <string name="app_update">Доступно оновлення {0}</string>
+  <string name="app_update_description">Нова версія \"{0}\" готова до встановлення. Ви повинні оновитися до останної версії аби мати останні покращення и виправлені баги.</string>
+  <string name="whatsapp_button_latest">У вас установлена остання версія</string>
+  <string name="delete_button_delete">Видалити</string>
+  <string name="delete_button_cancel">Зберегти у \"Завантаженнях\"</string>
+  <string name="ok">Чудово!</string>
+  <string name="update_button">Оновлення</string>
+  <string name="never_button">Не показувати знову</string>
+  <string name="cancel_button">Скасувати</string>
+  <string name="notifications">Сповіщення</string>
+  <string name="settings_notifications">Увімкнути сповіщення</string>
+  <string name="settings_notifications_description">Перевіряти нові оновлення WhatsApp автоматично кожні 6 годин і повідомляти мене, коли доступно нове оновлення</string>
+  <string name="settings_interval">Частота повідомлень</string>
+  <string name="settings_interval_description">Кожен {0}</string>
+  <string name="settings_app_update">Перевірити наявність оновлень для цього додатку</string>
+  <string name="settings_app_update_description">Через видалення в Google Play, оновлення в додатку було додане в додаток. Ви хочете отримати останні оновлення додатку?</string>
+  <string name="settings_autodownload">Завантажувати оновлення автоматично</string>
+  <string name="settings_autodownload_description">Завантаження і установка оновлень WhatsApp почнеться автоматично з запуском додатку</string>
+  <string name="settings_googleplay">Оцінити на Google Play</string>
+  <string name="settings_googleplay_description">У Вас є декілька хвилин аби оцінити цей додаток? Ми хочемо почути вашу думку</string>
+  <string name="settings_googleplus">Приєднатися до спільноти на Google+</string>
+  <string name="settings_googleplus_description">Хочете обговорити нові версії WhatsAppі бути в курсі останніх розробок? Вступайте в нашу спільноту!</string>
+  <string name="settings_donation">Пожертвування через PayPal</string>
+  <string name="settings_donation_description">Подобається наш додаток? Допоможіть автору купити собі кави</string>
+  <string name="settings_about">Зроблено з  \u2665 в Іспанії</string>
+  <string name="error_noconnection">Мабуть, Ви не підключені до Інтернету.\nБудь-ласка, переконайтесь, що Ви підключені до WiFi або 3G.</string>
+  <string name="toast_tap">Натисніть знову, аби закрити додаток</string>
+  <string name="notification_title">{0} доступно</string>
+  <string name="notification_description">Оновити зараз використовуючи {0}</string>
+  <string-array name="hours">
+    <item>3 години</item>
+    <item>6 годин</item>
+    <item>9 годин</item>
+    <item>12 годин (за замовчуванням)</item>
+    <item>24 години</item>
+  </string-array>
+  <string-array name="hours_values">
+    <item>1</item>
+    <item>2</item>
+    <item>3</item>
+    <item>4</item>
+    <item>5</item>
+  </string-array>
+</resources>

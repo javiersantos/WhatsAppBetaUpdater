@@ -127,6 +127,7 @@
     <AndroidResource Include="Resources\values-pt\strings.xml" />
     <AndroidResource Include="Resources\layout\toolbar.xml" />
     <AndroidResource Include="Resources\values-tr\strings.xml" />
+    <AndroidResource Include="Resources\values-uk\strings.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>
@@ -153,5 +154,6 @@
     <Folder Include="Resources\values-it\" />
     <Folder Include="Resources\values-pt\" />
     <Folder Include="Resources\values-tr\" />
+    <Folder Include="Resources\values-uk\" />
   </ItemGroup>
 </Project>
