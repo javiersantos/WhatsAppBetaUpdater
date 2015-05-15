@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="app_name">Beta Updater per WhatsApp</string>
   <string name="refresh">Cercar actualitzacions</string>
@@ -17,24 +17,47 @@
   <string name="latest_installed">La versió més nova està instal·lada</string>
   <string name="latest_installed_description">{0} està instal·lat. Tens l\'última versió.</string>
   <string name="available">{0} està disponible. Actualitza ara!</string>
-  <string name="whatsapp_button_update">Actualitzar WhatsApp!</string>
+  <string name="app_update">L\'actualització {0} està disponible</string>
+  <string name="app_update_description">Una nova versió de \"{0}\" està llesta per a baixar. Es recomana actualitzar a la última versió per a disposar de les últimes millores i solucions d\'errors.</string>
   <string name="whatsapp_button_latest">Tens l\'última versió</string>
   <string name="delete_button_delete">Si, eliminar-lo!</string>
   <string name="delete_button_cancel">Oh no, prefereixo guardar-lo!</string>
   <string name="ok">Impressionant!</string>
+  <string name="update_button">Actualitzar</string>
+  <string name="never_button">No mostrar més</string>
   <string name="cancel_button">Cancel·lar</string>
   <string name="notifications">Notificacions</string>
   <string name="settings_notifications">Habilita les notificacions</string>
   <string name="settings_notifications_description">Comprova si hi han noves actualitzacions de WhatsApp automàticament, i notifica\'m quan n\'hi hagi una de disponible</string>
+  <string name="settings_interval">Freqüència de notificacions</string>
+  <string name="settings_interval_description">Cada {0}</string>
+  <string name="settings_app_update">Comprovar noves actualitzacions per aquesta aplicació</string>
+  <string name="settings_app_update_description">Degut a l\'eliminació a Google Play, s\'ha afegit un actualitzador a l\'aplicació. Vols rebre les últimes actualitzacions?</string>
   <string name="settings_autodownload">Baixar automàticament les actualitzacions</string>
   <string name="settings_autodownload_description">Comenca a baixar i instal·lar actualitzacions noves WhatsApp automàticament al iniciar l\'aplicació</string>
   <string name="settings_googleplay">Valorar a Google Play</string>
   <string name="settings_googleplay_description">Tens uns segons per valorar aquesta aplicació? Volem escoltar la teva opinió</string>
   <string name="settings_googleplus">Uneix-te a la comunitat de Google+</string>
   <string name="settings_googleplus_description">Vols parlar sobre les noves actualitzacions de WhatsApp i estar al corrent de les novetats de l\'aplicació? Uneix-te a la nostra comunitat!</string>
+  <string name="settings_donation">Donació per PayPal</string>
+  <string name="settings_donation_description">T\'agrada aquesta aplicació? Ajuda al desenvolupador amb un cafè</string>
   <string name="settings_about">Fet amb \u2665 a Espanya</string>
   <string name="error_noconnection">Sembla que no estàs connectat a Internet.\nSi us plau comprova si tens activat el WiFi o el 3G.</string>
   <string name="toast_tap">Prem novament per tancar l\'aplicació</string>
   <string name="notification_title">{0} està disponible</string>
   <string name="notification_description">Actualitzar ara utilitzant {0}</string>
+  <string-array name="hours">
+    <item>3 hores</item>
+    <item>6 hores</item>
+    <item>9 hores</item>
+    <item>12 hores (predeterminat)</item>
+    <item>24 hores</item>
+  </string-array>
+  <string-array name="hours_values">
+    <item>1</item>
+    <item>2</item>
+    <item>3</item>
+    <item>4</item>
+    <item>5</item>
+  </string-array>
 </resources>
