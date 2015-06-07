@@ -9,9 +9,8 @@ App to update to the latest version of WhatsApp for Android. Beta Updater for Wh
 
 ### Upcoming features
 * Moving from Xamarin Studio (C#) to Android Studio (Java).
-* More settings for WhatsApp updates: choose APK download directory, automatic downloads only with WiFi, etc.
 
-### Translations
+## Translations
 [Help translating this app](https://crowdin.com/project/beta-updater-whatsapp)
 * English
 * Spanish
@@ -23,6 +22,19 @@ App to update to the latest version of WhatsApp for Android. Beta Updater for Wh
 * Portuguese
 * Turkish - Thanks to Furkan Taşkın -
 * Ukrainian - Thanks to Vitalii Demeshkant -
+
+## License
+    Copyright 2015 Javier Santos
+
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 2 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
 
 ### Tools
 Built with Xamarin.
