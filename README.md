@@ -1,6 +1,8 @@
 <h1 align="center">Beta Updater for WhatsApp</h1>
 
+<p align="center"><img src="https://github.com/javiersantos/WhatsAppBetaUpdater.Android/blob/master/WhatsAppBetaUpdater/Resources/drawable-xxhdpi/ic_launcher.png" width="100" height="100"></p>
 <p align="center">App to update to the latest version of WhatsApp for Android. Beta Updater for WhatsApp checks the latest version available on whatsapp.com and allows to install it automatically. Inspired by Material Design.</p>
+<p align="center"><a href="https://plus.google.com/communities/102574612559329723462">Community on Google+</a> | <a href="https://www.paypal.me/javiersantos">Donate</a> | <a href="https://www.patreon.com/javiersantos">Patreon</a></p>
 
 ## APK Download
 * [Download on GitHub](https://github.com/javiersantos/WhatsAppBetaUpdater.Android/releases)
