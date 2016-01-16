@@ -19,7 +19,7 @@
     <string name="delete_description">Es posible guardar o eliminar la actualización descargada (APK). ¿Qué quieres hacer?</string>
     <string name="donate_description">Beta Updater para WhatsApp es una app de código libre gratuita y libre de publicidad. Si quieres contribuir con el desarrollo puedes realizar una aportación. ¡Gracias!</string>
     <string name="app_update">La actualización %s está disponible</string>
-    <string name="app_update_description">Una nueva versión de %s está lista para descargar. Es recomendable actualizar a la última versión para disponer de las últimas mejoras y soluciones de errores.</string>
+    <string name="app_update_description">Una nueva versión está lista para descargar. Es recomendable actualizar a la última versión para disponer de las últimas mejoras y soluciones de errores.</string>
 
     <!--- Buttons -->
     <string name="button_delete">Eliminar</string>
