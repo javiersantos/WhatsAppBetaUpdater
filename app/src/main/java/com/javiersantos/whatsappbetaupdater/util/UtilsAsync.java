@@ -183,7 +183,7 @@ public class UtilsAsync {
                     break;
                 case UPDATE:
                     filename = context.getPackageName() + "_" + version + ".apk";
-                    downloadUrl = Config.GITHUB_APK;
+                    downloadUrl = Config.GITHUB_APK + "v" + version + "/" + context.getPackageName() + ".apk";
                     break;
             }
 
