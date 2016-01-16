@@ -33,6 +33,12 @@ public class MainActivity extends AppCompatActivity {
     private AppPreferences appPreferences;
     private Boolean doubleBackToExitPressedOnce = false;
 
+    // Variables
+    private TextView whatsapp_latest_version, whatsapp_installed_version, toolbar_subtitle;
+    private FloatingActionButton fab;
+    private ProgressWheel progressWheel;
+    private SwipeRefreshLayout swipeRefreshLayout;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,17 +46,15 @@ public class MainActivity extends AppCompatActivity {
 
         this.context = this;
         this.appPreferences = WhatsAppBetaUpdaterApplication.getAppPreferences();
+        this.fab = (FloatingActionButton) findViewById(R.id.fab);
+        this.toolbar_subtitle = (TextView) findViewById(R.id.toolbar_subtitle);
+        this.whatsapp_latest_version = (TextView) findViewById(R.id.whatsapp_latest_version);
+        this.whatsapp_installed_version = (TextView) findViewById(R.id.whatsapp_installed_version);
+        this.swipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.swipeContainer);
+        this.progressWheel = (ProgressWheel) findViewById(R.id.progress_wheel);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        // Initialize Views
-        final SwipeRefreshLayout swipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.swipeContainer);
-        final FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        final TextView toolbar_subtitle = (TextView) findViewById(R.id.toolbar_subtitle);
-        final TextView whatsapp_latest_version = (TextView) findViewById(R.id.whatsapp_latest_version);
-        TextView whatsapp_installed_version = (TextView) findViewById(R.id.whatsapp_installed_version);
-        final ProgressWheel progressWheel = (ProgressWheel) findViewById(R.id.progress_wheel);
 
         // Set drawable to FAB
         fab.setImageDrawable(new IconicsDrawable(this).icon(CommunityMaterial.Icon.cmd_download).color(Color.WHITE).sizeDp(24));
@@ -60,20 +64,12 @@ public class MainActivity extends AppCompatActivity {
             new UtilsAsync.LatestAppVersion(this).execute();
         }
 
-        // Check if there is a WhatsApp update and show UI changes
-        new UtilsAsync.LatestWhatsAppVersion(this, whatsapp_latest_version, toolbar_subtitle, fab, progressWheel).execute();
-
-        if (UtilsWhatsApp.isWhatsAppInstalled(this)) {
-            whatsapp_installed_version.setText(UtilsWhatsApp.getInstalledWhatsAppVersion(this));
-        } else {
-            whatsapp_installed_version.setText(getResources().getString(R.string.whatsapp_not_installed));
-        }
-
         // PullToRefresh
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
                 new UtilsAsync.LatestWhatsAppVersion(context, whatsapp_latest_version, toolbar_subtitle, fab, progressWheel).execute();
+                checkInstalledWhatsAppVersion();
                 swipeRefreshLayout.setRefreshing(false);
             }
         });
@@ -91,7 +87,23 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
+
+        // Check if there is a newest WhatsApp update and show UI changes
+        new UtilsAsync.LatestWhatsAppVersion(this, whatsapp_latest_version, toolbar_subtitle, fab, progressWheel).execute();
+
+        // Get latest WhatsApp installed version
+        checkInstalledWhatsAppVersion();
+
+        // Configure notification if enabled
         UtilsApp.setNotification(context, appPreferences.getEnableNotifications(), appPreferences.getHoursNotification());
+    }
+
+    private void checkInstalledWhatsAppVersion() {
+        if (UtilsWhatsApp.isWhatsAppInstalled(this)) {
+            whatsapp_installed_version.setText(UtilsWhatsApp.getInstalledWhatsAppVersion(this));
+        } else {
+            whatsapp_installed_version.setText(getResources().getString(R.string.whatsapp_not_installed));
+        }
     }
 
     @Override
