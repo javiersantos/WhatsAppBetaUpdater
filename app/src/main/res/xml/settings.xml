@@ -45,7 +45,7 @@
             android:summary="@string/settings_about">
             <intent
                 android:action="android.intent.action.VIEW"
-                android:data="https://github.com/javiersantos/WhatsAppBetaUpdater.Android" />
+                android:data="https://github.com/javiersantos/WhatsAppBetaUpdater" />
         </com.lb.material_preferences_library.custom_preferences.Preference>
     </PreferenceCategory>
 </PreferenceScreen>
