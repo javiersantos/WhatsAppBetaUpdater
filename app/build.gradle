@@ -1,11 +1,5 @@
 apply plugin: 'com.android.application'
 
-Properties properties = new Properties()
-properties.load(project.rootProject.file('local.properties').newDataInputStream())
-def keyStoreFile = properties.getProperty('keyFile')
-def keyStorePassword = properties.getProperty('keyPassword')
-def keyStoreAlias = properties.getProperty('keyAlias')
-
 android {
     compileSdkVersion 23
     buildToolsVersion "23.0.2"
@@ -19,21 +13,11 @@ android {
         versionName "3.0"
     }
 
-    signingConfigs {
-        releaseSigning {
-            storeFile file(keyStoreFile)
-            storePassword keyStorePassword
-            keyAlias keyStoreAlias
-            keyPassword keyStorePassword
-        }
-    }
-
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             buildConfigField "boolean", "DEBUG_MODE", "false"
-            signingConfig signingConfigs.releaseSigning
 
             applicationVariants.all { variant ->
                 variant.outputs.each { output ->
