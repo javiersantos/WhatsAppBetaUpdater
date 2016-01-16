@@ -1,0 +1,50 @@
+<resources>
+    <string name="app_name">Beta Updater for WhatsApp</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_donate">Donate</string>
+
+    <!-- Home -->
+    <string name="whatsapp_installed">Installed Version:</string>
+    <string name="whatsapp_latest">Latest Version:</string>
+    <string name="whatsapp_not_installed">Not installed</string>
+
+    <!-- Toolbar -->
+    <string name="update_available">Update %s is available!</string>
+    <string name="update_not_available">You have the latest version available</string>
+    
+    <!-- Dialogs -->
+    <string name="whatsapp_downloading">Downloading WhatsApp %s…</string>
+    <string name="delete">Do you want to keep the update?</string>
+    <string name="delete_description">It\'s possible to keep or delete the downloaded update (APK). What do you want to do?</string>
+    <string name="donate_description">Beta Updater for WhatsApp is an Open Source app completely free without ads. If you want to contribute with the development, I\'ll be really thankful.</string>
+    <string name="app_update">Update %s is available</string>
+    <string name="app_update_description">A new version is ready to download. You should update to the latest version to have the latest improvements and bug fixes.</string>
+
+    <!--- Buttons -->
+    <string name="button_delete">Delete</string>
+    <string name="button_save">Save in \"Downloads\"</string>
+    <string name="button_update">Update</string>
+    <string name="button_paypal">Donate via PayPal</string>
+    
+    <!-- Settings -->
+    <string name="settings_category_preferences">Preferences</string>
+    <string name="settings_category_notifications">Notifications</string>
+    <string name="settings_category_about">About</string>
+    <string name="settings_notifications">Enable notifications</string>
+    <string name="settings_notifications_description">Check for new WhatsApp updates automatically and notify me when a new one is available</string>
+    <string name="settings_interval">Notifications frequency</string>
+    <string name="settings_interval_description">Every %s hours</string>
+    <string name="settings_app_update">Check for updates</string>
+    <string name="settings_app_update_description">Receive the latest updates with bug fixes and improvements</string>
+    <string name="settings_autodownload">Auto-download updates</string>
+    <string name="settings_autodownload_description">Start to download and install new WhatsApp updates automatically when starting the app</string>
+    <string name="settings_license">Open Source licenses</string>
+    <string name="settings_googleplus">Join the community on Google+</string>
+    <string name="settings_googleplus_description">Want to talk about new versions of WhatsApp and keep abreast of developments in the application? Join to our community!</string>
+    <string name="settings_about">Made with %s by Javier Santos. Source code on GitHub.</string>
+
+    <!--- Notifications and toasts -->
+    <string name="toast_tap">Tap again to close the app</string>
+    <string name="notification">WhatsApp %s is available</string>
+    <string name="notification_description">Update now using %s</string>
+</resources>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical">
+    <PreferenceCategory
+        android:title="@string/settings_category_preferences">
+        <com.lb.material_preferences_library.custom_preferences.CheckBoxPreference
+            android:key="prefAutoDownload"
+            android:title="@string/settings_autodownload"
+            android:summary="@string/settings_autodownload_description"
+            android:defaultValue="false" />
+        <com.lb.material_preferences_library.custom_preferences.CheckBoxPreference
+            android:key="prefShowAppUpdates"
+            android:title="@string/settings_app_update"
+            android:summary="@string/settings_app_update_description"
+            android:defaultValue="true" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:title="@string/settings_category_notifications">
+        <com.lb.material_preferences_library.custom_preferences.CheckBoxPreference
+            android:key="prefEnableNotifications"
+            android:title="@string/settings_notifications"
+            android:summary="@string/settings_notifications_description"
+            android:defaultValue="true" />
+        <com.lb.material_preferences_library.custom_preferences.ListPreference
+            android:key="prefHoursNotification"
+            android:title="@string/settings_interval"
+            android:summary="@string/settings_interval_description"
+            android:defaultValue="12" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:title="@string/settings_category_about">
+        <com.lb.material_preferences_library.custom_preferences.Preference
+            android:key="prefLicense"
+            android:title="@string/settings_license" />
+        <com.lb.material_preferences_library.custom_preferences.Preference
+            android:title="@string/settings_googleplus"
+            android:summary="@string/settings_googleplus_description">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://plus.google.com/communities/102574612559329723462" />
+        </com.lb.material_preferences_library.custom_preferences.Preference>
+        <com.lb.material_preferences_library.custom_preferences.Preference
+            android:key="prefVersion"
+            android:title="@string/app_name"
+            android:summary="@string/settings_about">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://github.com/javiersantos/WhatsAppBetaUpdater.Android" />
+        </com.lb.material_preferences_library.custom_preferences.Preference>
+    </PreferenceCategory>
+</PreferenceScreen>
