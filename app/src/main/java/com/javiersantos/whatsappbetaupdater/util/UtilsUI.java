@@ -14,12 +14,14 @@ public class UtilsUI {
             p.setBehavior(new FloatingActionButton.Behavior());
             p.setAnchorId(R.id.app_bar);
             fab.setLayoutParams(p);
+            fab.setVisibility(View.VISIBLE);
             fab.show();
         } else {
             CoordinatorLayout.LayoutParams p = (CoordinatorLayout.LayoutParams) fab.getLayoutParams();
             p.setBehavior(null);
             p.setAnchorId(View.NO_ID);
             fab.setLayoutParams(p);
+            fab.setVisibility(View.GONE);
             fab.hide();
         }
     }
