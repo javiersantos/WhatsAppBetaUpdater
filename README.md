@@ -46,4 +46,4 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 ## Disclaimer
-Beta Updater for WhatsApp app is not affiliated with or sponsored by WhatsApp Inc.
+Beta Updater for WhatsApp app is not sponsored by or affiliated with WhatsApp Inc. WhatsApp Messenger, its name, trademark, and other aspects of the app are trademarked and owned by their respective owners.
