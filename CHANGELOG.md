@@ -1,6 +1,6 @@
 ### 3.0
-##### To Be Released
-* [NEW](https://github.com/javiersantos/WhatsAppBetaUpdater/commit/8d7c302d453ac87a2b582030579285eeaf349f73) Rewritten from zero with new UI and much faster startup time.
+##### Released: 16 January, 2016
+* [NEW](https://github.com/javiersantos/WhatsAppBetaUpdater/commit/8d7c302d453ac87a2b582030579285eeaf349f73) Rewritten from zero with new UI, faster loading time and bug fixes.
 
 ### 2.2
 ##### Released: 3 May, 2015
