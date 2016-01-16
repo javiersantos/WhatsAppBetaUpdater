@@ -17,7 +17,7 @@
     <string name="downloading">Descargando %1$s %2$s…</string>
     <string name="delete">¿Quieres guardar la actualización?</string>
     <string name="delete_description">Es posible guardar o eliminar la actualización descargada (APK). ¿Qué quieres hacer?</string>
-    <string name="donate_description">Beta Updater para WhatsApp es una app de código libre gratuita y libre de publicidad. Si quieres contribuir con el desarrollo puedes realizar una aportación. ¡Gracias!</string>
+    <string name="donate_description">%s es una app de código libre gratuita y libre de publicidad. Si quieres contribuir con el desarrollo puedes realizar una aportación. ¡Gracias!</string>
     <string name="app_update">La actualización %s está disponible</string>
     <string name="app_update_description">Una nueva versión está lista para descargar. Es recomendable actualizar a la última versión para disponer de las últimas mejoras y soluciones de errores.</string>
 

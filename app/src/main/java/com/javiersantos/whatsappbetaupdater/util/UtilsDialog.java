@@ -76,7 +76,7 @@ public class UtilsDialog {
     public static MaterialDialog showDonateDialog(final Context context) {
         MaterialDialog dialog = new MaterialDialog.Builder(context)
                 .title(context.getResources().getString(R.string.action_donate))
-                .content(context.getResources().getString(R.string.donate_description))
+                .content(String.format(context.getResources().getString(R.string.donate_description), context.getResources().getString(R.string.app_name)))
                 .items(context.getResources().getStringArray(R.array.donate_amount))
                 .itemsCallbackSingleChoice(-1, new MaterialDialog.ListCallbackSingleChoice() {
                     @Override

@@ -17,7 +17,7 @@
     <string name="downloading">Downloading %1$s %2$s…</string>
     <string name="delete">Do you want to keep the update?</string>
     <string name="delete_description">It\'s possible to keep or delete the downloaded update (APK). What do you want to do?</string>
-    <string name="donate_description">Beta Updater for WhatsApp is an Open Source app completely free without ads. If you want to contribute with the development, I\'ll be really thankful.</string>
+    <string name="donate_description">%s is an Open Source app completely free without ads. If you want to contribute with the development, I\'ll be really thankful.</string>
     <string name="app_update">Update %s is available</string>
     <string name="app_update_description">A new version is ready to download. You should update to the latest version to have the latest improvements and bug fixes.</string>
 
