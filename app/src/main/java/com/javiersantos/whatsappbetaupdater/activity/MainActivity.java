@@ -26,6 +26,7 @@ import com.javiersantos.whatsappbetaupdater.util.UtilsWhatsApp;
 import com.mikepenz.community_material_typeface_library.CommunityMaterial;
 import com.mikepenz.fontawesome_typeface_library.FontAwesome;
 import com.mikepenz.iconics.IconicsDrawable;
+import com.pnikosis.materialishprogress.ProgressWheel;
 
 public class MainActivity extends AppCompatActivity {
     private Context context;
@@ -49,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
         final TextView toolbar_subtitle = (TextView) findViewById(R.id.toolbar_subtitle);
         final TextView whatsapp_latest_version = (TextView) findViewById(R.id.whatsapp_latest_version);
         TextView whatsapp_installed_version = (TextView) findViewById(R.id.whatsapp_installed_version);
+        final ProgressWheel progressWheel = (ProgressWheel) findViewById(R.id.progress_wheel);
 
         // Set drawable to FAB
         fab.setImageDrawable(new IconicsDrawable(this).icon(CommunityMaterial.Icon.cmd_download).color(Color.WHITE).sizeDp(24));
@@ -59,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         // Check if there is a WhatsApp update and show UI changes
-        new UtilsAsync.LatestWhatsAppVersion(this, whatsapp_latest_version, toolbar_subtitle, fab).execute();
+        new UtilsAsync.LatestWhatsAppVersion(this, whatsapp_latest_version, toolbar_subtitle, fab, progressWheel).execute();
 
         if (UtilsWhatsApp.isWhatsAppInstalled(this)) {
             whatsapp_installed_version.setText(UtilsWhatsApp.getInstalledWhatsAppVersion(this));
@@ -71,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                new UtilsAsync.LatestWhatsAppVersion(context, whatsapp_latest_version, toolbar_subtitle, fab).execute();
+                new UtilsAsync.LatestWhatsAppVersion(context, whatsapp_latest_version, toolbar_subtitle, fab, progressWheel).execute();
                 swipeRefreshLayout.setRefreshing(false);
             }
         });

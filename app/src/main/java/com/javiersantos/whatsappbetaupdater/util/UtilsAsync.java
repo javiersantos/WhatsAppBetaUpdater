@@ -10,6 +10,7 @@ import android.os.Environment;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.NotificationManagerCompat;
+import android.view.View;
 import android.widget.TextView;
 
 import com.afollestad.materialdialogs.MaterialDialog;
@@ -17,6 +18,7 @@ import com.javiersantos.whatsappbetaupdater.Config;
 import com.javiersantos.whatsappbetaupdater.R;
 import com.javiersantos.whatsappbetaupdater.WhatsAppBetaUpdaterApplication;
 import com.javiersantos.whatsappbetaupdater.activity.MainActivity;
+import com.pnikosis.materialishprogress.ProgressWheel;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
@@ -38,13 +40,15 @@ public class UtilsAsync {
     public static class LatestWhatsAppVersion extends AsyncTask<Void, Void, String> {
         private TextView latestVersion, toolbarSubtitle;
         private FloatingActionButton fab;
+        private ProgressWheel progressWheel;
         private Context context;
         private AppPreferences appPreferences;
 
-        public LatestWhatsAppVersion(Context context, TextView latestVersion, TextView toolbarSubtitle, FloatingActionButton fab) {
+        public LatestWhatsAppVersion(Context context, TextView latestVersion, TextView toolbarSubtitle, FloatingActionButton fab, ProgressWheel progressWheel) {
             this.latestVersion = latestVersion;
             this.toolbarSubtitle = toolbarSubtitle;
             this.fab = fab;
+            this.progressWheel = progressWheel;
             this.context = context;
             this.appPreferences = WhatsAppBetaUpdaterApplication.getAppPreferences();
         }
@@ -53,6 +57,8 @@ public class UtilsAsync {
         protected void onPreExecute() {
             super.onPreExecute();
             UtilsUI.showFAB(fab, false);
+            latestVersion.setVisibility(View.GONE);
+            progressWheel.setVisibility(View.VISIBLE);
         }
 
         @Override
@@ -63,7 +69,9 @@ public class UtilsAsync {
         @Override
         protected void onPostExecute(String version) {
             super.onPostExecute(version);
-            this.latestVersion.setText(version);
+            latestVersion.setText(version);
+            latestVersion.setVisibility(View.VISIBLE);
+            progressWheel.setVisibility(View.GONE);
 
             if (UtilsWhatsApp.isWhatsAppInstalled(context) && UtilsWhatsApp.isUpdateAvailable(UtilsWhatsApp.getInstalledWhatsAppVersion(context), version)) {
                 UtilsUI.showFAB(fab, true);

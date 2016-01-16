@@ -48,4 +48,5 @@ dependencies {
     compile('com.mikepenz:aboutlibraries:5.3.7@aar') { transitive = true }
     compile('com.github.afollestad.material-dialogs:core:0.8.5.3@aar') { transitive = true }
     compile 'com.github.AndroidDeveloperLB:MaterialPreferenceLibrary:5'
+    compile 'com.pnikosis:materialish-progress:1.7'
 }
