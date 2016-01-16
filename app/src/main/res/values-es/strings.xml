@@ -4,8 +4,8 @@
     <string name="action_donate">Donar</string>
 
     <!-- Home -->
-    <string name="whatsapp_installed">Versión instalada:</string>
-    <string name="whatsapp_latest">Última versión:</string>
+    <string name="whatsapp_installed">Versión instalada</string>
+    <string name="whatsapp_latest">Última versión</string>
     <string name="whatsapp_not_installed">No instalado</string>
 
     <!-- Toolbar -->
