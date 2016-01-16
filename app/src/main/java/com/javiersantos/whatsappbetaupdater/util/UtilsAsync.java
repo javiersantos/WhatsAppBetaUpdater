@@ -69,19 +69,24 @@ public class UtilsAsync {
         @Override
         protected void onPostExecute(String version) {
             super.onPostExecute(version);
-            latestVersion.setText(version);
             latestVersion.setVisibility(View.VISIBLE);
             progressWheel.setVisibility(View.GONE);
 
-            if (UtilsWhatsApp.isWhatsAppInstalled(context) && UtilsWhatsApp.isUpdateAvailable(UtilsWhatsApp.getInstalledWhatsAppVersion(context), version)) {
-                UtilsUI.showFAB(fab, true);
-                toolbarSubtitle.setText(String.format(context.getResources().getString(R.string.update_available), version));
-                if (appPreferences.getAutoDownload()) {
-                    new UtilsAsync.DownloadFile(context, UtilsEnum.DownloadType.WHATSAPP_APK, version).execute();
+            if (!version.equals("0.0.0.0")) {
+                latestVersion.setText(version);
+                if (UtilsWhatsApp.isWhatsAppInstalled(context) && UtilsWhatsApp.isUpdateAvailable(UtilsWhatsApp.getInstalledWhatsAppVersion(context), version)) {
+                    UtilsUI.showFAB(fab, true);
+                    toolbarSubtitle.setText(String.format(context.getResources().getString(R.string.update_available), version));
+                    if (appPreferences.getAutoDownload()) {
+                        new UtilsAsync.DownloadFile(context, UtilsEnum.DownloadType.WHATSAPP_APK, version).execute();
+                    }
+                } else {
+                    UtilsUI.showFAB(fab, false);
+                    toolbarSubtitle.setText(context.getResources().getString(R.string.update_not_available));
                 }
             } else {
-                UtilsUI.showFAB(fab, false);
-                toolbarSubtitle.setText(context.getResources().getString(R.string.update_not_available));
+                latestVersion.setText(context.getResources().getString(R.string.whatsapp_not_available));
+                toolbarSubtitle.setText(context.getResources().getString(R.string.update_not_connection));
             }
 
         }

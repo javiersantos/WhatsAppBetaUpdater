@@ -7,10 +7,12 @@
     <string name="whatsapp_installed">Installed Version</string>
     <string name="whatsapp_latest">Latest Version</string>
     <string name="whatsapp_not_installed">Not installed</string>
+    <string name="whatsapp_not_available" translatable="false">NA</string>
 
     <!-- Toolbar -->
     <string name="update_available">Update %s is available!</string>
     <string name="update_not_available">You have the latest version available</string>
+    <string name="update_not_connection">No internet connection available</string>
     
     <!-- Dialogs -->
     <string name="whatsapp_downloading">Downloading WhatsApp %s…</string>

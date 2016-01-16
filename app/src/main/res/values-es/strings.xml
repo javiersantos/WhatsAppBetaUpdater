@@ -11,6 +11,7 @@
     <!-- Toolbar -->
     <string name="update_available">¡La actualización %s está disponible!</string>
     <string name="update_not_available">Tienes la última versión disponible</string>
+    <string name="update_not_connection">No hay conexión a Internet</string>
 
     <!-- Dialogs -->
     <string name="whatsapp_downloading">Descargando WhatsApp %s…</string>
