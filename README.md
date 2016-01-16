@@ -1,6 +1,7 @@
 <h1 align="center">Beta Updater for WhatsApp</h1>
 
 <p align="center">
+<a target="_blank" href="https://travis-ci.org/javiersantos/WhatsAppBetaUpdater"><img src="https://travis-ci.org/javiersantos/WhatsAppBetaUpdater.svg?branch=master"></a>
   <span class="badge-paypal"><a href="https://www.paypal.me/javiersantos" title="Donate using PayPal"><img src="https://img.shields.io/badge/paypal-donate-yellow.svg" /></a></span>
   <span class="badge-patreon"><a href="http://patreon.com/javiersantos" title="Donate using Patreon"><img src="https://img.shields.io/badge/patreon-donate-yellow.svg" /></a></span>
 </p>
