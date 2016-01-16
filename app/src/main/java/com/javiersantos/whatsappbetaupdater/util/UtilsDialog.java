@@ -6,6 +6,7 @@ import android.view.View;
 import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.javiersantos.whatsappbetaupdater.R;
+import com.javiersantos.whatsappbetaupdater.WhatsAppBetaUpdaterApplication;
 
 import java.io.File;
 
@@ -41,15 +42,24 @@ public class UtilsDialog {
     }
 
     public static MaterialDialog showUpdateAvailableDialog(final Context context, final String version) {
+        final AppPreferences appPreferences = WhatsAppBetaUpdaterApplication.getAppPreferences();
+
         MaterialDialog dialog = new MaterialDialog.Builder(context)
                 .title(String.format(context.getResources().getString(R.string.app_update), version))
                 .content(context.getResources().getString(R.string.app_update_description))
                 .positiveText(context.getResources().getString(R.string.button_update))
                 .negativeText(context.getResources().getString(android.R.string.cancel))
+                .neutralText(context.getResources().getString(R.string.button_disable_update))
                 .onPositive(new MaterialDialog.SingleButtonCallback() {
                     @Override
                     public void onClick(MaterialDialog dialog, DialogAction which) {
                         new UtilsAsync.DownloadFile(context, UtilsEnum.DownloadType.UPDATE, version).execute();
+                    }
+                })
+                .onNeutral(new MaterialDialog.SingleButtonCallback() {
+                    @Override
+                    public void onClick(MaterialDialog dialog, DialogAction which) {
+                        appPreferences.setShowAppUpdate(false);
                     }
                 }).show();
 

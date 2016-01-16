@@ -24,6 +24,7 @@
     <string name="button_delete">Delete</string>
     <string name="button_save">Save in \"Downloads\"</string>
     <string name="button_update">Update</string>
+    <string name="button_disable_update">Don\'t show again</string>
     <string name="button_paypal">Donate via PayPal</string>
     
     <!-- Settings -->

@@ -31,6 +31,11 @@ public class AppPreferences {
         return sharedPreferences.getBoolean(KeyShowAppUpdates, true);
     }
 
+    public void setShowAppUpdate(Boolean res) {
+        editor.putBoolean(KeyShowAppUpdates, res);
+        editor.commit();
+    }
+
     public Boolean getEnableNotifications() {
         return sharedPreferences.getBoolean(KeyEnableNotifications, true);
     }

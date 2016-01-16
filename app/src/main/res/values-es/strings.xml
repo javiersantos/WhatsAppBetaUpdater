@@ -24,6 +24,7 @@
     <string name="button_delete">Eliminar</string>
     <string name="button_save">Guardar en \"Descargas\"</string>
     <string name="button_update">Actualizar</string>
+    <string name="button_disable_update">No mostrar de nuevo</string>
     <string name="button_paypal">Donar vía PayPal</string>
 
     <!-- Settings -->
