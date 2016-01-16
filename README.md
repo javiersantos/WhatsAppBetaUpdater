@@ -12,7 +12,7 @@
 
 ## APK Download
 * [Download on GitHub](https://github.com/javiersantos/WhatsAppBetaUpdater.Android/releases)
-* [Download on Aptoide](http://fjaviersantos.store.aptoide.com/app/market/com.javiersantos.whatsappbetaupdater/12/9176879/Beta+Updater+for+WhatsApp)
+* [Download on Aptoide](http://fjaviersantos.store.aptoide.com/app/market/com.javiersantos.whatsappbetaupdater/16/16294224/Beta+Updater+for+WhatsApp)
 
 ![Beta Updater for WhatsApp](https://raw.githubusercontent.com/javiersantos/WhatsAppBetaUpdater/master/Screenshots/banner.png)
 
