@@ -12,16 +12,23 @@ import java.io.File;
 
 public class UtilsDialog {
 
-    public static MaterialDialog showDownloadingDialog(Context context, String version) {
+    public static MaterialDialog showDownloadingDialog(Context context, UtilsEnum.DownloadType downloadType, String version) {
         Boolean showMinMax = false; // Show a max/min ratio to the left of the seek bar
 
-        MaterialDialog dialog = new MaterialDialog.Builder(context)
-                .title(String.format(context.getResources().getString(R.string.whatsapp_downloading), version))
+        MaterialDialog.Builder builder = new MaterialDialog.Builder(context)
                 .progress(false, 100, showMinMax)
-                .cancelable(false)
-                .show();
+                .cancelable(false);
 
-        return dialog;
+        switch (downloadType) {
+            case WHATSAPP_APK:
+                builder.title(String.format(context.getResources().getString(R.string.downloading), context.getResources().getString(R.string.app_whatsapp), version));
+                break;
+            case UPDATE:
+                builder.title(String.format(context.getResources().getString(R.string.downloading), context.getResources().getString(R.string.app_name), version));
+                break;
+        }
+
+        return builder.show();
     }
 
     public static MaterialDialog showSaveAPKDialog(Context context, final File file) {

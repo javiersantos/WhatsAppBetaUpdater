@@ -180,7 +180,7 @@ public class UtilsAsync {
         protected void onPreExecute() {
             super.onPreExecute();
             path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS) + "/";
-            dialog = UtilsDialog.showDownloadingDialog(context, version);
+            dialog = UtilsDialog.showDownloadingDialog(context, downloadType, version);
             switch (downloadType) {
                 case WHATSAPP_APK:
                     filename = "WhatsApp_" + version + ".apk";

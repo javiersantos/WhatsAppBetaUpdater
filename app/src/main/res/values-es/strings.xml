@@ -14,7 +14,7 @@
     <string name="update_not_connection">No hay conexión a Internet</string>
 
     <!-- Dialogs -->
-    <string name="whatsapp_downloading">Descargando WhatsApp %s…</string>
+    <string name="downloading">Descargando %1$s %2$s…</string>
     <string name="delete">¿Quieres guardar la actualización?</string>
     <string name="delete_description">Es posible guardar o eliminar la actualización descargada (APK). ¿Qué quieres hacer?</string>
     <string name="donate_description">Beta Updater para WhatsApp es una app de código libre gratuita y libre de publicidad. Si quieres contribuir con el desarrollo puedes realizar una aportación. ¡Gracias!</string>
@@ -42,7 +42,7 @@
     <string name="settings_autodownload_description">Empezar a descargar e instalar nuevas actualizaciones de WhatsApp automáticamente al iniciar la aplicación</string>
     <string name="settings_license">Licencias Open Source</string>
     <string name="settings_googleplus">Únete a la comunidad en Google+</string>
-    <string name="settings_googleplus_description">¿Quieres hablar de las nuevas versiones de WhatsApp y estar al tanto de las novedades de la aplicación? ¡Únete a nuestra comunidad!</string>
+    <string name="settings_googleplus_description">¿Quieres hablar de las nuevas versiones de WhatsApp y estar al tanto de las novedades? ¡Únete a nuestra comunidad!</string>
     <string name="settings_about">Hecho con %s por Javier Santos. Código fuente en GitHub.</string>
 
     <!--- Notifications and toasts -->
