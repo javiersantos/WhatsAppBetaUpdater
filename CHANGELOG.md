@@ -1,3 +1,7 @@
+### 3.0
+##### To Be Released
+* [NEW](https://github.com/javiersantos/WhatsAppBetaUpdater/commit/8d7c302d453ac87a2b582030579285eeaf349f73) Rewritten from zero with new UI and much faster startup time.
+
 ### 2.2
 ##### Released: 3 May, 2015
 * [NEW](https://github.com/javiersantos/WhatsAppBetaUpdater.Android/commit/7023ae0dc22ffd00920e00b0fffc079734ce8fa7) In-App Updater.
