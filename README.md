@@ -7,8 +7,13 @@
 </p>
 
 <p align="center"><img src="https://raw.githubusercontent.com/javiersantos/WhatsAppBetaUpdater/master/app/src/main/ic_launcher-web.png" width="100" height="100"></p>
-<p align="center">App to update to the latest version of WhatsApp for Android. Beta Updater for WhatsApp checks the latest version available on whatsapp.com and allows to install it automatically.</p>
+<p align="center">App to update to the latest version of WhatsApp for Android. Beta Updater for WhatsApp checks the latest beta version available on whatsapp.com and allows to install it automatically.</p>
 <p align="center"><a href="https://plus.google.com/communities/102574612559329723462">Community on Google+</a></p>
+
+## Why using Beta Updater?
+WhatsApp publishes beta updates on his website before they become available on Google Play. It means that the latest features aren't available on Google Play until several weeks later.
+
+When the users want to have this beta updates, the regular method is downloading the APK file from the website and installing it manually. Beta Updater does that automatically.
 
 ## APK Download
 * [Download on GitHub](https://github.com/javiersantos/WhatsAppBetaUpdater.Android/releases)
