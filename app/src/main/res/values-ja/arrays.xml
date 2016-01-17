@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string-array name="donate_amount">
+    <item>$ 1</item>
+    <item>$ 2</item>
+    <item>$ 5</item>
+    <item>$ 10</item>
+  </string-array>
+
+  <string-array name="notification_hours">
+    <item>3 時間</item>
+    <item>6 時間</item>
+    <item>9 時間</item>
+    <item>12 時間 (デフォルト)</item>
+    <item>24 時間</item>
+  </string-array>
+</resources>
