@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="donate_amount">
-        <item>$ 1</item>
-        <item>$ 2</item>
-        <item>$ 5</item>
-        <item>$ 10</item>
+    <string-array name="donate_amount" translatable="false">
+        <item>%s 1</item>
+        <item>%s 2</item>
+        <item>%s 5</item>
+        <item>%s 10</item>
     </string-array>
 
     <string-array name="notification_hours">

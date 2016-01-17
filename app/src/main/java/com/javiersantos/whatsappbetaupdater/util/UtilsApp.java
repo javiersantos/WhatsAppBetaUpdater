@@ -8,9 +8,11 @@ import android.net.Uri;
 import android.os.SystemClock;
 
 import com.javiersantos.whatsappbetaupdater.Config;
+import com.javiersantos.whatsappbetaupdater.R;
 import com.javiersantos.whatsappbetaupdater.receiver.NotificationReceiver;
 
 import java.io.File;
+import java.util.Currency;
 import java.util.Locale;
 
 public class UtilsApp {
@@ -37,7 +39,7 @@ public class UtilsApp {
     }
 
     public static Intent getPayPalIntent(String amount) {
-        String amountRes = amount.replaceAll("\\D+","").trim();
+        String amountRes = amount.replaceAll("\\D+","").trim(); // Remove symbol ($, €, etc)
 
         Intent intent = new Intent(Intent.ACTION_VIEW);
         intent.setData(Uri.parse(generatePayPalDonationLink(amountRes, getPayPalCurrency())));
@@ -45,16 +47,27 @@ public class UtilsApp {
         return intent;
     }
 
-    private static String generatePayPalDonationLink(String amount, UtilsEnum.PayPalCurrency currency) {
+    public static String[] getDonationArray(Context context) {
+        String[] donationArray = context.getResources().getStringArray(R.array.donate_amount);
+        for (int i = 0; i < donationArray.length; i++) {
+            donationArray[i] = String.format(donationArray[i], getPayPalSymbol());
+        }
+
+        return donationArray;
+    }
+
+    private static String generatePayPalDonationLink(String amount, String currency) {
         return "https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=" + Config.PAYPAL_DONATION + "&currency_code=" + currency + "&amount=" + amount + "&item_name=Donation%20for%20%22Beta%20Updater%20for%20WhatsApp%22";
     }
 
-    private static UtilsEnum.PayPalCurrency getPayPalCurrency() {
-        if (Locale.getDefault().getLanguage().equals("es")) {
-            return UtilsEnum.PayPalCurrency.EUR;
-        } else {
-            return UtilsEnum.PayPalCurrency.USD;
-        }
+    private static String getPayPalCurrency() {
+        Currency currency = Currency.getInstance(Locale.getDefault());
+        return currency.getCurrencyCode().equals("EUR") ? "EUR" : "USD";
+    }
+
+    private static String getPayPalSymbol() {
+        Currency currency = Currency.getInstance(Locale.getDefault());
+        return currency.getSymbol().equals("€") ? "€" : "$";
     }
 
     /**
