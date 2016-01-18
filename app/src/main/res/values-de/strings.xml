@@ -44,7 +44,7 @@
     <string name="settings_license">Open Source Lizenzen</string>
     <string name="settings_googleplus">Tritt der Community auf Google+ bei</string>
     <string name="settings_googleplus_description">Du willst über die aktuellste Version von WhatsApp und die Entwicklung reden? Tritt unserer Community bei!</string>
-    <string name="settings_about">Entwickelt mit %s von Javies Santos. Quellcode auf GitHub.</string>
+    <string name="settings_about">Entwickelt mit %s von Javier Santos. Quellcode auf GitHub.</string>
 
     <!-- Notifications and toasts -->
     <string name="toast_tap">Drücke noch einmal um die App zu schließen</string>
