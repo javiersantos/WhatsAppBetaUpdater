@@ -13,6 +13,7 @@ import android.support.v4.app.NotificationManagerCompat;
 import android.view.View;
 import android.widget.TextView;
 
+import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.javiersantos.whatsappbetaupdater.Config;
 import com.javiersantos.whatsappbetaupdater.R;
@@ -180,7 +181,18 @@ public class UtilsAsync {
         protected void onPreExecute() {
             super.onPreExecute();
             path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS) + "/";
-            dialog = UtilsDialog.showDownloadingDialog(context, downloadType, version);
+
+            // Configure cancel button and show progress dialog
+            MaterialDialog.Builder builder = UtilsDialog.showDownloadingDialog(context, downloadType, version);
+            builder.onNegative(new MaterialDialog.SingleButtonCallback() {
+                @Override
+                public void onClick(MaterialDialog dialog, DialogAction which) {
+                    cancel(true);
+                }
+            });
+            dialog = builder.show();
+
+            // Configure type of download: WhatsApp update or Beta Updater update
             switch (downloadType) {
                 case WHATSAPP_APK:
                     filename = "WhatsApp_" + version + ".apk";
@@ -192,6 +204,7 @@ public class UtilsAsync {
                     break;
             }
 
+            // Create download directory if doesn't exist
             File file = new File(path);
             if (!file.exists()) { file.mkdir(); }
 
@@ -219,6 +232,11 @@ public class UtilsAsync {
                 int count;
 
                 while ((count = input.read(data)) != -1) {
+                    // Close input if download has been cancelled
+                    if (isCancelled()) {
+                        input.close();
+                        return null;
+                    }
                     total += count;
                     // Updating download progress
                     if (lenghtOfFile > 0) {
@@ -258,6 +276,13 @@ public class UtilsAsync {
                 case UPDATE:
                     break;
             }
+        }
+
+        @Override
+        protected void onCancelled() {
+            // Delete uncompleted file
+            File file = new File(path, filename);
+            if (file.exists()) { file.delete(); }
         }
 
     }
