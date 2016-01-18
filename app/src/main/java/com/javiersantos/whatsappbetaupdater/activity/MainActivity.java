@@ -23,9 +23,8 @@ import com.javiersantos.whatsappbetaupdater.util.UtilsAsync;
 import com.javiersantos.whatsappbetaupdater.util.UtilsDialog;
 import com.javiersantos.whatsappbetaupdater.util.UtilsEnum;
 import com.javiersantos.whatsappbetaupdater.util.UtilsWhatsApp;
-import com.mikepenz.community_material_typeface_library.CommunityMaterial;
-import com.mikepenz.fontawesome_typeface_library.FontAwesome;
 import com.mikepenz.iconics.IconicsDrawable;
+import com.mikepenz.material_design_iconic_typeface_library.MaterialDesignIconic;
 import com.pnikosis.materialishprogress.ProgressWheel;
 
 public class MainActivity extends AppCompatActivity {
@@ -57,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         // Set drawable to FAB
-        fab.setImageDrawable(new IconicsDrawable(this).icon(CommunityMaterial.Icon.cmd_download).color(Color.WHITE).sizeDp(24));
+        fab.setImageDrawable(new IconicsDrawable(this).icon(MaterialDesignIconic.Icon.gmi_download).color(Color.WHITE).sizeDp(24));
 
         // Check if there is an app update and show dialog
         if (appPreferences.getShowAppUpdates()) {
@@ -126,8 +125,8 @@ public class MainActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
 
-        menu.findItem(R.id.action_donate).setIcon(new IconicsDrawable(context).icon(FontAwesome.Icon.faw_paypal).color(Color.WHITE).actionBar());
-        menu.findItem(R.id.action_settings).setIcon(new IconicsDrawable(context).icon(CommunityMaterial.Icon.cmd_settings).color(Color.WHITE).actionBar());
+        menu.findItem(R.id.action_donate).setIcon(new IconicsDrawable(context).icon(MaterialDesignIconic.Icon.gmi_paypal_alt).color(Color.WHITE).actionBar());
+        menu.findItem(R.id.action_settings).setIcon(new IconicsDrawable(context).icon(MaterialDesignIconic.Icon.gmi_settings).color(Color.WHITE).actionBar());
 
         return true;
     }
