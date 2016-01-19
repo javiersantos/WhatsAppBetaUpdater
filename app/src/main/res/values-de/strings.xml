@@ -15,7 +15,7 @@
     <string name="update_not_connection">Keine Internetverbindung vorhanden</string>
 
     <!-- Dialogs -->
-    <string name="downloading">Downloading %1$s %2$s…</string>
+    <string name="downloading">Downloading %1$s %2$s&#8230;</string>
     <string name="delete">Willst Du das Update behalten?</string>
     <string name="delete_description">Es ist möglich das heruntergeladene Update (APK) zu behalten oder zu löschen. Was willst Du tun?</string>
     <string name="donate_description">%/ ist eine kostenlose und werbefreie Open Source App. Wenn Du bei der Entwicklung mithelfen willst, wäre ich wirklich dankbar.</string>
