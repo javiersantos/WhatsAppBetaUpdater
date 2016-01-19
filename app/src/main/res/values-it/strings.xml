@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">Aggiornamenti beta di WhatsApp</string>
+    <string name="action_settings">Impostazioni</string>
+    <string name="action_donate">Dona</string>
+
+    <!-- Home -->
+    <string name="whatsapp_installed">Versione installata</string>
+    <string name="whatsapp_latest">Ultima versione</string>
+    <string name="whatsapp_not_installed">Non installata</string>
+
+    <!-- Toolbar -->
+    <string name="update_available">L'aggiornamento %s è disponibile!</string>
+    <string name="update_not_available">Hai installato l\'ultima versione disponibile</string>
+    <string name="update_not_connection">Nessuna connessione ad internet disponibile</string>
+    
+    <!-- Dialogs -->
+    <string name="downloading">Scaricamento di %1$s %2$s…</string>
+    <string name="delete">Vuoi mantenere l\'aggiornamento?</string>
+    <string name="delete_description">È possibile mantenere o cancellare l\'aggiornamento scaricato (APK). Cosa vuoi fare?</string>
+    <string name="donate_description">%s è un\'app open source completamente gratuita e senza pubblicità. Se vuoi contribuire allo sviluppo, ne saremo grati.</string>
+    <string name="app_update">L'aggiornamento %s è disponibile</string>
+    <string name="app_update_description">Una nuova versione è pronta per lo scaricamento. Dovresti aggiornare all\'ultima versione per avere gli ultimi miglioramenti e correzioni.</string>
+
+    <!--- Buttons -->
+    <string name="button_delete">Elimina</string>
+    <string name="button_save">Salva in \"Downloads\"</string>
+    <string name="button_update">Aggiorna</string>
+    <string name="button_disable_update">Non mostrare più</string>
+    <string name="button_paypal">Dona con PayPal</string>
+    
+    <!-- Settings -->
+    <string name="settings_category_preferences">Preferenze</string>
+    <string name="settings_category_notifications">Notifiche</string>
+    <string name="settings_category_about">Informazioni</string>
+    <string name="settings_notifications">Abilita notifiche</string>
+    <string name="settings_notifications_description">Controlla automaticamente se ci sono nuovi aggiornamenti per Whatsapp e invia una notifica quando una nuova versione è disponibile</string>
+    <string name="settings_interval">Frequenza delle notifiche</string>
+    <string name="settings_interval_description">Ogni %s ore</string>
+    <string name="settings_app_update">Controlla per aggiornamenti</string>
+    <string name="settings_app_update_description">Ricevi le ultime versioni con gli ultimi miglioramenti e correzioni</string>
+    <string name="settings_autodownload">Scarica automaticamente gli aggiornamenti</string>
+    <string name="settings_autodownload_description">Inizia a scaricare e installare un nuovo aggiornamento di Whatsapp automaticamente quando l'app viene avviata</string>
+    <string name="settings_license">Licenze open source</string>
+    <string name="settings_googleplus">Entra a far parte della comunità su Google+</string>
+    <string name="settings_googleplus_description">Vuoi parlare delle nuove versioni di WhatsApp e tenerti aggiornato sugli sviluppi? Aderisci alla nostra comunità!</string>
+    <string name="settings_about">Fatto con %s da Javier Santos. Codice sorgente su GitHub.</string>
+
+    <!--- Notifications and toasts -->
+    <string name="toast_tap">Premi ancora per chiudere l'app</string>
+    <string name="notification">WhatsApp %s è disponibile</string>
+    <string name="notification_description">Aggiorna ora usando %s</string>
+</resources>
