@@ -16,7 +16,8 @@ WhatsApp publishes beta updates on his website before they become available on G
 When the users want to have this beta updates, the regular method is downloading the APK file from the website and installing it manually. Beta Updater does that automatically.
 
 ## APK Download
-* [Download on GitHub](https://github.com/javiersantos/WhatsAppBetaUpdater/releases)
+* [Download on GitHub](https://github.com/javiersantos/WhatsAppBetaUpdater/releases) *- Recommended -*
+* [Download on F-Droid](https://f-droid.org/repository/browse/?fdid=com.javiersantos.whatsappbetaupdater)
 * [Download on Aptoide](http://fjaviersantos.store.aptoide.com/app/market/com.javiersantos.whatsappbetaupdater/16/16294224/Beta+Updater+for+WhatsApp)
 
 ![Beta Updater for WhatsApp](https://raw.githubusercontent.com/javiersantos/WhatsAppBetaUpdater/master/Screenshots/banner.png)
