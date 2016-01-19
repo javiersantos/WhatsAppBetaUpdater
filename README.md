@@ -29,7 +29,6 @@ When the users want to have this beta updates, the regular method is downloading
 * Japanese
 
 ## Third Party Libraries
-* [Material Design Library](https://github.com/navasmdc/MaterialDesignLibrary)
 * [Material Dialogs](https://github.com/afollestad/material-dialogs)
 * [Materialish Progress](https://github.com/pnikosis/materialish-progress)
 * [Android Iconics](https://github.com/mikepenz/Android-Iconics)
