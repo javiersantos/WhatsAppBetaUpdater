@@ -1,6 +1,8 @@
 package com.javiersantos.whatsappbetaupdater.util;
 
+import android.app.Activity;
 import android.content.Context;
+import android.support.design.widget.Snackbar;
 import android.view.View;
 
 import com.afollestad.materialdialogs.DialogAction;
@@ -32,13 +34,19 @@ public class UtilsDialog {
         return builder;
     }
 
-    public static MaterialDialog showSaveAPKDialog(Context context, final File file) {
+    public static MaterialDialog showSaveAPKDialog(final Context context, final File file, final String version) {
         MaterialDialog dialog = new MaterialDialog.Builder(context)
                 .title(context.getResources().getString(R.string.delete))
                 .content(context.getResources().getString(R.string.delete_description))
                 .cancelable(false)
                 .positiveText(context.getResources().getString(R.string.button_save))
                 .negativeText(context.getResources().getString(R.string.button_delete))
+                .onPositive(new MaterialDialog.SingleButtonCallback() {
+                    @Override
+                    public void onClick(MaterialDialog dialog, DialogAction which) {
+                        showSnackbarSaved(context, file, version);
+                    }
+                })
                 .onNegative(new MaterialDialog.SingleButtonCallback() {
                     @Override
                     public void onClick(MaterialDialog dialog, DialogAction which) {
@@ -82,7 +90,7 @@ public class UtilsDialog {
                 .itemsCallbackSingleChoice(-1, new MaterialDialog.ListCallbackSingleChoice() {
                     @Override
                     public boolean onSelection(MaterialDialog dialog, View itemView, int which, CharSequence text) {
-                        context.startActivity(UtilsApp.getPayPalIntent(text.toString()));
+                        context.startActivity(UtilsIntent.getPayPalIntent(text.toString()));
                         return true;
                     }
                 })
@@ -90,6 +98,19 @@ public class UtilsDialog {
                 .show();
 
         return dialog;
+    }
+
+    public static void showSnackbarSaved(final Context context, final File file, final String version) {
+        Activity activity = (Activity) context;
+        Snackbar.make(activity.findViewById(R.id.coordinatorLayout), String.format(context.getResources().getString(R.string.snackbar_saved), file.getName()), Snackbar.LENGTH_LONG)
+                .setAction(context.getResources().getString(R.string.button_share), new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        String shareText = String.format(context.getResources().getString(R.string.snackbar_share), version, context.getResources().getString(R.string.app_name) + " " + "https://github.com/javiersantos/WhatsAppBetaUpdater/releases");
+                        context.startActivity(UtilsIntent.getShareAPKIntent(file, shareText));
+                    }
+                })
+                .show();
     }
 
 }

@@ -1,34 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Beta Updater para WhatsApp</string>
     <string name="action_settings">Ajustes</string>
     <string name="action_donate">Donar</string>
-
-    <!-- Home -->
     <string name="whatsapp_installed">Versión instalada</string>
     <string name="whatsapp_latest">Última versión</string>
     <string name="whatsapp_not_installed">No instalado</string>
-
-    <!-- Toolbar -->
     <string name="update_available">¡La actualización %s está disponible!</string>
     <string name="update_not_available">Tienes la última versión disponible</string>
     <string name="update_not_connection">No hay conexión a Internet</string>
-
-    <!-- Dialogs -->
-    <string name="downloading">Descargando %1$s %2$s…</string>
+    <string name="downloading">Descargando %1$s %2$s&#8230;</string>
     <string name="delete">¿Quieres guardar la actualización?</string>
     <string name="delete_description">Es posible guardar o eliminar la actualización descargada (APK). ¿Qué quieres hacer?</string>
     <string name="donate_description">%s es una app de código libre gratuita y libre de publicidad. Si quieres contribuir con el desarrollo puedes realizar una aportación. ¡Gracias!</string>
     <string name="app_update">La actualización %s está disponible</string>
     <string name="app_update_description">Una nueva versión está lista para descargar. Es recomendable actualizar a la última versión para disponer de las últimas mejoras y soluciones de errores.</string>
-
-    <!--- Buttons -->
     <string name="button_delete">Eliminar</string>
     <string name="button_save">Guardar en \"Descargas\"</string>
+    <string name="button_share">Compartir APK</string>
     <string name="button_update">Actualizar</string>
     <string name="button_disable_update">No mostrar de nuevo</string>
     <string name="button_paypal">Donar vía PayPal</string>
-
-    <!-- Settings -->
     <string name="settings_category_preferences">Ajustes globales</string>
     <string name="settings_category_notifications">Notificaciones</string>
     <string name="settings_category_about">Acerca de</string>
@@ -44,9 +36,9 @@
     <string name="settings_googleplus">Únete a la comunidad en Google+</string>
     <string name="settings_googleplus_description">¿Quieres hablar de las nuevas versiones de WhatsApp y estar al tanto de las novedades? ¡Únete a nuestra comunidad!</string>
     <string name="settings_about">Hecho con %s por Javier Santos. Código fuente en GitHub.</string>
-
-    <!--- Notifications and toasts -->
     <string name="toast_tap">Pulsa de nuevo para salir</string>
+    <string name="snackbar_saved">%s guardado en \"Descargas\"</string>
+    <string name="snackbar_share">Acabo de instalar WhatsApp %1$s usando %2$s</string>
     <string name="notification">WhatsApp %s está disponible</string>
     <string name="notification_description">Actualiza ahora usando %s</string>
 </resources>

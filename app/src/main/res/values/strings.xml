@@ -14,7 +14,7 @@
     <string name="update_not_connection">No internet connection available</string>
     
     <!-- Dialogs -->
-    <string name="downloading">Downloading %1$s %2$s…</string>
+    <string name="downloading">Downloading %1$s %2$s&#8230;</string>
     <string name="delete">Do you want to keep the update?</string>
     <string name="delete_description">It\'s possible to keep or delete the downloaded update (APK). What do you want to do?</string>
     <string name="donate_description">%s is an Open Source app completely free without ads. If you want to contribute with the development, I\'ll be really thankful.</string>
@@ -24,6 +24,7 @@
     <!--- Buttons -->
     <string name="button_delete">Delete</string>
     <string name="button_save">Save in \"Downloads\"</string>
+    <string name="button_share">Share APK</string>
     <string name="button_update">Update</string>
     <string name="button_disable_update">Don\'t show again</string>
     <string name="button_paypal">Donate via PayPal</string>
@@ -45,8 +46,10 @@
     <string name="settings_googleplus_description">Want to talk about new versions of WhatsApp and keep abreast of developments? Join to our community!</string>
     <string name="settings_about">Made with %s by Javier Santos. Source code on GitHub.</string>
 
-    <!--- Notifications and toasts -->
+    <!--- Notifications, Toasts and Snackbars -->
     <string name="toast_tap">Tap again to close the app</string>
+    <string name="snackbar_saved">%s saved in \"Downloads\"</string>
+    <string name="snackbar_share">I\'ve just installed WhatsApp %1$s using %2$s</string>
     <string name="notification">WhatsApp %s is available</string>
     <string name="notification_description">Update now using %s</string>
 

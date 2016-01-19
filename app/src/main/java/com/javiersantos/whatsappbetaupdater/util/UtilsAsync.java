@@ -268,10 +268,10 @@ public class UtilsAsync {
         @Override
         protected void onPostExecute(String file_url) {
             dialog.dismiss();
-            context.startActivity(UtilsApp.getAPKIntent(new File(path, filename)));
+            context.startActivity(UtilsIntent.getOpenAPKIntent(new File(path, filename)));
             switch (downloadType) {
                 case WHATSAPP_APK:
-                    UtilsDialog.showSaveAPKDialog(context, new File(path, filename));
+                    UtilsDialog.showSaveAPKDialog(context, new File(path, filename), version);
                     break;
                 case UPDATE:
                     break;
