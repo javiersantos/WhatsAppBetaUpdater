@@ -28,6 +28,8 @@ When the users want to have this beta updates, the regular method is downloading
 * German
 * Japanese
 
+If you want to translate the app in your native language please go to [Crowdin's project page](https://crowdin.com/project/beta-updater-whatsapp).
+
 ## Third Party Libraries
 * [Material Dialogs](https://github.com/afollestad/material-dialogs)
 * [Materialish Progress](https://github.com/pnikosis/materialish-progress)
