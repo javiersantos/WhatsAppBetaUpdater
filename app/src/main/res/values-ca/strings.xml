@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Beta Updater per WhatsApp</string>
+    <string name="action_settings">Opcions</string>
+    <string name="action_donate">Donar</string>
+    <string name="whatsapp_installed">Versió instal·lada</string>
+    <string name="whatsapp_latest">Última versió</string>
+    <string name="whatsapp_not_installed">No instal·lada</string>
+    <string name="update_available">L\'actualització %s està disponible!</string>
+    <string name="update_not_available">Ja tens la última versió disponible</string>
+    <string name="update_not_connection">No hi ha cap connexió a Internet disponible</string>
+    <string name="downloading">Baixant %1$s %2$s&#8230;</string>
+    <string name="delete">Vols guardar l\'actualització?</string>
+    <string name="delete_description">És possible guardar o eliminar l\'actalització baixada (APK). Què vols fer?</string>
+    <string name="donate_description">%s és una aplicació de codi lliure gratuïta i lliure de publicitat. Si vols ajudar amb el desenvolupament pots realitzar una donació. Gràcies.</string>
+    <string name="app_update">L\'actualització %s està disponible</string>
+    <string name="app_update_description">Una nova versió està llesta per baixar. Es recomana actualitzar a la última versió per a disposar de les últimes millores i solucions d\'errors.</string>
+    <string name="button_delete">Eliminar</string>
+    <string name="button_save">Desa a \"Baixades\"</string>
+    <string name="button_share">Compartir APK</string>
+    <string name="button_update">Actualitza</string>
+    <string name="button_disable_update">No mostrar-ho més</string>
+    <string name="button_paypal">Donar per PayPal</string>
+    <string name="settings_category_preferences">Configuració</string>
+    <string name="settings_category_notifications">Notificacions</string>
+    <string name="settings_category_about">Quant a</string>
+    <string name="settings_notifications">Habilita les notificacions</string>
+    <string name="settings_notifications_description">Comprova si hi han noves actualitzacions de WhatsApp automàticament, i notifica\'m quan n\'hi hagi una de disponible</string>
+    <string name="settings_interval">Freqüència de notificacions</string>
+    <string name="settings_interval_description">Cada %s hores</string>
+    <string name="settings_app_update">Cercar actualitzacions</string>
+    <string name="settings_app_update_description">Rebre les últimes actualitzacions amb millores i solucions d\'errors</string>
+    <string name="settings_autodownload">Baixar automàticament les actualitzacions</string>
+    <string name="settings_autodownload_description">Començar a baixar i instal·lar les noves versions de WhatsApp automàticament al obrir l\'aplicació</string>
+    <string name="settings_license">Llicències de codi obert</string>
+    <string name="settings_googleplus">Uneix-te a la comunitat de Google+</string>
+    <string name="settings_googleplus_description">Vols parlar de les últimes versions de WhatsApp i estar al corrent de les novetats! Uneix-te a la nostra comunitat!</string>
+    <string name="settings_about">Fet amb %s per Javier Santos. Codi font a GitHub.</string>
+    <string name="toast_tap">Prem novament per tancar l\'aplicació</string>
+    <string name="snackbar_saved">%s desat a \"Baixades\"</string>
+    <string name="snackbar_share">Acabo d\'instal·lar WhatsApp %1$s utilitzant %2$s</string>
+    <string name="notification">WhatsApp %s està disponible</string>
+    <string name="notification_description">Actualitza ara amb %s</string>
+</resources>
