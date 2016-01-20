@@ -12,7 +12,7 @@
 <p align="center"><a target="_blank" href="https://plus.google.com/communities/102574612559329723462">Community on Google+</a></p>
 
 ## Why using Beta Updater?
-WhatsApp publishes beta updates on their website before they become available on Google Play. It means that the latest features aren't available on Google Play until several weeks later.
+WhatsApp publishes beta updates on their website before they become available on Google Play. It means that the latest features aren't available on Google Play until several weeks later (like audio calls, backup to Google Drive and new UI changes).
 
 When the users want to have this beta updates, the regular method is downloading the APK file from the website and installing it manually. Beta Updater does that automatically.
 
