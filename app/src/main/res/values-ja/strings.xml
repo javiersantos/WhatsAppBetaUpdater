@@ -17,6 +17,7 @@
     <string name="app_update_description">新しいバージョンをダウンロードする準備ができています。最新の改善とバグ修正のため最新バージョンにアップデートする必要があります。</string>
     <string name="button_delete">削除</string>
     <string name="button_save">\"Downloads\" に保存</string>
+    <string name="button_share">APK を共有</string>
     <string name="button_update">アップデート</string>
     <string name="button_disable_update">次回から表示しない</string>
     <string name="button_paypal">PayPal で寄付する</string>
@@ -36,6 +37,8 @@
     <string name="settings_googleplus_description">WhatsApp の新しいバージョンについての話をしたり、開発に後れを取らないようにしたいですか? 私たちのコミュニティに参加してください!</string>
     <string name="settings_about">Javier Santos により %s で作成。ソースコードは GitHub.</string>
     <string name="toast_tap">もう一度タップすると、アプリを閉じます</string>
+    <string name="snackbar_saved">%s を \"Downloads\" に保存しました</string>
+    <string name="snackbar_share">%2$s を使用して WhatsApp %1$s をインストールしました</string>
     <string name="notification">WhatsApp %s が利用できます</string>
     <string name="notification_description">%s を使用して今すぐアップデート</string>
 </resources>
