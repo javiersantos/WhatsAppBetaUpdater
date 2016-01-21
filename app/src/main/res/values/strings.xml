@@ -50,6 +50,7 @@
     <string name="toast_tap">Tap again to close the app</string>
     <string name="snackbar_saved">%s saved in \"Downloads\"</string>
     <string name="snackbar_share">I\'ve just installed WhatsApp %1$s using %2$s</string>
+    <string name="snackbar_failed">Something went wrong when downloading the update. Try again.</string>
     <string name="notification">WhatsApp %s is available</string>
     <string name="notification_description">Update now using %s</string>
 

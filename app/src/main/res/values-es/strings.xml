@@ -39,6 +39,7 @@
     <string name="toast_tap">Pulsa de nuevo para salir</string>
     <string name="snackbar_saved">%s guardado en \"Descargas\"</string>
     <string name="snackbar_share">Acabo de instalar WhatsApp %1$s usando %2$s</string>
+    <string name="snackbar_failed">Algo salió mal al descargar la actualización. Inténtalo de nuevo.</string>
     <string name="notification">WhatsApp %s está disponible</string>
     <string name="notification_description">Actualiza ahora usando %s</string>
 </resources>

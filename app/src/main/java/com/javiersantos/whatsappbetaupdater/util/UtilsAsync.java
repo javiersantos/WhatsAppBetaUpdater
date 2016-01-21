@@ -165,7 +165,7 @@ public class UtilsAsync {
         }
     }
 
-    public static class DownloadFile extends AsyncTask<Void, Integer, String> {
+    public static class DownloadFile extends AsyncTask<Void, Integer, Integer> {
         private Context context;
         private MaterialDialog dialog;
         private UtilsEnum.DownloadType downloadType;
@@ -211,17 +211,18 @@ public class UtilsAsync {
         }
 
         @Override
-        protected String doInBackground(Void... voids) {
+        protected Integer doInBackground(Void... voids) {
             InputStream input = null;
             OutputStream output = null;
             HttpURLConnection connection = null;
+            Integer lengthOfFile = 0;
 
             try {
                 URL url = new URL(downloadUrl);
                 connection = (HttpURLConnection) url.openConnection();
                 connection.connect();
                 // Getting file lenght
-                int lenghtOfFile = connection.getContentLength();
+                lengthOfFile = connection.getContentLength();
                 // Read file
                 input = connection.getInputStream();
                 // Where to write file
@@ -239,14 +240,15 @@ public class UtilsAsync {
                     }
                     total += count;
                     // Updating download progress
-                    if (lenghtOfFile > 0) {
-                        publishProgress((int) ((total * 100) / lenghtOfFile));
+                    if (lengthOfFile > 0) {
+                        publishProgress((int) ((total * 100) / lengthOfFile));
                     }
                     output.write(data, 0, count);
                 }
 
             } catch (Exception e) {
                 e.printStackTrace();
+                return null;
             } finally {
                 try {
                     if (output != null) { output.close(); }
@@ -258,7 +260,7 @@ public class UtilsAsync {
                 }
             }
 
-            return null;
+            return lengthOfFile;
         }
 
         protected void onProgressUpdate(Integer... progress) {
@@ -266,15 +268,23 @@ public class UtilsAsync {
         }
 
         @Override
-        protected void onPostExecute(String file_url) {
+        protected void onPostExecute(Integer file_length) {
             dialog.dismiss();
-            context.startActivity(UtilsIntent.getOpenAPKIntent(new File(path, filename)));
-            switch (downloadType) {
-                case WHATSAPP_APK:
-                    UtilsDialog.showSaveAPKDialog(context, new File(path, filename), version);
-                    break;
-                case UPDATE:
-                    break;
+            File file = new File(path, filename);
+            if (file_length != null && file.length() == file_length) {
+                // File download: OK
+                context.startActivity(UtilsIntent.getOpenAPKIntent(file));
+                switch (downloadType) {
+                    case WHATSAPP_APK:
+                        UtilsDialog.showSaveAPKDialog(context, file, version);
+                        break;
+                    case UPDATE:
+                        break;
+                }
+            } else {
+                // File download: FAILED
+                onCancelled();
+                UtilsDialog.showSnackbar(context, context.getResources().getString(R.string.snackbar_failed));
             }
         }
 

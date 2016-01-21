@@ -44,7 +44,7 @@ public class UtilsDialog {
                 .onPositive(new MaterialDialog.SingleButtonCallback() {
                     @Override
                     public void onClick(MaterialDialog dialog, DialogAction which) {
-                        showSnackbarSaved(context, file, version);
+                        showSnackbarSavedAPK(context, file, version);
                     }
                 })
                 .onNegative(new MaterialDialog.SingleButtonCallback() {
@@ -100,7 +100,13 @@ public class UtilsDialog {
         return dialog;
     }
 
-    public static void showSnackbarSaved(final Context context, final File file, final String version) {
+    public static void showSnackbar(Context context, String title) {
+        Activity activity = (Activity) context;
+        Snackbar.make(activity.findViewById(R.id.coordinatorLayout), title, Snackbar.LENGTH_LONG)
+                .show();
+    }
+
+    public static void showSnackbarSavedAPK(final Context context, final File file, final String version) {
         Activity activity = (Activity) context;
         Snackbar.make(activity.findViewById(R.id.coordinatorLayout), String.format(context.getResources().getString(R.string.snackbar_saved), file.getName()), Snackbar.LENGTH_LONG)
                 .setAction(context.getResources().getString(R.string.button_share), new View.OnClickListener() {
