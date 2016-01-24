@@ -3,6 +3,7 @@ package com.javiersantos.whatsappbetaupdater.util;
 import android.content.Context;
 import android.content.pm.PackageManager;
 
+import com.javiersantos.whatsappbetaupdater.BuildConfig;
 import com.javiersantos.whatsappbetaupdater.object.Version;
 
 public class UtilsWhatsApp {
@@ -33,10 +34,14 @@ public class UtilsWhatsApp {
     }
 
     public static Boolean isUpdateAvailable(String installedVersion, String latestVersion) {
-        Version installed = new Version(installedVersion);
-        Version latest = new Version(latestVersion);
+        if (BuildConfig.DEBUG_MODE) {
+            return false;
+        } else {
+            Version installed = new Version(installedVersion);
+            Version latest = new Version(latestVersion);
 
-        return installed.compareTo(latest) < 0;
+            return installed.compareTo(latest) < 0;
+        }
     }
 
 }

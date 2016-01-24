@@ -26,7 +26,7 @@ android {
             }
         }
         debug {
-            applicationIdSuffix '.debug'
+            versionNameSuffix '-debug'
             buildConfigField "boolean", "DEBUG_MODE", "true"
         }
     }
