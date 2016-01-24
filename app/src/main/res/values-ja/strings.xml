@@ -39,6 +39,7 @@
     <string name="toast_tap">もう一度タップすると、アプリを閉じます</string>
     <string name="snackbar_saved">%s を \"Downloads\" に保存しました</string>
     <string name="snackbar_share">%2$s を使用して WhatsApp %1$s をインストールしました</string>
+    <string name="snackbar_failed">アップデートのダウンロード中に何か問題が発生しました。もう一度試してください。</string>
     <string name="notification">WhatsApp %s が利用できます</string>
     <string name="notification_description">%s を使用して今すぐアップデート</string>
 </resources>
