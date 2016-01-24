@@ -9,8 +9,8 @@ android {
         applicationId "com.javiersantos.whatsappbetaupdater"
         minSdkVersion 15
         targetSdkVersion 22
-        versionCode 16
-        versionName "3.0"
+        versionCode 17
+        versionName "3.1"
     }
 
     buildTypes {
@@ -29,6 +29,10 @@ android {
             applicationIdSuffix '.debug'
             buildConfigField "boolean", "DEBUG_MODE", "true"
         }
+    }
+
+    lintOptions {
+        disable 'MissingTranslation'
     }
 }
 
