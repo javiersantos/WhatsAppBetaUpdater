@@ -18,7 +18,7 @@
     <string name="downloading">Downloading %1$s %2$s&#8230;</string>
     <string name="delete">Willst Du das Update behalten?</string>
     <string name="delete_description">Es ist möglich das heruntergeladene Update (APK) zu behalten oder zu löschen. Was willst Du tun?</string>
-    <string name="donate_description">%/ ist eine kostenlose und werbefreie Open Source App. Wenn Du bei der Entwicklung mithelfen willst, wäre ich wirklich dankbar.</string>
+    <string name="donate_description">%s ist eine kostenlose und werbefreie Open Source App. Wenn Du bei der Entwicklung mithelfen willst, wäre ich wirklich dankbar.</string>
     <string name="app_update">Update %s ist verfügbar</string>
     <string name="app_update_description">Eine neue Version steht zum Download bereit. Für die neuesten Verbesserungen und Fehlerbehebungen solltest Du auf die aktuellste Version aktualisieren</string>
 
