@@ -95,10 +95,12 @@ public class UtilsAsync {
 
     public static class NotifyWhatsAppVersion extends AsyncTask<Void, Void, String> {
         private Context context;
+        private AppPreferences appPreferences;
         private Intent intent;
 
         public NotifyWhatsAppVersion(Context context, Intent intent) {
             this.context = context;
+            this.appPreferences = WhatsAppBetaUpdaterApplication.getAppPreferences();
             this.intent = intent;
         }
 
@@ -131,6 +133,7 @@ public class UtilsAsync {
                         .setSmallIcon(R.mipmap.ic_launcher)
                         .setContentTitle(title)
                         .setContentText(message)
+                        .setSound(appPreferences.getSoundNotification())
                         .setStyle(style)
                         .setWhen(System.currentTimeMillis())
                         .setAutoCancel(true)
