@@ -2,6 +2,8 @@ package com.javiersantos.whatsappbetaupdater.util;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.media.RingtoneManager;
+import android.net.Uri;
 import android.preference.PreferenceManager;
 
 public class AppPreferences {
@@ -11,6 +13,7 @@ public class AppPreferences {
     private final String KeyAutoDownload = "prefAutoDownload";
     private final String KeyShowAppUpdates = "prefShowAppUpdates";
     private final String KeyEnableNotifications = "prefEnableNotifications";
+    private final String KeySoundNotification = "prefSoundNotification";
     private final String KeyHoursNotification = "prefHoursNotification";
 
     public AppPreferences(Context context) {
@@ -38,6 +41,16 @@ public class AppPreferences {
 
     public Boolean getEnableNotifications() {
         return sharedPreferences.getBoolean(KeyEnableNotifications, true);
+    }
+
+    public Uri getSoundNotification() {
+        String ringtone = sharedPreferences.getString(KeySoundNotification, RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION).toString());
+        return Uri.parse(ringtone);
+    }
+
+    public void setSoundNotification(Uri uri) {
+        editor.putString(KeySoundNotification, uri.toString());
+        editor.commit();
     }
 
     public Integer getHoursNotification() {

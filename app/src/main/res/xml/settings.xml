@@ -21,6 +21,9 @@
             android:title="@string/settings_notifications"
             android:summary="@string/settings_notifications_description"
             android:defaultValue="true" />
+        <com.lb.material_preferences_library.custom_preferences.Preference
+            android:key="prefSoundNotification"
+            android:title="@string/settings_notifications_sound" />
         <com.lb.material_preferences_library.custom_preferences.ListPreference
             android:key="prefHoursNotification"
             android:title="@string/settings_interval"

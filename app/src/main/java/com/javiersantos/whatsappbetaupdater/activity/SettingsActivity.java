@@ -1,8 +1,11 @@
 package com.javiersantos.whatsappbetaupdater.activity;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.media.RingtoneManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 
@@ -11,6 +14,7 @@ import com.javiersantos.whatsappbetaupdater.WhatsAppBetaUpdaterApplication;
 import com.javiersantos.whatsappbetaupdater.util.AppPreferences;
 import com.javiersantos.whatsappbetaupdater.util.UtilsApp;
 import com.lb.material_preferences_library.PreferenceActivity;
+import com.lb.material_preferences_library.custom_preferences.CheckBoxPreference;
 import com.lb.material_preferences_library.custom_preferences.ListPreference;
 import com.lb.material_preferences_library.custom_preferences.Preference;
 
@@ -22,6 +26,8 @@ public class SettingsActivity extends PreferenceActivity implements SharedPrefer
     private Integer hearthCount = 0;
     private SharedPreferences sharedPreferences;
     private AppPreferences appPreferences;
+    private CheckBoxPreference prefEnableNotifications;
+    private Preference prefSoundNotification;
     private ListPreference prefHoursNotification;
 
     @Override
@@ -42,12 +48,32 @@ public class SettingsActivity extends PreferenceActivity implements SharedPrefer
     }
 
     private void setPreferenceView() {
+        prefEnableNotifications = (CheckBoxPreference) findPreference("prefEnableNotifications");
+        prefSoundNotification = (Preference) findPreference("prefSoundNotification");
+        initPrefSoundNotification(prefSoundNotification);
         prefHoursNotification = (ListPreference) findPreference("prefHoursNotification");
         initPrefHoursNotification(prefHoursNotification);
         Preference prefLicense = (Preference) findPreference("prefLicense");
         initPrefLicense(prefLicense);
         Preference prefVersion = (Preference) findPreference("prefVersion");
         initPrefVersion(prefVersion);
+    }
+
+    private void initPrefSoundNotification(Preference preference) {
+        preference.setSummary(RingtoneManager.getRingtone(context, appPreferences.getSoundNotification()).getTitle(context));
+        preference.setOnPreferenceClickListener(new android.preference.Preference.OnPreferenceClickListener() {
+            @Override
+            public boolean onPreferenceClick(android.preference.Preference preference) {
+                Intent intent = new Intent(RingtoneManager.ACTION_RINGTONE_PICKER)
+                        .putExtra(RingtoneManager.EXTRA_RINGTONE_TYPE, RingtoneManager.TYPE_NOTIFICATION)
+                        .putExtra(RingtoneManager.EXTRA_RINGTONE_SHOW_DEFAULT, true)
+                        .putExtra(RingtoneManager.EXTRA_RINGTONE_DEFAULT_URI, RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION))
+                        .putExtra(RingtoneManager.EXTRA_RINGTONE_EXISTING_URI, appPreferences.getSoundNotification())
+                        .putExtra(RingtoneManager.EXTRA_RINGTONE_TITLE, getResources().getString(R.string.settings_notifications_sound));
+                startActivityForResult(intent, 5);
+                return true;
+            }
+        });
     }
 
     private void initPrefHoursNotification(ListPreference listPreference) {
@@ -89,8 +115,30 @@ public class SettingsActivity extends PreferenceActivity implements SharedPrefer
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
         Preference preference = (Preference) findPreference(key);
 
-        if (preference == prefHoursNotification) {
+        if (preference == prefEnableNotifications) {
+            if (prefEnableNotifications.isChecked()) {
+                prefSoundNotification.setEnabled(true);
+                prefHoursNotification.setEnabled(true);
+            } else {
+                prefSoundNotification.setEnabled(false);
+                prefHoursNotification.setEnabled(false);
+            }
+        } else if (preference == prefSoundNotification) {
+            preference.setSummary(RingtoneManager.getRingtone(context, appPreferences.getSoundNotification()).getTitle(context));
+        } else if (preference == prefHoursNotification) {
             preference.setSummary(String.format(getResources().getString(R.string.settings_interval_description), appPreferences.getHoursNotification()));
+        }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent intent) {
+        if (resultCode == Activity.RESULT_OK && requestCode == 5) {
+            Uri uri = intent.getParcelableExtra(RingtoneManager.EXTRA_RINGTONE_PICKED_URI);
+            if (uri != null) {
+                appPreferences.setSoundNotification(uri);
+            } else {
+                appPreferences.setSoundNotification(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION));
+            }
         }
     }
 }
