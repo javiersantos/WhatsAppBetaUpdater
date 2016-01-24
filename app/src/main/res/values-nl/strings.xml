@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Beta Updater voor WhatsApp</string>
+    <string name="action_settings">Instellingen</string>
+    <string name="action_donate">Doneer</string>
+    <string name="whatsapp_installed">Geïnstalleerde versie</string>
+    <string name="whatsapp_latest">Laatste versie</string>
+    <string name="whatsapp_not_installed">Niet geïnstalleerd</string>
+    <string name="update_available">Update %s is beschikbaar!</string>
+    <string name="update_not_available">Je hebt de meest recente versie</string>
+    <string name="update_not_connection">Geen internetverbinding beschikbaar</string>
+    <string name="downloading">Downloaden %1$s %2$s&#8230;</string>
+    <string name="delete">Wilt u de update houden?</string>
+    <string name="delete_description">Het is mogelijk de gedownloade update (APK) te bewaren of verwijderen. Wat wilt u doen?</string>
+    <string name="donate_description">%s is een Open Source app die volledig gratis is zonder reclame. Als je mee wilt helpen met de ontwikkeling van deze app, ben ik je erg dankbaar.</string>
+    <string name="app_update">Update %s is beschikbaar</string>
+    <string name="app_update_description">Een nieuwe versie is gereed om te downloaden. U dient te updaten naar de laatste versie om de nieuwste verbeteringen en bug fixes te hebben.</string>
+    <string name="button_delete">Verwijderen</string>
+    <string name="button_save">Opslaan in \"Downloads\"</string>
+    <string name="button_share">Deel APK</string>
+    <string name="button_update">Bijwerken</string>
+    <string name="button_disable_update">Niet meer weergeven</string>
+    <string name="button_paypal">Doneer via PayPal</string>
+    <string name="settings_category_preferences">Voorkeuren</string>
+    <string name="settings_category_notifications">Meldingen</string>
+    <string name="settings_category_about">Over</string>
+    <string name="settings_notifications">Meldingen inschakelen</string>
+    <string name="settings_notifications_description">Controleer voor nieuwe WhatsApp updates automatisch en meld mij wanneer er een nieuwe beschikbaar is</string>
+    <string name="settings_notifications_sound">Meldingsgeluid</string>
+    <string name="settings_interval">Melding frequentie</string>
+    <string name="settings_interval_description">Elke %s uren</string>
+    <string name="settings_app_update">Controleer op updates</string>
+    <string name="settings_app_update_description">Ontvang de laatste updates met bug fixes en verbeteringen</string>
+    <string name="settings_autodownload">Automatisch updates downloaden</string>
+    <string name="settings_autodownload_description">Start met downloaden en installeren van de nieuwe WhatsApp updates automatisch wanneer de app start</string>
+    <string name="settings_license">Open Source licenties</string>
+    <string name="settings_googleplus">Word lid van de groep op Google+</string>
+    <string name="settings_googleplus_description">Wil je graag praten over nieuwe whatsapp updates en op de hoogte blijven van de ontwikkeling? Join dan nu onze community!</string>
+    <string name="settings_about">Gemaakt met %s door Javier Santos. Bron code op GitHub.</string>
+    <string name="toast_tap">Tik opnieuw op de app te sluiten</string>
+    <string name="snackbar_saved">%s opgeslagen in \"Downloads\"</string>
+    <string name="snackbar_share">Ik heb net whatsapp %1$s met %2$s</string>
+    <string name="snackbar_failed">Er is iets misgegaan bij het downloaden van de update. Probeer opnieuw.</string>
+    <string name="notification">Whatsapp %s is beschikbaar</string>
+    <string name="notification_description">Update gebruikt nu %s</string>
+</resources>

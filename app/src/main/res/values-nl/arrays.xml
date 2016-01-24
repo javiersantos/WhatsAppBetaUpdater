@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="notification_hours">
+        <item>1 uur</item>
+        <item>3 uur</item>
+        <item>6 uur</item>
+        <item>9 uur</item>
+        <item>12 uur (standaard)</item>
+        <item>24 uur</item>
+    </string-array>
+</resources>
