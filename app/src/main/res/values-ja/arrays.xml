@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="notification_hours">
+        <item>1 時間</item>
         <item>3 時間</item>
         <item>6 時間</item>
         <item>9 時間</item>
