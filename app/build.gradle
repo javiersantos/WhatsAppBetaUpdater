@@ -9,8 +9,8 @@ android {
         applicationId "com.javiersantos.whatsappbetaupdater"
         minSdkVersion 15
         targetSdkVersion 22
-        versionCode 18
-        versionName "3.1"
+        versionCode 19
+        versionName "3.1.1"
     }
 
     buildTypes {
