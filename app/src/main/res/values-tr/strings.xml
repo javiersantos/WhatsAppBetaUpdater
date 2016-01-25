@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">WhatsApp Beta Güncelleyici</string>
+    <string name="action_settings">Ayarlar</string>
+    <string name="action_donate">Bağış yap</string>
+    <string name="whatsapp_installed">Yüklü Sürüm</string>
+    <string name="whatsapp_latest">En Son Sürüm</string>
+    <string name="whatsapp_not_installed">Yüklü değil</string>
+    <string name="update_available">%s güncellemesi hazır!</string>
+    <string name="update_not_available">En güncel sürümü kullanmaktasınız</string>
+    <string name="update_not_connection">İnternet bağlantısı yok</string>
+    <string name="downloading">%1$s %2$s indiriliyor&#8230;</string>
+    <string name="delete">Güncelleştirmeyi devam ettirmek istiyor musunuz?</string>
+    <string name="delete_description">İndirilmiş güncellemeyi tutmak veya silmek mümkün. Ne yapmak istersiniz?</string>
+    <string name="donate_description">%s reklam barındırmayan, açık kaynak bir uygulamadır. Geliştirmeye yardımcı olursanız size minnettar olurum.</string>
+    <string name="app_update">%s güncellemesi hazır</string>
+    <string name="app_update_description">Yeni sürümü indirmek için hazır. En son yenilikleri ve hata düzeltmelerini edinmek için en yeni sürüme güncellemelisiniz.</string>
+    <string name="button_delete">Sil</string>
+    <string name="button_save">\"İndirilenler\" kısmına kaydet</string>
+    <string name="button_share">APK Paylaş</string>
+    <string name="button_update">Güncelle</string>
+    <string name="button_disable_update">Bunu tekrar gösterme</string>
+    <string name="button_paypal">PayPal ile bağış yap</string>
+    <string name="settings_category_preferences">Seçenekler</string>
+    <string name="settings_category_notifications">Bildirimler</string>
+    <string name="settings_category_about">Hakkında</string>
+    <string name="settings_notifications">Bildirimleri etkinleştir</string>
+    <string name="settings_notifications_description">WhatsApp güncellemelerini her kontrol et ve yenisi geldiği zaman beni bilgilendir</string>
+    <string name="settings_notifications_sound">Bildiri sesi</string>
+    <string name="settings_interval">Bildirim aralığı</string>
+    <string name="settings_interval_description">Her %s saatde</string>
+    <string name="settings_app_update">Güncellemeleri denetle</string>
+    <string name="settings_app_update_description">Son geliştirmeleri ve hata düzeltmelerini içeren son sürümü edinin</string>
+    <string name="settings_autodownload">Güncellemeleri otomatik indir</string>
+    <string name="settings_autodownload_description">Uygulama başlatıldığı zaman otomatik olarak WhatsApp güncellemesini indirsin ve kursun</string>
+    <string name="settings_license">Açık Kaynak lisansları</string>
+    <string name="settings_googleplus">Google+ topluluğumuza katılın</string>
+    <string name="settings_googleplus_description">WhatsApp uygulamasının yeni sürümleri hakkında konuşmak ve güncellemelerinden haberdar olmak ister misiniz? O zaman topluluğumuza katılın!</string>
+    <string name="settings_about">Javier Santos tarafından %s ile yapılmıştır. Kaynak koduna GitHub\'dan erişebilirsiniz.</string>
+    <string name="toast_tap">Uygulamayı kapatmak için tekrar dokunun</string>
+    <string name="snackbar_saved">%s \"İndirilenler\" kısmına kaydedilmiştir</string>
+    <string name="snackbar_share">%2$s kullanarak WhatsApp %1$s yükledim</string>
+    <string name="snackbar_failed">İndirme sırasında bir şeyler ters gitti. Tekrar deneyin.</string>
+    <string name="notification">WhatsApp %s indirilmeye hazır</string>
+    <string name="notification_description">%s kullanarak hemen güncelle</string>
+</resources>

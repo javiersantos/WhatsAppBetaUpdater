@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="notification_hours">
+        <item>1 saat</item>
+        <item>3 saat</item>
+        <item>6 saat</item>
+        <item>9 saat</item>
+        <item>12 saat (varsayılan)</item>
+        <item>24 saat</item>
+    </string-array>
+</resources>
