@@ -35,7 +35,7 @@ public class UtilsWhatsApp {
 
     public static Boolean isUpdateAvailable(String installedVersion, String latestVersion) {
         if (BuildConfig.DEBUG_MODE) {
-            return false;
+            return true;
         } else {
             Version installed = new Version(installedVersion);
             Version latest = new Version(latestVersion);
