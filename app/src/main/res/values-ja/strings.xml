@@ -26,6 +26,7 @@
     <string name="settings_category_about">アプリついて</string>
     <string name="settings_notifications">通知を有効にする</string>
     <string name="settings_notifications_description">自動的に新しい WhatsApp のアップデートを確認して、新しいものが利用可能なときに通知します</string>
+    <string name="settings_notifications_sound">通知音</string>
     <string name="settings_interval">通知の頻度</string>
     <string name="settings_interval_description">%s 時間ごと</string>
     <string name="settings_app_update">アップデートの確認</string>
