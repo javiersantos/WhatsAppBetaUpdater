@@ -272,7 +272,7 @@ public class UtilsAsync {
 
         @Override
         protected void onPostExecute(Integer file_length) {
-            dialog.dismiss();
+            UtilsHelper.dismissDialog(dialog);
             File file = new File(path, filename);
             if (file_length != null && file.length() == file_length) {
                 // File download: OK
