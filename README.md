@@ -30,6 +30,8 @@ When a user wants to have these beta updates, the regular method is downloading 
 * Japanese
 * Catalan
 * Dutch
+* Italian
+* Turkish
 
 If you want to translate the app in your native language please go to [Crowdin's project page](https://crowdin.com/project/beta-updater-whatsapp).
 
