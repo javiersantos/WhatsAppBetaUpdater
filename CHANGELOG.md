@@ -1,13 +1,13 @@
 ### 3.1
-**To Be Released**
-* Added button to cancel download.
-* Added notification sound.
+**Released: 25 January, 2016**
+* Added button to cancel the download.
+* Added customizable notification sound.
 * Added "1 hour" on notification frequency.
 * Option to share downloaded update on Telegram, email, etc.
 * Shows message when the download fails.
 * Improved donation dialog.
-* Minor bug fixes.
-* Japenese, German and Catalan translations.
+* Fixed some issues on Android 4.x
+* Japenese, German, Catalan and Dutch translations.
 
 ***
 
