@@ -1,6 +1,5 @@
 package com.javiersantos.whatsappbetaupdater.activity;
 
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -28,7 +27,6 @@ import com.mikepenz.material_design_iconic_typeface_library.MaterialDesignIconic
 import com.pnikosis.materialishprogress.ProgressWheel;
 
 public class MainActivity extends AppCompatActivity {
-    private Context context;
     private AppPreferences appPreferences;
     private Boolean doubleBackToExitPressedOnce = false;
 
@@ -43,7 +41,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        this.context = this;
         this.appPreferences = WhatsAppBetaUpdaterApplication.getAppPreferences();
         this.fab = (FloatingActionButton) findViewById(R.id.fab);
         this.toolbar_subtitle = (TextView) findViewById(R.id.toolbar_subtitle);
@@ -67,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                new UtilsAsync.LatestWhatsAppVersion(context, whatsapp_latest_version, toolbar_subtitle, fab, progressWheel).execute();
+                new UtilsAsync.LatestWhatsAppVersion(MainActivity.this, whatsapp_latest_version, toolbar_subtitle, fab, progressWheel).execute();
                 checkInstalledWhatsAppVersion();
                 swipeRefreshLayout.setRefreshing(false);
             }
@@ -77,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                new UtilsAsync.DownloadFile(context, UtilsEnum.DownloadType.WHATSAPP_APK, whatsapp_latest_version.getText().toString()).execute();
+                new UtilsAsync.DownloadFile(MainActivity.this, UtilsEnum.DownloadType.WHATSAPP_APK, whatsapp_latest_version.getText().toString()).execute();
             }
         });
 
@@ -94,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
         checkInstalledWhatsAppVersion();
 
         // Configure notification if enabled
-        UtilsApp.setNotification(context, appPreferences.getEnableNotifications(), appPreferences.getHoursNotification());
+        UtilsApp.setNotification(this, appPreferences.getEnableNotifications(), appPreferences.getHoursNotification());
     }
 
     private void checkInstalledWhatsAppVersion() {
@@ -125,8 +122,8 @@ public class MainActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
 
-        menu.findItem(R.id.action_donate).setIcon(new IconicsDrawable(context).icon(MaterialDesignIconic.Icon.gmi_paypal_alt).color(Color.WHITE).actionBar());
-        menu.findItem(R.id.action_settings).setIcon(new IconicsDrawable(context).icon(MaterialDesignIconic.Icon.gmi_settings).color(Color.WHITE).actionBar());
+        menu.findItem(R.id.action_donate).setIcon(new IconicsDrawable(this).icon(MaterialDesignIconic.Icon.gmi_paypal_alt).color(Color.WHITE).actionBar());
+        menu.findItem(R.id.action_settings).setIcon(new IconicsDrawable(this).icon(MaterialDesignIconic.Icon.gmi_settings).color(Color.WHITE).actionBar());
 
         return true;
     }
@@ -140,7 +137,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(this, SettingsActivity.class));
                 break;
             case R.id.action_donate:
-                UtilsDialog.showDonateDialog(context);
+                UtilsDialog.showDonateDialog(this);
                 break;
         }
 

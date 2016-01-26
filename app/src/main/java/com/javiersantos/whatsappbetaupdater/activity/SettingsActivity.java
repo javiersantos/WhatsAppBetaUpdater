@@ -1,7 +1,6 @@
 package com.javiersantos.whatsappbetaupdater.activity;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.media.RingtoneManager;
@@ -22,7 +21,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class SettingsActivity extends PreferenceActivity implements SharedPreferences.OnSharedPreferenceChangeListener {
-    private Context context;
     private Integer hearthCount = 0;
     private SharedPreferences sharedPreferences;
     private AppPreferences appPreferences;
@@ -38,7 +36,6 @@ public class SettingsActivity extends PreferenceActivity implements SharedPrefer
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        this.context = this;
         this.appPreferences = WhatsAppBetaUpdaterApplication.getAppPreferences();
 
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
@@ -60,7 +57,7 @@ public class SettingsActivity extends PreferenceActivity implements SharedPrefer
     }
 
     private void initPrefSoundNotification(Preference preference) {
-        preference.setSummary(RingtoneManager.getRingtone(context, appPreferences.getSoundNotification()).getTitle(context));
+        preference.setSummary(RingtoneManager.getRingtone(this, appPreferences.getSoundNotification()).getTitle(this));
         preference.setOnPreferenceClickListener(new android.preference.Preference.OnPreferenceClickListener() {
             @Override
             public boolean onPreferenceClick(android.preference.Preference preference) {
@@ -87,7 +84,7 @@ public class SettingsActivity extends PreferenceActivity implements SharedPrefer
         preference.setOnPreferenceClickListener(new android.preference.Preference.OnPreferenceClickListener() {
             @Override
             public boolean onPreferenceClick(android.preference.Preference preference) {
-                startActivity(new Intent(context, LicenseActivity.class));
+                startActivity(new Intent(SettingsActivity.this, LicenseActivity.class));
                 return true;
             }
         });
@@ -96,8 +93,8 @@ public class SettingsActivity extends PreferenceActivity implements SharedPrefer
     private void initPrefVersion(Preference preference) {
         final ArrayList<String> hearts = new ArrayList<>(Arrays.asList("\u2665", "\uD83D\uDC99", "\uD83D\uDC9A", "\uD83D\uDC9C", "\uD83D\uDC9B", "\uD83D\uDC98"));
 
-        String versionName = UtilsApp.getAppVersionName(context);
-        int versionCode = UtilsApp.getAppVersionCode(context);
+        String versionName = UtilsApp.getAppVersionName(this);
+        int versionCode = UtilsApp.getAppVersionCode(this);
         preference.setTitle(getResources().getString(R.string.app_name) + " v" + versionName + " (" + versionCode + ")");
         preference.setSummary(String.format(getResources().getString(R.string.settings_about), hearts.get(hearthCount)));
 
@@ -124,7 +121,7 @@ public class SettingsActivity extends PreferenceActivity implements SharedPrefer
                 prefHoursNotification.setEnabled(false);
             }
         } else if (preference == prefSoundNotification) {
-            preference.setSummary(RingtoneManager.getRingtone(context, appPreferences.getSoundNotification()).getTitle(context));
+            preference.setSummary(RingtoneManager.getRingtone(this, appPreferences.getSoundNotification()).getTitle(this));
         } else if (preference == prefHoursNotification) {
             preference.setSummary(String.format(getResources().getString(R.string.settings_interval_description), appPreferences.getHoursNotification()));
         }
