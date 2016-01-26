@@ -87,7 +87,7 @@ public class UtilsDialog {
                 .title(context.getResources().getString(R.string.action_donate))
                 .content(String.format(context.getResources().getString(R.string.donate_description), context.getResources().getString(R.string.app_name)))
                 .items(UtilsApp.getDonationArray(context))
-                .itemsCallbackSingleChoice(-1, new MaterialDialog.ListCallbackSingleChoice() {
+                .itemsCallbackSingleChoice(1, new MaterialDialog.ListCallbackSingleChoice() {
                     @Override
                     public boolean onSelection(MaterialDialog dialog, View itemView, int which, CharSequence text) {
                         context.startActivity(UtilsIntent.getPayPalIntent(text.toString()));
@@ -95,6 +95,7 @@ public class UtilsDialog {
                     }
                 })
                 .positiveText(context.getResources().getString(R.string.button_paypal))
+                .negativeText(context.getResources().getString(android.R.string.cancel))
                 .show();
 
         return dialog;
