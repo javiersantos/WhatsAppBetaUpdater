@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Beta Updater pour WhatsApp</string>
+    <string name="action_settings">Paramètres</string>
+    <string name="action_donate">Don</string>
+    <string name="whatsapp_installed">Version installée</string>
+    <string name="whatsapp_latest">Dernière version</string>
+    <string name="whatsapp_not_installed">Non installée</string>
+    <string name="update_available">Mise à jour %s disponible !</string>
+    <string name="update_not_available">Vous avez la dernière version</string>
+    <string name="update_not_connection">Aucune connexion Internet disponible</string>
+    <string name="downloading">Téléchargement %1$s %2$s&#8230;</string>
+    <string name="delete">Voulez vous garder la mise a jour?</string>
+    <string name="delete_description">Il est possible de conserver ou supprimer la mise à jour téléchargée (APK). Que voulez-vous faire?</string>
+    <string name="donate_description">%s est une application Open Source et gratuite, sans publicité. Si vous le souhaitez, vous pouvez contribuer à son développement. Merci!</string>
+    <string name="app_update">Mise à jour %s disponible</string>
+    <string name="app_update_description">Une nouvelle version est prête a être téléchargée. Vous devriez la télécharger pour avoir toute les dernières améliorations et corrections.</string>
+    <string name="button_delete">Supprimer</string>
+    <string name="button_save">Sauvegarder dans \"Téléchargements\"</string>
+    <string name="button_share">Partager l\'APK</string>
+    <string name="button_update">Mettre à jour</string>
+    <string name="button_disable_update">Ne plus afficher</string>
+    <string name="button_paypal">Donner via PayPal</string>
+    <string name="settings_category_preferences">Préferences</string>
+    <string name="settings_category_notifications">Notifications</string>
+    <string name="settings_category_about">À propos</string>
+    <string name="settings_notifications">Activer les notifications</string>
+    <string name="settings_notifications_description">Vérifier les nouvelles mises à jour de WhatsApp automatiquement et me notifier lorsqu\'une nouvelle version est disponible</string>
+    <string name="settings_notifications_sound">Son de notification</string>
+    <string name="settings_interval">Frequence de notification</string>
+    <string name="settings_interval_description">Toutes les %s heures</string>
+    <string name="settings_app_update">Mettre à jour</string>
+    <string name="settings_app_update_description">Recevoir les dernières mise à jour avec corrections et améliorations</string>
+    <string name="settings_autodownload">Téléchargement automatique des mises à jour</string>
+    <string name="settings_autodownload_description">Commencer à télécharger et installer les nouvelles mises à jour de WhatsApp automatiquement au démarrage de l\'application</string>
+    <string name="settings_license">Licences Open Source</string>
+    <string name="settings_googleplus">Rejoignez la communauté sur Google+</string>
+    <string name="settings_googleplus_description">Vous souhaitez parler des nouvelles versions de WhatsApp et connaître les dernières nouveautés ? Rejoignez notre communauté ! </string>
+    <string name="settings_about">Réalisé à %s par Javier Santos. Code source sur Github.</string>
+    <string name="toast_tap">Touchez à nouveau pour fermer l\'application</string>
+    <string name="snackbar_saved">%s enregistré dans \"Téléchargement\"</string>
+    <string name="snackbar_share">Je viens d\'installer WhatsApp %1$s avec %2$s</string>
+    <string name="snackbar_failed">Une erreur est survenue durant le téléchargement. Réessayer.</string>
+    <string name="notification">WhatsApp %s est disponible</string>
+    <string name="notification_description">Mise à jour %s</string>
+</resources>
