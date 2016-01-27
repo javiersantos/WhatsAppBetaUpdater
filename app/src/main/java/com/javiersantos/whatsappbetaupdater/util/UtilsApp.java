@@ -22,7 +22,7 @@ public class UtilsApp {
         AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
 
         if (enable) {
-            alarmManager.setRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP, SystemClock.elapsedRealtime(), getHoursToSeconds(hours), pendingIntent);
+            alarmManager.setRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP, SystemClock.elapsedRealtime(), getHoursToMilliseconds(hours), pendingIntent);
         } else {
             alarmManager.cancel(pendingIntent);
         }
@@ -83,8 +83,8 @@ public class UtilsApp {
         return res;
     }
 
-    private static Integer getHoursToSeconds(Integer hours) {
-        return hours * hours * 60 * 60 * 1000;
+    private static Integer getHoursToMilliseconds(Integer hours) {
+        return hours * 60 * 60 * 1000;
     }
 
 }
