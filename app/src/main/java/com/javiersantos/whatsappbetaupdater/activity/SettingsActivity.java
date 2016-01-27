@@ -45,15 +45,27 @@ public class SettingsActivity extends PreferenceActivity implements SharedPrefer
     }
 
     private void setPreferenceView() {
+        Preference prefLicense = (Preference) findPreference("prefLicense");
+        Preference prefVersion = (Preference) findPreference("prefVersion");
         prefEnableNotifications = (CheckBoxPreference) findPreference("prefEnableNotifications");
         prefSoundNotification = (Preference) findPreference("prefSoundNotification");
-        initPrefSoundNotification(prefSoundNotification);
         prefHoursNotification = (ListPreference) findPreference("prefHoursNotification");
+
+        initPrefEnableNotifications(appPreferences.getEnableNotifications());
+        initPrefSoundNotification(prefSoundNotification);
         initPrefHoursNotification(prefHoursNotification);
-        Preference prefLicense = (Preference) findPreference("prefLicense");
         initPrefLicense(prefLicense);
-        Preference prefVersion = (Preference) findPreference("prefVersion");
         initPrefVersion(prefVersion);
+    }
+
+    private void initPrefEnableNotifications(Boolean enable) {
+        if (enable) {
+            prefSoundNotification.setEnabled(true);
+            prefHoursNotification.setEnabled(true);
+        } else {
+            prefSoundNotification.setEnabled(false);
+            prefHoursNotification.setEnabled(false);
+        }
     }
 
     private void initPrefSoundNotification(Preference preference) {
@@ -76,7 +88,6 @@ public class SettingsActivity extends PreferenceActivity implements SharedPrefer
     private void initPrefHoursNotification(ListPreference listPreference) {
         listPreference.setEntries(getResources().getStringArray(R.array.notification_hours));
         listPreference.setEntryValues(getResources().getStringArray(R.array.notification_hours_values));
-
         listPreference.setSummary(String.format(getResources().getString(R.string.settings_interval_description), appPreferences.getHoursNotification()));
     }
 
@@ -113,13 +124,7 @@ public class SettingsActivity extends PreferenceActivity implements SharedPrefer
         Preference preference = (Preference) findPreference(key);
 
         if (preference == prefEnableNotifications) {
-            if (prefEnableNotifications.isChecked()) {
-                prefSoundNotification.setEnabled(true);
-                prefHoursNotification.setEnabled(true);
-            } else {
-                prefSoundNotification.setEnabled(false);
-                prefHoursNotification.setEnabled(false);
-            }
+            initPrefEnableNotifications(prefEnableNotifications.isChecked());
         } else if (preference == prefSoundNotification) {
             preference.setSummary(RingtoneManager.getRingtone(this, appPreferences.getSoundNotification()).getTitle(this));
         } else if (preference == prefHoursNotification) {
