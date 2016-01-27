@@ -41,7 +41,7 @@
                 <TextView
                     style="@style/TextAppearance.AppCompat.Title"
                     android:textColor="@color/gray"
-                    android:fontFamily="sans-serif-thin"
+                    android:fontFamily="sans-serif-light"
                     android:gravity="center"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
@@ -51,7 +51,6 @@
                     android:id="@+id/whatsapp_installed_version"
                     style="@style/TextAppearance.AppCompat.Title"
                     android:textColor="@color/gray"
-                    android:fontFamily="sans-serif-light"
                     android:gravity="center"
                     android:layout_marginTop="5dp"
                     android:layout_width="fill_parent"
@@ -81,7 +80,7 @@
                     <TextView
                         style="@style/TextAppearance.AppCompat.Title"
                         android:textColor="@color/gray"
-                        android:fontFamily="sans-serif-thin"
+                        android:fontFamily="sans-serif-light"
                         android:gravity="center"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
@@ -91,7 +90,6 @@
                         android:id="@+id/whatsapp_latest_version"
                         style="@style/TextAppearance.AppCompat.Title"
                         android:textColor="@color/gray"
-                        android:fontFamily="sans-serif-light"
                         android:gravity="center"
                         android:layout_marginTop="5dp"
                         android:layout_width="fill_parent"
