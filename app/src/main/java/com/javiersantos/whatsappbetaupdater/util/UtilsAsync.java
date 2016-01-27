@@ -137,6 +137,7 @@ public class UtilsAsync {
                         .setStyle(style)
                         .setWhen(System.currentTimeMillis())
                         .setAutoCancel(true)
+                        .setOnlyAlertOnce(true)
                         .extend(wearableExtender);
 
                 Notification notification = builder.build();
