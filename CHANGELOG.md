@@ -1,4 +1,9 @@
-### 3.1
+### 3.1.2
+**Released: 27 January, 2016**
+* Bug fixes.
+* Italian, Turkish and French translations.
+
+### 3.1.1 / 3.1
 **Released: 25 January, 2016**
 * Added button to cancel the download.
 * Added customizable notification sound.
