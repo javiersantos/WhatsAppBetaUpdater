@@ -37,11 +37,21 @@ public class SettingsActivity extends PreferenceActivity implements SharedPrefer
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         this.appPreferences = WhatsAppBetaUpdaterApplication.getAppPreferences();
-
-        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-        sharedPreferences.registerOnSharedPreferenceChangeListener(this);
+        this.sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
 
         setPreferenceView();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        sharedPreferences.registerOnSharedPreferenceChangeListener(this);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        sharedPreferences.unregisterOnSharedPreferenceChangeListener(this);
     }
 
     private void setPreferenceView() {
@@ -125,10 +135,12 @@ public class SettingsActivity extends PreferenceActivity implements SharedPrefer
 
         if (preference == prefEnableNotifications) {
             initPrefEnableNotifications(prefEnableNotifications.isChecked());
+            UtilsApp.setNotification(this, prefEnableNotifications.isChecked(), appPreferences.getHoursNotification());
         } else if (preference == prefSoundNotification) {
             preference.setSummary(RingtoneManager.getRingtone(this, appPreferences.getSoundNotification()).getTitle(this));
         } else if (preference == prefHoursNotification) {
             preference.setSummary(String.format(getResources().getString(R.string.settings_interval_description), appPreferences.getHoursNotification()));
+            UtilsApp.setNotification(this, prefEnableNotifications.isChecked(), appPreferences.getHoursNotification());
         }
     }
 

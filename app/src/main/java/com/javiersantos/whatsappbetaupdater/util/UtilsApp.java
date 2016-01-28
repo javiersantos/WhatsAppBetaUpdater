@@ -25,7 +25,13 @@ public class UtilsApp {
             alarmManager.setRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP, SystemClock.elapsedRealtime(), getHoursToMilliseconds(hours), pendingIntent);
         } else {
             alarmManager.cancel(pendingIntent);
+            pendingIntent.cancel();
         }
+    }
+
+    public static Boolean isNotificationRunning(Context context) {
+        Intent intent = new Intent(context, NotificationReceiver.class);
+        return (PendingIntent.getBroadcast(context, 0, intent, PendingIntent.FLAG_NO_CREATE) != null);
     }
 
     public static String[] getDonationArray(Context context) {

@@ -81,6 +81,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
+    protected void onStart() {
+        super.onStart();
+
+        // Configure notification if it's not running in background (first time that app is running) and pref is enabled
+        if (!UtilsApp.isNotificationRunning(this)) {
+            UtilsApp.setNotification(this, appPreferences.getEnableNotifications(), appPreferences.getHoursNotification());
+        }
+    }
+
+    @Override
     protected void onResume() {
         super.onResume();
 
@@ -89,9 +99,6 @@ public class MainActivity extends AppCompatActivity {
 
         // Get latest WhatsApp installed version
         checkInstalledWhatsAppVersion();
-
-        // Configure notification if enabled
-        UtilsApp.setNotification(this, appPreferences.getEnableNotifications(), appPreferences.getHoursNotification());
     }
 
     private void checkInstalledWhatsAppVersion() {
