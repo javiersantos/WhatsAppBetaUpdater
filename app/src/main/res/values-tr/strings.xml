@@ -28,7 +28,7 @@
     <string name="settings_notifications_description">WhatsApp güncellemelerini her kontrol et ve yenisi geldiği zaman beni bilgilendir</string>
     <string name="settings_notifications_sound">Bildiri sesi</string>
     <string name="settings_interval">Bildirim aralığı</string>
-    <string name="settings_interval_description">Her %s saatde</string>
+    <string name="settings_interval_description">Her %s saatte</string>
     <string name="settings_app_update">Güncellemeleri denetle</string>
     <string name="settings_app_update_description">Son geliştirmeleri ve hata düzeltmelerini içeren son sürümü edinin</string>
     <string name="settings_autodownload">Güncellemeleri otomatik indir</string>
