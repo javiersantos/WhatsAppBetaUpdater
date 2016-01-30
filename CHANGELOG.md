@@ -1,7 +1,16 @@
+### 3.1.3
+**Released: 30 January, 2016**
+* Minor design tweaks.
+* Fixed some crashes.
+
+***
+
 ### 3.1.2
 **Released: 27 January, 2016**
 * Bug fixes.
 * Italian, Turkish and French translations.
+
+***
 
 ### 3.1.1 / 3.1
 **Released: 25 January, 2016**
