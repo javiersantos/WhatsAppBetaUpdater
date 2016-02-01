@@ -2,14 +2,14 @@
 
 <p align="center">
   <a target="_blank" href="https://travis-ci.org/javiersantos/WhatsAppBetaUpdater"><img src="https://travis-ci.org/javiersantos/WhatsAppBetaUpdater.svg?branch=master"></a>
-  <a target="_blank" href="http://android-arsenal.com/details/3/3047"><img src="https://img.shields.io/badge/Android%20Arsenal-Beta%20Updater%20for%20WhatsApp-blue.svg?style=flat"></a>
-  <span class="badge-paypal"><a target="_blank" href="https://www.paypal.me/javiersantos" title="Donate using PayPal"><img src="https://img.shields.io/badge/paypal-donate-yellow.svg" /></a></span>
-  <span class="badge-patreon"><a target="_blank" href="http://patreon.com/javiersantos" title="Donate using Patreon"><img src="https://img.shields.io/badge/patreon-donate-yellow.svg" /></a></span>
+  <a target="_blank" href="http://android-arsenal.com/details/3/3047"><img src="https://img.shields.io/badge/Android%20Arsenal-Beta%20Updater%20for%20WhatsApp-blue.svg"></a>
+  <a target="_blank" href="https://www.paypal.me/javiersantos" title="Donate using PayPal"><img src="https://img.shields.io/badge/paypal-donate-yellow.svg" /></a>
+  <a target="_blank" href="http://patreon.com/javiersantos" title="Donate using Patreon"><img src="https://img.shields.io/badge/patreon-donate-yellow.svg" /></a>
 </p>
 
 <p align="center"><img src="https://raw.githubusercontent.com/javiersantos/WhatsAppBetaUpdater/master/app/src/main/ic_launcher-web.png" width="100" height="100"></p>
 <p align="center">An app to update to the latest version of WhatsApp for Android. Beta Updater for WhatsApp checks the latest beta version available on whatsapp.com and enables you to install it automatically.</p>
-<p align="center"><a target="_blank" href="https://plus.google.com/communities/102574612559329723462">Community on Google+</a></p>
+<p align="center"><a target="_blank" href="https://github.com/javiersantos/WhatsAppBetaUpdater/releases"><img src="https://img.shields.io/github/downloads/javiersantos/WhatsAppBetaUpdater/total.svg"></a></p>
 
 ## Why using Beta Updater?
 WhatsApp publishes beta updates on their website before they become available on Google Play. This means that the latest features aren't available on Google Play until several weeks later (like audio calls, backup to Google Drive and new UI changes).
