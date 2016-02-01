@@ -19,7 +19,7 @@ When a user wants to have these beta updates, the regular method is downloading 
 ## APK Download
 * [Download on GitHub](https://github.com/javiersantos/WhatsAppBetaUpdater/releases) *- Recommended -*
 * [Download on F-Droid](https://f-droid.org/repository/browse/?fdid=com.javiersantos.whatsappbetaupdater)
-* [Download on Aptoide](http://fjaviersantos.store.aptoide.com/app/market/com.javiersantos.whatsappbetaupdater/19/17102137/Beta+Updater+for+WhatsApp)
+* [Download on Aptoide](http://fjaviersantos.store.aptoide.com/app/market/com.javiersantos.whatsappbetaupdater/21/17494795/Beta+Updater+for+WhatsApp)
 
 ![Beta Updater for WhatsApp](https://raw.githubusercontent.com/javiersantos/WhatsAppBetaUpdater/master/Screenshots/banner.png)
 
