@@ -29,6 +29,7 @@
     <string name="button_update">Update</string>
     <string name="button_disable_update">Nicht wieder anzeigen</string>
     <string name="button_paypal">Spenden mit PayPal</string>
+    <string name="button_share">APK teilen</string>
 
     <!-- Settings -->
     <string name="settings_category_preferences">Einstellungen</string>
@@ -46,9 +47,14 @@
     <string name="settings_googleplus">Tritt der Community auf Google+ bei</string>
     <string name="settings_googleplus_description">Du willst über die aktuellste Version von WhatsApp und die Entwicklung reden? Tritt unserer Community bei!</string>
     <string name="settings_about">Entwickelt mit %s von Javier Santos. Quellcode auf GitHub.</string>
+    <string name="settings_notifications_sound">Benachrichtigungston</string>
 
-    <!-- Notifications and toasts -->
+    <!--- Notifications, Toasts and Snackbars -->
     <string name="toast_tap">Drücke noch einmal um die App zu schließen</string>
     <string name="notification">WhatsApp %s ist vefügbar</string>
     <string name="notification_description">Update verwendet jetzt %s</string>
+    <string name="snackbar_saved">%s in \"Downloads\" gespeichert</string>
+    <string name="snackbar_share">Ich habe gerade WhatsApp %1$s mit %2$s installiert</string>
+    <string name="snackbar_failed">Etwas ist beim herunterladen des Updates schiefgelaufen. Versuche es nochmal.</string>
+
 </resources>
