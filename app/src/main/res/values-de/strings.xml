@@ -13,6 +13,7 @@
     <string name="update_available">Update %s ist vefügbar!</string>
     <string name="update_not_available">Du hast bereits die aktuellste Version</string>
     <string name="update_not_connection">Keine Internetverbindung vorhanden</string>
+    <string name="update_not_installed">WhatsApp %s jetzt installieren!</string>
 
     <!-- Dialogs -->
     <string name="downloading">Downloading %1$s %2$s&#8230;</string>
@@ -50,6 +51,4 @@
     <string name="toast_tap">Drücke noch einmal um die App zu schließen</string>
     <string name="notification">WhatsApp %s ist vefügbar</string>
     <string name="notification_description">Update verwendet jetzt %s</string>
-    <string name="new_install">WhatsApp %s jetzt installieren!</string>
-
 </resources>

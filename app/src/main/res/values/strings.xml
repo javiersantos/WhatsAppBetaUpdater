@@ -12,6 +12,7 @@
     <string name="update_available">Update %s is available!</string>
     <string name="update_not_available">You have the latest version available</string>
     <string name="update_not_connection">No internet connection available</string>
+    <string name="update_not_installed">Install WhatsApp %s now!</string>
     
     <!-- Dialogs -->
     <string name="downloading">Downloading %1$s %2$s&#8230;</string>
@@ -58,5 +59,4 @@
     <!-- Untranslatable -->
     <string name="app_whatsapp" translatable="false">WhatsApp</string>
     <string name="whatsapp_not_available" translatable="false">NA</string>
-    <string name="new_install">Install WhatsApp %s now!</string>
 </resources>
