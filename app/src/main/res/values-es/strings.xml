@@ -9,6 +9,7 @@
     <string name="update_available">¡La actualización %s está disponible!</string>
     <string name="update_not_available">Tienes la última versión disponible</string>
     <string name="update_not_connection">No hay conexión a Internet</string>
+    <string name="update_not_installed">¡Instalar WhatsApp %s ahora!</string>
     <string name="downloading">Descargando %1$s %2$s&#8230;</string>
     <string name="delete">¿Quieres guardar la actualización?</string>
     <string name="delete_description">Es posible guardar o eliminar la actualización descargada (APK). ¿Qué quieres hacer?</string>
