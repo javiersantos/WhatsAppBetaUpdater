@@ -50,5 +50,6 @@
     <string name="toast_tap">Drücke noch einmal um die App zu schließen</string>
     <string name="notification">WhatsApp %s ist vefügbar</string>
     <string name="notification_description">Update verwendet jetzt %s</string>
+    <string name="new_install">WhatsApp %s jetzt installieren!</string>
 
 </resources>

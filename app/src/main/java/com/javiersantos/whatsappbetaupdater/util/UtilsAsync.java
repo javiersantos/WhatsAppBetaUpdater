@@ -81,6 +81,9 @@ public class UtilsAsync {
                     if (appPreferences.getAutoDownload()) {
                         new UtilsAsync.DownloadFile(context, UtilsEnum.DownloadType.WHATSAPP_APK, version).execute();
                     }
+                } else if(!UtilsWhatsApp.isWhatsAppInstalled(context)){
+                    UtilsUI.showFAB(fab, true);
+                    toolbarSubtitle.setText(String.format(context.getResources().getString(R.string.new_install), version));
                 } else {
                     UtilsUI.showFAB(fab, false);
                     toolbarSubtitle.setText(context.getResources().getString(R.string.update_not_available));

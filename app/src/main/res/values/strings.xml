@@ -58,4 +58,5 @@
     <!-- Untranslatable -->
     <string name="app_whatsapp" translatable="false">WhatsApp</string>
     <string name="whatsapp_not_available" translatable="false">NA</string>
+    <string name="new_install">Install WhatsApp %s now!</string>
 </resources>
