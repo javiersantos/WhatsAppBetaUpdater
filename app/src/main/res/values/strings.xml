@@ -37,6 +37,7 @@
     <string name="settings_notifications">Enable notifications</string>
     <string name="settings_notifications_description">Check for new WhatsApp updates automatically and notify me when a new one is available</string>
     <string name="settings_notifications_sound">Notification sound</string>
+    <string name="settings_notifications_none">None</string>
     <string name="settings_interval">Notifications frequency</string>
     <string name="settings_interval_description">Every %s hours</string>
     <string name="settings_app_update">Check for updates</string>

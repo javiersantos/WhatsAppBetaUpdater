@@ -79,7 +79,7 @@ public class SettingsActivity extends PreferenceActivity implements SharedPrefer
     }
 
     private void initPrefSoundNotification(Preference preference) {
-        preference.setSummary(RingtoneManager.getRingtone(this, appPreferences.getSoundNotification()).getTitle(this));
+        preference.setSummary(getSavedRingtone());
         preference.setOnPreferenceClickListener(new android.preference.Preference.OnPreferenceClickListener() {
             @Override
             public boolean onPreferenceClick(android.preference.Preference preference) {
@@ -129,6 +129,15 @@ public class SettingsActivity extends PreferenceActivity implements SharedPrefer
         });
     }
 
+    private String getSavedRingtone() {
+        Uri ringtone = appPreferences.getSoundNotification();
+        if (!ringtone.toString().equals("null")) {
+            return RingtoneManager.getRingtone(this, ringtone).getTitle(this);
+        } else {
+            return getResources().getString(R.string.button_none);
+        }
+    }
+
     @Override
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
         Preference preference = (Preference) findPreference(key);
@@ -136,8 +145,6 @@ public class SettingsActivity extends PreferenceActivity implements SharedPrefer
         if (preference == prefEnableNotifications) {
             initPrefEnableNotifications(prefEnableNotifications.isChecked());
             UtilsApp.setNotification(this, prefEnableNotifications.isChecked(), appPreferences.getHoursNotification());
-        } else if (preference == prefSoundNotification) {
-            preference.setSummary(RingtoneManager.getRingtone(this, appPreferences.getSoundNotification()).getTitle(this));
         } else if (preference == prefHoursNotification) {
             preference.setSummary(String.format(getResources().getString(R.string.settings_interval_description), appPreferences.getHoursNotification()));
             UtilsApp.setNotification(this, prefEnableNotifications.isChecked(), appPreferences.getHoursNotification());
@@ -151,8 +158,9 @@ public class SettingsActivity extends PreferenceActivity implements SharedPrefer
             if (uri != null) {
                 appPreferences.setSoundNotification(uri);
             } else {
-                appPreferences.setSoundNotification(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION));
+                appPreferences.setSoundNotification(Uri.parse("null")); // Silent Notification Tone
             }
+            prefSoundNotification.setSummary(getSavedRingtone());
         }
     }
 }

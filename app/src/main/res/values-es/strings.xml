@@ -28,6 +28,7 @@
     <string name="settings_notifications">Activar notificaciones</string>
     <string name="settings_notifications_description">Comprobar nuevas actualizaciones de WhatsApp automáticamente y notificarme cuando una nueva versión esté disponible</string>
     <string name="settings_notifications_sound">Sonido de notificación</string>
+    <string name="settings_notifications_none">Ninguno</string>
     <string name="settings_interval">Frecuencia de notificaciones</string>
     <string name="settings_interval_description">Cada %s horas</string>
     <string name="settings_app_update">Buscar actualizaciones</string>

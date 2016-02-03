@@ -136,12 +136,16 @@ public class UtilsAsync {
                         .setSmallIcon(R.mipmap.ic_launcher)
                         .setContentTitle(title)
                         .setContentText(message)
-                        .setSound(appPreferences.getSoundNotification())
                         .setStyle(style)
                         .setWhen(System.currentTimeMillis())
                         .setAutoCancel(true)
                         .setOnlyAlertOnce(true)
                         .extend(wearableExtender);
+
+                // Check if "Silent Notification Tone" is selected
+                if (!appPreferences.getSoundNotification().toString().equals("null")) {
+                    builder.setSound(appPreferences.getSoundNotification());
+                }
 
                 Notification notification = builder.build();
                 manager.notify(0, notification);
