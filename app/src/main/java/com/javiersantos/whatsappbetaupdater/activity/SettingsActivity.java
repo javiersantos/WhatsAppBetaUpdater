@@ -134,7 +134,7 @@ public class SettingsActivity extends PreferenceActivity implements SharedPrefer
         if (!ringtone.toString().equals("null")) {
             return RingtoneManager.getRingtone(this, ringtone).getTitle(this);
         } else {
-            return getResources().getString(R.string.button_none);
+            return getResources().getString(R.string.settings_notifications_none);
         }
     }
 
