@@ -9,8 +9,9 @@
     <string name="update_available">%s güncellemesi hazır!</string>
     <string name="update_not_available">En güncel sürümü kullanmaktasınız</string>
     <string name="update_not_connection">İnternet bağlantısı yok</string>
+    <string name="update_not_installed">WhatsApp %s sürümünü yükle!</string>
     <string name="downloading">%1$s %2$s indiriliyor&#8230;</string>
-    <string name="delete">Güncelleştirmeyi devam ettirmek istiyor musunuz?</string>
+    <string name="delete">Güncellemeyi saklamak istiyor musunuz?</string>
     <string name="delete_description">İndirilmiş güncellemeyi tutmak veya silmek mümkün. Ne yapmak istersiniz?</string>
     <string name="donate_description">%s reklam barındırmayan, açık kaynak bir uygulamadır. Geliştirmeye yardımcı olursanız size minnettar olurum.</string>
     <string name="app_update">%s güncellemesi hazır</string>
@@ -27,6 +28,7 @@
     <string name="settings_notifications">Bildirimleri etkinleştir</string>
     <string name="settings_notifications_description">WhatsApp güncellemelerini her kontrol et ve yenisi geldiği zaman beni bilgilendir</string>
     <string name="settings_notifications_sound">Bildiri sesi</string>
+    <string name="settings_notifications_none">Hiçbiri</string>
     <string name="settings_interval">Bildirim aralığı</string>
     <string name="settings_interval_description">Her %s saatte</string>
     <string name="settings_app_update">Güncellemeleri denetle</string>
