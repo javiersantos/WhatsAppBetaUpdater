@@ -108,6 +108,5 @@
     <orderEntry type="library" exported="" name="material-design-iconic-typeface-2.2.0.1" level="project" />
     <orderEntry type="library" exported="" name="support-annotations-23.1.1" level="project" />
     <orderEntry type="library" exported="" name="appcompat-v7-23.1.1" level="project" />
-    <orderEntry type="library" exported="" name="org.apache.http.legacy-android-23" level="project" />
   </component>
 </module>

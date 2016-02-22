@@ -21,11 +21,6 @@ import com.javiersantos.whatsappbetaupdater.WhatsAppBetaUpdaterApplication;
 import com.javiersantos.whatsappbetaupdater.activity.MainActivity;
 import com.pnikosis.materialishprogress.ProgressWheel;
 
-import org.apache.http.HttpResponse;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.DefaultHttpClient;
-
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -230,6 +225,7 @@ public class UtilsAsync {
 
             try {
                 URL url = new URL(downloadUrl);
+
                 connection = (HttpURLConnection) url.openConnection();
                 connection.connect();
                 // Getting file lenght
@@ -309,17 +305,18 @@ public class UtilsAsync {
     }
 
     public static String getLatestWhatsAppVersion() {
-        String res = "0.0.0.0";
         String source = "";
 
         try {
-            HttpClient client = new DefaultHttpClient();
-            HttpGet request = new HttpGet(Config.WHATSAPP_URL_CDN);
-            HttpResponse response = client.execute(request);
+            URL url = new URL(Config.WHATSAPP_URL_CDN);
 
-            InputStream in = response.getEntity().getContent();
-            BufferedReader reader = new BufferedReader(new InputStreamReader(in));
+            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+            connection.connect();
+
+            InputStream in = connection.getInputStream();
+            BufferedReader reader = new BufferedReader(new InputStreamReader(in, "UTF-8"));
             StringBuilder str = new StringBuilder();
+
             String line;
             while((line = reader.readLine()) != null) {
                 if (line.contains(Config.PATTERN_LATEST_VERSION)) {
@@ -345,13 +342,15 @@ public class UtilsAsync {
         String source = "";
 
         try {
-            HttpClient client = new DefaultHttpClient();
-            HttpGet request = new HttpGet(Config.GITHUB_TAGS);
-            HttpResponse response = client.execute(request);
+            URL url = new URL(Config.GITHUB_TAGS);
 
-            InputStream in = response.getEntity().getContent();
+            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+            connection.connect();
+
+            InputStream in = connection.getInputStream();
             BufferedReader reader = new BufferedReader(new InputStreamReader(in));
             StringBuilder str = new StringBuilder();
+
             String line;
             while((line = reader.readLine()) != null) {
                 str.append(line);
