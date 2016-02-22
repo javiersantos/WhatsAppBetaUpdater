@@ -4,6 +4,7 @@ import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.SystemClock;
 
 import com.javiersantos.whatsappbetaupdater.Config;
@@ -91,6 +92,21 @@ public class UtilsApp {
 
     private static Integer getHoursToMilliseconds(Integer hours) {
         return hours * 60 * 60 * 1000;
+    }
+
+    public static String getVersionFromString(String s) {
+        String res = "0.0.0.0";
+
+        Uri uri = Uri.parse(s);
+        String withoutHost = uri.getPath();
+        String[] split = withoutHost.split("/");
+        String version = split[2];
+
+        if (!version.equals("current")) {
+            res = version;
+        }
+
+        return res;
     }
 
 }

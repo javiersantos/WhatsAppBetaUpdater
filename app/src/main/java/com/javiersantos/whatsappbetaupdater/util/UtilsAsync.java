@@ -314,7 +314,7 @@ public class UtilsAsync {
 
         try {
             HttpClient client = new DefaultHttpClient();
-            HttpGet request = new HttpGet(Config.WHATSAPP_URL);
+            HttpGet request = new HttpGet(Config.WHATSAPP_URL_CDN);
             HttpResponse response = client.execute(request);
 
             InputStream in = response.getEntity().getContent();
@@ -322,7 +322,9 @@ public class UtilsAsync {
             StringBuilder str = new StringBuilder();
             String line;
             while((line = reader.readLine()) != null) {
-                str.append(line);
+                if (line.contains(Config.PATTERN_LATEST_VERSION)) {
+                    str.append(line);
+                }
             }
 
             in.close();
@@ -332,18 +334,10 @@ public class UtilsAsync {
             e.printStackTrace();
         }
 
-        String[] split = source.split(">");
-        int i = 0;
-        while (i < split.length) {
-            if (split[i].startsWith("Version")) {
-                split = split[i].split("( )|(<)");
-                res = split[1].trim();
-                break;
-            }
-            i++;
-        }
+        String[] split = source.split(Config.PATTERN_LATEST_VERSION);
+        String urlWithVersion = split[1].split("\"")[0];
 
-        return res;
+        return UtilsApp.getVersionFromString(urlWithVersion);
     }
 
     public static String getLatestAppVersion() {
