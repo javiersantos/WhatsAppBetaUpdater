@@ -308,7 +308,7 @@ public class UtilsAsync {
         String source = "";
 
         try {
-            URL url = new URL(Config.WHATSAPP_URL_CDN);
+            URL url = new URL(Config.WHATSAPP_URL);
 
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.connect();
@@ -332,9 +332,9 @@ public class UtilsAsync {
         }
 
         String[] split = source.split(Config.PATTERN_LATEST_VERSION);
-        String urlWithVersion = split[1].split("\"")[0];
+        String urlWithVersion = split[1].split("<")[0].trim();
 
-        return UtilsApp.getVersionFromString(urlWithVersion);
+        return urlWithVersion;
     }
 
     public static String getLatestAppVersion() {

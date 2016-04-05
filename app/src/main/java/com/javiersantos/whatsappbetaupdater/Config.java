@@ -6,10 +6,10 @@ public class Config {
     public static final String GITHUB_TAGS = GITHUB_URL.concat("/tags");
     public static final String GITHUB_APK = GITHUB_URL.concat("/releases/download/");
     public static final String WHATSAPP_URL = "http://www.whatsapp.com/android/";
-    public static final String WHATSAPP_URL_CDN = "https://www.cdn.whatsapp.net/android/";
     public static final String WHATSAPP_APK = WHATSAPP_URL.concat("current/WhatsApp.apk");
     public static final String PAYPAL_DONATION = "donate@javiersantos.me";
 
-    public static final String PATTERN_LATEST_VERSION = "<a class=\"button\" href=\"";
+    public static final String PATTERN_LATEST_VERSION = "<p class=\"version\" align=\"center\">Version";
+    public static final String PATTERN_LATEST_VERSION_CDN = "<a class=\"button\" href=\"";
 
 }
