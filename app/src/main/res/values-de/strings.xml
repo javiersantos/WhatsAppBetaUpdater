@@ -43,5 +43,5 @@
     <string name="snackbar_share">Ich habe gerade WhatsApp %1$s mit %2$s installiert</string>
     <string name="snackbar_failed">Etwas ist beim herunterladen des Updates schiefgelaufen. Versuche es nochmal.</string>
     <string name="notification">WhatsApp %s ist vefügbar</string>
-    <string name="notification_description">Update verwendet jetzt %s</string>
+    <string name="notification_description">Tippe hier, um %s zu öffnen</string>
 </resources>
