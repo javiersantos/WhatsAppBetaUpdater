@@ -3,6 +3,8 @@ package com.javiersantos.whatsappbetaupdater;
 import android.app.Application;
 
 import com.javiersantos.whatsappbetaupdater.util.AppPreferences;
+import com.mikepenz.iconics.Iconics;
+import com.mikepenz.material_design_iconic_typeface_library.MaterialDesignIconic;
 
 public class WhatsAppBetaUpdaterApplication extends Application {
     private static AppPreferences appPreferences;
@@ -11,6 +13,7 @@ public class WhatsAppBetaUpdaterApplication extends Application {
     public void onCreate() {
         super.onCreate();
         appPreferences = new AppPreferences(this);
+        Iconics.registerFont(new MaterialDesignIconic());
     }
 
     public static AppPreferences getAppPreferences() {
