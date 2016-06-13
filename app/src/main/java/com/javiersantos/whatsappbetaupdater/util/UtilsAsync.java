@@ -59,7 +59,11 @@ public class UtilsAsync {
 
         @Override
         protected String doInBackground(Void... voids) {
-            return getLatestWhatsAppVersion();
+            if (UtilsNetwork.isNetworkAvailable(context)) {
+                return getLatestWhatsAppVersion();
+            } else {
+                return "0.0.0.0";
+            }
         }
 
         @Override
@@ -104,7 +108,11 @@ public class UtilsAsync {
 
         @Override
         protected String doInBackground(Void... voids) {
-            return getLatestWhatsAppVersion();
+            if (UtilsNetwork.isNetworkAvailable(context)) {
+                return getLatestWhatsAppVersion();
+            } else {
+                return "0.0.0.0";
+            }
         }
 
         @Override
