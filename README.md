@@ -11,7 +11,7 @@
 <p align="center"><a target="_blank" href="https://github.com/javiersantos/WhatsAppBetaUpdater/releases"><img src="https://img.shields.io/github/downloads/javiersantos/WhatsAppBetaUpdater/total.svg"></a></p>
 <p align="center"><a target="_blank" href="https://f-droid.org/repository/browse/?fdid=com.javiersantos.whatsappbetaupdater"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Get_it_on_F-Droid.svg/1024px-Get_it_on_F-Droid.svg.png" height="60"></a></p>
 
-## Why using Beta Updater?
+## Why use Beta Updater?
 WhatsApp publishes beta updates on their website before they become available on Google Play. This means that the latest features aren't available on Google Play until several weeks later (like audio calls, backup to Google Drive and new UI changes).
 
 When a user wants to have these beta updates, the regular method is downloading the APK file from the website and installing it manually. Beta Updater does that automatically.
