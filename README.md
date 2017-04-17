@@ -1,3 +1,5 @@
+[![Android Gems](http://www.android-gems.com/badge/javiersantos/WhatsAppBetaUpdater.svg?branch=master)](http://www.android-gems.com/lib/javiersantos/WhatsAppBetaUpdater)
+
 <h1 align="center">Beta Updater for WhatsApp</h1>
 
 <p align="center">
