@@ -41,17 +41,21 @@ public class UtilsAsync {
             Context context = mContextRef.get();
 
             if (context != null && UtilsNetwork.isNetworkAvailable(context)) {
-                return getLatestAppVersion();
-            } else {
+                String update = getLatestAppVersion();
+                if (update != null)
+                    return update;
+                else
+                    mCallback.onError(UpdaterError.UPDATE_NOT_FOUND);
+            } else
                 mCallback.onError(UpdaterError.NO_INTERNET_CONNECTION);
-                return null;
-            }
+            return null;
         }
 
         @Override
         protected void onPostExecute(String version) {
             super.onPostExecute(version);
-            mCallback.onFinished(new Update(version, null), UtilsWhatsApp.isUpdateAvailable(mInstalledUpdate, version));
+            if (version != null)
+                mCallback.onFinished(new Update(version, null), UtilsWhatsApp.isUpdateAvailable(mInstalledUpdate, version));
         }
     }
 

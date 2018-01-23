@@ -44,11 +44,14 @@ public class GetLatestVersion extends AsyncTask<Void, Void, Update> {
         Context context = mContextRef.get();
 
         if (context != null && UtilsNetwork.isNetworkAvailable(context)) {
-            return getUpdate();
-        } else {
+            Update update = getUpdate();
+            if (update != null)
+                return update;
+            else
+                mCallback.onError(UpdaterError.UPDATE_NOT_FOUND);
+        } else
             mCallback.onError(UpdaterError.NO_INTERNET_CONNECTION);
-            return null;
-        }
+        return null;
     }
 
     public static Update getUpdate() {
@@ -106,7 +109,8 @@ public class GetLatestVersion extends AsyncTask<Void, Void, Update> {
     @Override
     protected void onPostExecute(Update update) {
         super.onPostExecute(update);
-        mCallback.onFinished(update, mInstalledUpdate != null && UtilsWhatsApp.isUpdateAvailable(mInstalledUpdate, update.getLatestVersion()));
+        if (update != null)
+            mCallback.onFinished(update, mInstalledUpdate != null && UtilsWhatsApp.isUpdateAvailable(mInstalledUpdate, update.getLatestVersion()));
     }
 
 }

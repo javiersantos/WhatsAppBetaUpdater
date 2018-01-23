@@ -203,7 +203,9 @@ public class MainActivity extends AppCompatActivity implements UpdaterCallback {
     public void onError(UpdaterError error) {
         if (error == UpdaterError.NO_INTERNET_CONNECTION)
             toolbar_subtitle.setText(getResources().getString(R.string.update_not_connection));
-        whatsapp_latest_version.setText("NA");
+        progressWheel.setVisibility(View.GONE);
+        whatsapp_latest_version.setVisibility(View.VISIBLE);
+        whatsapp_latest_version.setText(getString(R.string.whatsapp_not_available));
     }
 
 }
