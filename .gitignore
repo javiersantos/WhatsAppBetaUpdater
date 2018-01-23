@@ -35,3 +35,5 @@ gen-external-apklibs
 .idea/
 *.db
 
+# IntelliJ
+*.iml
