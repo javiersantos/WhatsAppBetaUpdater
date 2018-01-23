@@ -72,7 +72,8 @@ public class MainActivity extends AppCompatActivity implements UpdaterCallback {
             new UtilsAsync.LatestAppVersion(this, UtilsApp.getAppVersionName(this), new UpdaterCallback() {
                 @Override
                 public void onFinished(Update update, boolean isUpdateAvailable) {
-                    UtilsDialog.showUpdateAvailableDialog(MainActivity.this, update);
+                    if (isUpdateAvailable)
+                        UtilsDialog.showUpdateAvailableDialog(MainActivity.this, update);
                 }
 
                 @Override

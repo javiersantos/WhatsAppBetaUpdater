@@ -24,4 +24,12 @@ public class Update {
     public void setDownloadUrl(String downloadUrl) {
         this.downloadUrl = downloadUrl;
     }
+
+    @Override
+    public String toString() {
+        return "Update{" +
+                "latestVersion='" + latestVersion + '\'' +
+                ", downloadUrl='" + downloadUrl + '\'' +
+                '}';
+    }
 }

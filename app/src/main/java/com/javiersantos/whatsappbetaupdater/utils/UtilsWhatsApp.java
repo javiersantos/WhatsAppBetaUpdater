@@ -3,21 +3,18 @@ package com.javiersantos.whatsappbetaupdater.utils;
 import android.content.Context;
 import android.content.pm.PackageManager;
 
-import com.javiersantos.whatsappbetaupdater.BuildConfig;
 import com.javiersantos.whatsappbetaupdater.models.Version;
 
 public class UtilsWhatsApp {
 
     public static String getInstalledWhatsAppVersion(Context context) {
-        String version = "";
-
         try {
-            version = context.getPackageManager().getPackageInfo("com.whatsapp", 0).versionName;
+            return context.getPackageManager().getPackageInfo("com.whatsapp", 0).versionName;
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();
         }
 
-        return version;
+        return null;
     }
 
     public static Boolean isWhatsAppInstalled(Context context) {
@@ -34,14 +31,10 @@ public class UtilsWhatsApp {
     }
 
     public static Boolean isUpdateAvailable(String installedVersion, String latestVersion) {
-        if (BuildConfig.DEBUG_MODE) {
-            return false;
-        } else {
-            Version installed = new Version(installedVersion);
-            Version latest = new Version(latestVersion);
+        Version installed = new Version(installedVersion);
+        Version latest = new Version(latestVersion);
 
-            return installed.compareTo(latest) < 0;
-        }
+        return installed.compareTo(latest) < 0;
     }
 
 }
