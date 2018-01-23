@@ -17,7 +17,7 @@ WhatsApp publishes beta updates on their website before they become available on
 When a user wants to have these beta updates, the regular method is downloading the APK file from the website and installing it manually. Beta Updater does that automatically.
 
 ## APK Download
-* [Download on GitHub](https://github.com/javiersantos/WhatsAppBetaUpdater/releases) *- Recommended -*
+* [Download on GitHub](https://github.com/javiersantos/WhatsAppBetaUpdater/releases/latest) *- Recommended -*
 * [Download on F-Droid](https://f-droid.org/repository/browse/?fdid=com.javiersantos.whatsappbetaupdater)
 * [Download on Aptoide](http://fjaviersantos.store.aptoide.com/app/market/com.javiersantos.whatsappbetaupdater/23/18846195/Beta+Updater+for+WhatsApp)
 
@@ -34,8 +34,6 @@ When a user wants to have these beta updates, the regular method is downloading 
 * Turkish
 * French
 
-If you want to translate the app in your native language please go to [Crowdin's project page](https://crowdin.com/project/beta-updater-whatsapp).
-
 ## Third Party Libraries
 * [Material Dialogs](https://github.com/afollestad/material-dialogs)
 * [Materialish Progress](https://github.com/pnikosis/materialish-progress)
@@ -45,7 +43,7 @@ If you want to translate the app in your native language please go to [Crowdin's
 
 ## License
 
-    Copyright 2015 Javier Santos
+    Copyright 2015-2018 Javier Santos
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
