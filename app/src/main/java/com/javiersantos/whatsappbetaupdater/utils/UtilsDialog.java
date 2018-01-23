@@ -1,4 +1,4 @@
-package com.javiersantos.whatsappbetaupdater.util;
+package com.javiersantos.whatsappbetaupdater.utils;
 
 import android.app.Activity;
 import android.content.Context;
@@ -9,6 +9,7 @@ import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.javiersantos.whatsappbetaupdater.R;
 import com.javiersantos.whatsappbetaupdater.WhatsAppBetaUpdaterApplication;
+import com.javiersantos.whatsappbetaupdater.models.Update;
 
 import java.io.File;
 
@@ -57,11 +58,11 @@ public class UtilsDialog {
         return dialog;
     }
 
-    public static MaterialDialog showUpdateAvailableDialog(final Context context, final String version) {
+    public static MaterialDialog showUpdateAvailableDialog(final Context context, final Update update) {
         final AppPreferences appPreferences = WhatsAppBetaUpdaterApplication.getAppPreferences();
 
         MaterialDialog dialog = new MaterialDialog.Builder(context)
-                .title(String.format(context.getResources().getString(R.string.app_update), version))
+                .title(String.format(context.getResources().getString(R.string.app_update), update.getLatestVersion()))
                 .content(context.getResources().getString(R.string.app_update_description))
                 .positiveText(context.getResources().getString(R.string.button_update))
                 .negativeText(context.getResources().getString(android.R.string.cancel))
@@ -69,7 +70,7 @@ public class UtilsDialog {
                 .onPositive(new MaterialDialog.SingleButtonCallback() {
                     @Override
                     public void onClick(MaterialDialog dialog, DialogAction which) {
-                        new UtilsAsync.DownloadFile(context, UtilsEnum.DownloadType.UPDATE, version).execute();
+                        new UtilsAsync.DownloadFile(context, UtilsEnum.DownloadType.UPDATE, update).execute();
                     }
                 })
                 .onNeutral(new MaterialDialog.SingleButtonCallback() {

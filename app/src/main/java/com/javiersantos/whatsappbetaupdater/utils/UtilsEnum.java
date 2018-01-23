@@ -1,4 +1,4 @@
-package com.javiersantos.whatsappbetaupdater.util;
+package com.javiersantos.whatsappbetaupdater.utils;
 
 public class UtilsEnum {
 

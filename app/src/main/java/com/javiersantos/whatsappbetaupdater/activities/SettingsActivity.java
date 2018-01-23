@@ -1,4 +1,4 @@
-package com.javiersantos.whatsappbetaupdater.activity;
+package com.javiersantos.whatsappbetaupdater.activities;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -10,12 +10,14 @@ import android.preference.PreferenceManager;
 
 import com.javiersantos.whatsappbetaupdater.R;
 import com.javiersantos.whatsappbetaupdater.WhatsAppBetaUpdaterApplication;
-import com.javiersantos.whatsappbetaupdater.util.AppPreferences;
-import com.javiersantos.whatsappbetaupdater.util.UtilsApp;
+import com.javiersantos.whatsappbetaupdater.utils.AppPreferences;
+import com.javiersantos.whatsappbetaupdater.utils.UtilsApp;
 import com.lb.material_preferences_library.PreferenceActivity;
 import com.lb.material_preferences_library.custom_preferences.CheckBoxPreference;
 import com.lb.material_preferences_library.custom_preferences.ListPreference;
 import com.lb.material_preferences_library.custom_preferences.Preference;
+import com.mikepenz.aboutlibraries.Libs;
+import com.mikepenz.aboutlibraries.LibsBuilder;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -105,7 +107,11 @@ public class SettingsActivity extends PreferenceActivity implements SharedPrefer
         preference.setOnPreferenceClickListener(new android.preference.Preference.OnPreferenceClickListener() {
             @Override
             public boolean onPreferenceClick(android.preference.Preference preference) {
-                startActivity(new Intent(SettingsActivity.this, LicenseActivity.class));
+                new LibsBuilder()
+                        .withActivityStyle(Libs.ActivityStyle.LIGHT_DARK_TOOLBAR)
+                        .withActivityTitle(getResources().getString(R.string.settings_license))
+                        .withAutoDetect(true)
+                        .start(SettingsActivity.this);
                 return true;
             }
         });

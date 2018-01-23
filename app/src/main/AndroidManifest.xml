@@ -14,7 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".activity.MainActivity"
+            android:name=".activities.MainActivity"
             android:label="@string/app_name"
             android:configChanges="orientation|screenSize">
             <intent-filter>
@@ -24,14 +24,11 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activity.SettingsActivity"
+            android:name=".activities.SettingsActivity"
             android:label="@string/action_settings" />
-        <activity
-            android:name=".activity.LicenseActivity"
-            android:label="@string/settings_license" />
 
         <!-- Notification Receiver -->
-        <receiver android:name=".receiver.NotificationReceiver" />
+        <receiver android:name=".receivers.NotificationReceiver" />
     </application>
 
 </manifest>

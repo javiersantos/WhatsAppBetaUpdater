@@ -1,4 +1,4 @@
-package com.javiersantos.whatsappbetaupdater.util;
+package com.javiersantos.whatsappbetaupdater.utils;
 
 import android.content.Context;
 import android.net.ConnectivityManager;

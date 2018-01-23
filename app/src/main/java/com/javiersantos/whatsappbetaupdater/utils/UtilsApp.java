@@ -1,4 +1,4 @@
-package com.javiersantos.whatsappbetaupdater.util;
+package com.javiersantos.whatsappbetaupdater.utils;
 
 import android.app.AlarmManager;
 import android.app.PendingIntent;
@@ -9,7 +9,7 @@ import android.os.SystemClock;
 
 import com.javiersantos.whatsappbetaupdater.Config;
 import com.javiersantos.whatsappbetaupdater.R;
-import com.javiersantos.whatsappbetaupdater.receiver.NotificationReceiver;
+import com.javiersantos.whatsappbetaupdater.receivers.NotificationReceiver;
 
 import java.util.Currency;
 import java.util.Locale;

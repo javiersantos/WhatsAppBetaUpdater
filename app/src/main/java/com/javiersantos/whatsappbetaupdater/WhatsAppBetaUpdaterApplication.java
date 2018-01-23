@@ -2,7 +2,7 @@ package com.javiersantos.whatsappbetaupdater;
 
 import android.app.Application;
 
-import com.javiersantos.whatsappbetaupdater.util.AppPreferences;
+import com.javiersantos.whatsappbetaupdater.utils.AppPreferences;
 import com.mikepenz.iconics.Iconics;
 import com.mikepenz.material_design_iconic_typeface_library.MaterialDesignIconic;
 
