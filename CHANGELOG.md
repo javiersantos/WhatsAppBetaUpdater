@@ -1,3 +1,11 @@
+### 4.0 - 4.0.1
+**Released: 23 January, 2018**
+* Revamped code.
+* Working again 👍 
+* Fixes, fixes everywhere.
+
+***
+
 ### 3.1.3
 **Released: 30 January, 2016**
 * Minor design tweaks.
