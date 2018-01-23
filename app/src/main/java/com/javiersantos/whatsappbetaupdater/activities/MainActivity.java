@@ -170,42 +170,58 @@ public class MainActivity extends AppCompatActivity implements UpdaterCallback {
     }
 
     @Override
-    public void onFinished(Update update, boolean isUpdateAvailable) {
+    public void onFinished(final Update update, final boolean isUpdateAvailable) {
         this.mUpdate = update;
-        progressWheel.setVisibility(View.GONE);
-        whatsapp_latest_version.setVisibility(View.VISIBLE);
-        whatsapp_latest_version.setText(update.getLatestVersion());
+        final boolean isWhatsAppInstalled = UtilsWhatsApp.isWhatsAppInstalled(MainActivity.this);
 
-        boolean isWhatsAppInstalled = UtilsWhatsApp.isWhatsAppInstalled(MainActivity.this);
-        if (isWhatsAppInstalled && isUpdateAvailable) {
-            UtilsUI.showFAB(fab, true);
-            toolbar_subtitle.setText(String.format(getResources().getString(R.string.update_available), update.getLatestVersion()));
-            if (appPreferences.getAutoDownload()) {
-                new UtilsAsync.DownloadFile(MainActivity.this, UtilsEnum.DownloadType.WHATSAPP_APK, update).execute();
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                progressWheel.setVisibility(View.GONE);
+                whatsapp_latest_version.setVisibility(View.VISIBLE);
+                whatsapp_latest_version.setText(update.getLatestVersion());
+
+                if (isWhatsAppInstalled && isUpdateAvailable) {
+                    UtilsUI.showFAB(fab, true);
+                    toolbar_subtitle.setText(String.format(getResources().getString(R.string.update_available), update.getLatestVersion()));
+                    if (appPreferences.getAutoDownload()) {
+                        new UtilsAsync.DownloadFile(MainActivity.this, UtilsEnum.DownloadType.WHATSAPP_APK, update).execute();
+                    }
+                } else if (!isWhatsAppInstalled) {
+                    UtilsUI.showFAB(fab, true);
+                    toolbar_subtitle.setText(String.format(getResources().getString(R.string.update_not_installed), update.getLatestVersion()));
+                } else {
+                    UtilsUI.showFAB(fab, false);
+                    toolbar_subtitle.setText(getResources().getString(R.string.update_not_available));
+                }
             }
-        } else if (!isWhatsAppInstalled) {
-            UtilsUI.showFAB(fab, true);
-            toolbar_subtitle.setText(String.format(getResources().getString(R.string.update_not_installed), update.getLatestVersion()));
-        } else {
-            UtilsUI.showFAB(fab, false);
-            toolbar_subtitle.setText(getResources().getString(R.string.update_not_available));
-        }
+        });
     }
 
     @Override
     public void onLoading() {
-        checkInstalledWhatsAppVersion();
-        whatsapp_latest_version.setVisibility(View.GONE);
-        progressWheel.setVisibility(View.VISIBLE);
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                checkInstalledWhatsAppVersion();
+                whatsapp_latest_version.setVisibility(View.GONE);
+                progressWheel.setVisibility(View.VISIBLE);
+            }
+        });
     }
 
     @Override
-    public void onError(UpdaterError error) {
-        if (error == UpdaterError.NO_INTERNET_CONNECTION)
-            toolbar_subtitle.setText(getResources().getString(R.string.update_not_connection));
-        progressWheel.setVisibility(View.GONE);
-        whatsapp_latest_version.setVisibility(View.VISIBLE);
-        whatsapp_latest_version.setText(getString(R.string.whatsapp_not_available));
+    public void onError(final UpdaterError error) {
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                if (error == UpdaterError.NO_INTERNET_CONNECTION)
+                    toolbar_subtitle.setText(getResources().getString(R.string.update_not_connection));
+                progressWheel.setVisibility(View.GONE);
+                whatsapp_latest_version.setVisibility(View.VISIBLE);
+                whatsapp_latest_version.setText(getString(R.string.whatsapp_not_available));
+            }
+        });
     }
 
 }
