@@ -4,10 +4,10 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.design.widget.FloatingActionButton;
-import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -66,21 +66,27 @@ public class MainActivity extends AppCompatActivity implements UpdaterCallback {
 
         // Set drawable to FAB
         fab.setImageDrawable(new IconicsDrawable(this).icon(MaterialDesignIconic.Icon.gmi_download).color(Color.WHITE).sizeDp(24));
+        fab.hide();
 
         // Check if there is an app update and show dialog
         if (appPreferences.getShowAppUpdates()) {
             new UtilsAsync.LatestAppVersion(this, UtilsApp.getAppVersionName(this), new UpdaterCallback() {
                 @Override
                 public void onFinished(Update update, boolean isUpdateAvailable) {
-                    if (isUpdateAvailable)
-                        UtilsDialog.showUpdateAvailableDialog(MainActivity.this, update);
+                    runOnUiThread(() -> {
+                        fab.show();
+                        if (isUpdateAvailable)
+                            UtilsDialog.showUpdateAvailableDialog(MainActivity.this, update);
+                    });
                 }
 
                 @Override
                 public void onLoading() {}
 
                 @Override
-                public void onError(UpdaterError error) {}
+                public void onError(UpdaterError error) {
+                    runOnUiThread(() -> fab.hide());
+                }
             }).execute();
         }
 
