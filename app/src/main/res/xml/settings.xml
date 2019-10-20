@@ -36,13 +36,6 @@
             android:key="prefLicense"
             android:title="@string/settings_license" />
         <com.lb.material_preferences_library.custom_preferences.Preference
-            android:title="@string/settings_googleplus"
-            android:summary="@string/settings_googleplus_description">
-            <intent
-                android:action="android.intent.action.VIEW"
-                android:data="https://plus.google.com/communities/102574612559329723462" />
-        </com.lb.material_preferences_library.custom_preferences.Preference>
-        <com.lb.material_preferences_library.custom_preferences.Preference
             android:key="prefVersion"
             android:title="@string/app_name"
             android:summary="@string/settings_about">
