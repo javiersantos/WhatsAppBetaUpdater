@@ -1,8 +1,12 @@
 package com.javiersantos.whatsappbetaupdater.models;
 
+import android.text.TextUtils;
+
 public class Update {
     private String latestVersion;
     private String downloadUrl;
+
+    public Update() {}
 
     public Update(String latestVersion, String downloadUrl) {
         this.latestVersion = latestVersion;
@@ -23,6 +27,10 @@ public class Update {
 
     public void setDownloadUrl(String downloadUrl) {
         this.downloadUrl = downloadUrl;
+    }
+
+    public Boolean isSuccessfull() {
+        return !TextUtils.isEmpty(this.latestVersion) && !TextUtils.isEmpty(this.downloadUrl);
     }
 
     @Override

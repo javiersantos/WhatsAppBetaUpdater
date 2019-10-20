@@ -2,6 +2,7 @@ package com.javiersantos.whatsappbetaupdater.asyncs;
 
 import android.content.Context;
 import android.os.AsyncTask;
+import android.text.TextUtils;
 
 import com.javiersantos.whatsappbetaupdater.Config;
 import com.javiersantos.whatsappbetaupdater.callback.UpdaterCallback;
@@ -56,11 +57,12 @@ public class GetLatestVersion extends AsyncTask<Void, Void, Update> {
 
     public static Update getUpdate() {
         String source = "";
+        Update latestUpdate = new Update();
 
         try {
             URL url = new URL(Config.WHATSAPP_URL);
 
-            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+            HttpURLConnection connection = UtilsNetwork.getHttpUrlConnection(url);
             connection.connect();
 
             InputStream in = connection.getInputStream();
@@ -79,17 +81,15 @@ public class GetLatestVersion extends AsyncTask<Void, Void, Update> {
             e.printStackTrace();
         }
 
+        latestUpdate.setLatestVersion(extractVersion(source));
+
         for (String s : extractUrls(source)) {
             if (s.contains(".apk")) {
-                Pattern pattern = Pattern.compile("\\d+(\\.\\d+)+");
-                Matcher matcher = pattern.matcher(s);
-                if (matcher.find()) {
-                    return new Update(matcher.group(), s);
-                }
+                latestUpdate.setDownloadUrl(s);
             }
         }
 
-        return null;
+        return latestUpdate.isSuccessfull() ? latestUpdate : null;
     }
 
     private static List<String> extractUrls(String text) {
@@ -104,6 +104,23 @@ public class GetLatestVersion extends AsyncTask<Void, Void, Update> {
         }
 
         return containedUrls;
+    }
+
+    private static String extractVersion(String text) {
+        String latestVersion = null;
+        String[] containedVersions = TextUtils.split(text, "Version ");
+
+        if (containedVersions.length > 1) {
+            String versionRegex = "\\d+(\\.\\d+)+";
+            Pattern pattern = Pattern.compile(versionRegex, Pattern.CASE_INSENSITIVE);
+            Matcher urlMatcher = pattern.matcher(containedVersions[1]);
+
+            if (urlMatcher.find()) {
+                latestVersion = urlMatcher.group();
+            }
+        }
+
+        return latestVersion;
     }
 
     @Override

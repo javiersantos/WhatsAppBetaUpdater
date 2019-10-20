@@ -60,14 +60,14 @@ public class UtilsAsync {
     }
 
     public static class DownloadFile extends AsyncTask<Void, Integer, Integer> {
-        private Context context;
+        private WeakReference<Context> mContextRef;
         private MaterialDialog dialog;
         private UtilsEnum.DownloadType downloadType;
         private Update update;
         private String path, filename, downloadUrl;
 
         public DownloadFile(Context context, UtilsEnum.DownloadType downloadType, Update update) {
-            this.context = context;
+            this.mContextRef = new WeakReference<>(context);
             this.downloadType = downloadType;
             this.update = update;
         }
@@ -75,6 +75,8 @@ public class UtilsAsync {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
+            Context context = mContextRef.get();
+
             path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS) + "/";
 
             // Configure cancel button and show progress dialog
@@ -115,7 +117,7 @@ public class UtilsAsync {
             try {
                 URL url = new URL(downloadUrl);
 
-                connection = (HttpURLConnection) url.openConnection();
+                connection = UtilsNetwork.getHttpUrlConnection(url);
                 connection.connect();
                 // Getting file lenght
                 lengthOfFile = connection.getContentLength();
@@ -165,6 +167,8 @@ public class UtilsAsync {
 
         @Override
         protected void onPostExecute(Integer file_length) {
+            Context context = mContextRef.get();
+
             UtilsHelper.dismissDialog(dialog);
             File file = new File(path, filename);
             if (file_length != null && file.length() == file_length) {
